@@ -7,6 +7,11 @@ const Navbar = () => {
   // const menu = document.querySelector('.mobile-menu');
   const navLinks = [
     {
+      id: 'nav-link-0',
+      name: 'Home',
+      link: '/',
+    },
+    {
       id: 'nav-link-1',
       name: 'About',
       link: '/about',
