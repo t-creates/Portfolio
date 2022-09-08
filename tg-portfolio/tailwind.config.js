@@ -21,6 +21,11 @@ module.exports = {
       '2xl': '1536px',
       // => @media (min-width: 1536px) { ... }
     },
+    extend: {
+      backgroundImage: {
+        hero: "url('/pexels-alex-conchillos-3745234.jpeg')",
+      },
+    },
   },
   plugins: [],
 };
