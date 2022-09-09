@@ -5,8 +5,8 @@ import { client } from '../utils/client';
 import { heroQuery, clientsQuery } from '../utils/queries';
 
 const Home = () => {
-  const [hero, setHero] = useState(null);
-  const [clients, setClients] = useState(null);
+  const [hero, setHero] = useState();
+  const [clients, setClients] = useState();
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {

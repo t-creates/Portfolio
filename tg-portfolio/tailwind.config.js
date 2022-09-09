@@ -37,7 +37,7 @@ module.exports = {
   },
   plugins: [
     // eslint-disable-next-line
-    require('tailwindcss-animate'),
+    'tailwindcss-animate',
     // eslint-disable-next-line
     require('daisyui'),
   ],

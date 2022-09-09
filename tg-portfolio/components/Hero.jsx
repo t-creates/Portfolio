@@ -20,7 +20,7 @@ const Hero = ({ hero }) => {
           <div>
             <h1 className="font-extrabold navName text-7xl animate-bounce fill-mode-forwards">{hero[0].name}</h1>
             <h1 className="font-bold navName text-5xl animate-bounce repeat-1 textBlue">{hero[0].title}</h1>
-            <h1 className="font-semibold navName text-3xl heroTitle">{hero[0].bio}</h1>
+            <h1 className="font-semibold navName text-3xl text-black">{hero[0].bio}</h1>
           </div>
           <div className="flex flex-col justify-center items-center">
             <Link href="../public/travisGeislingerResume.pdf">

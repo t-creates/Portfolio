@@ -42,8 +42,6 @@ const Navbar = () => {
             <Link href="/">
               <div className="text-xl font-extrabold flex items-center py-4 px-2">
                 <img src="/default.png" alt="Travis Geislinger" className="md:h-28 md:w-28 sm:h-16 sm:w-16 mr-2 rounded-full cursor-pointer hover:animate-pulse" />
-                {/* <h1 className=""><span className="hover:text-zinc-500 cursor-pointer hover:animate-pulse">Travis Geislinger </span>
-                </h1> */}
               </div>
             </Link>
           </div>
