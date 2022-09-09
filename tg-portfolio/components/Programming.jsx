@@ -1,9 +1,7 @@
-import React from 'react'
+import React from 'react';
 
-const Programming = () => {
-  return (
-    <div>Programming</div>
-  )
-}
+const Programming = () => (
+  <div>Programming</div>
+);
 
-export default Programming
+export default Programming;
