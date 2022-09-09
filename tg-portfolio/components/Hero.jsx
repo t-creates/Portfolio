@@ -11,7 +11,7 @@ const Hero = ({ hero }) => {
       <div className="flex justify-between items-center max-w-5xl lg:m-28  md:px-16 md:m-14 rounded-lg bg-slate-700/70">
         <div className="p-16">
           <img
-            className="rounded-full lg:w-96 lg:h-96  md:w-64 md:h-64 sm:w-28 sm:h-28 pr-5"
+            className="rounded-full lg:w-96 lg:h-96  md:w-64 md:h-64  pr-5"
             src={`${heroImage}`}
           />
         </div>

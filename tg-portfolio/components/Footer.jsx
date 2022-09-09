@@ -6,7 +6,7 @@ const Footer = () => {
   console.log('Footer');
   return (
     <div>
-      <footer className="p-5">
+      <footer className="p-5 mt-28">
         <div className="lg:px-40">
           <hr className="border-4 logoBlue rounded-full" />
         </div>

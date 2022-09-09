@@ -1,17 +1,17 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: [
-    './pages/**/*.{js,ts,jsx,tsx}',
-    './components/**/*.{js,ts,jsx,tsx}',
-    './layouts/**/*.{js,ts,jsx,tsx}',
-    './lib/**/*.{js,ts,jsx,tsx}',
-  ],
-  // purge: [
+  // content: [
   //   './pages/**/*.{js,ts,jsx,tsx}',
   //   './components/**/*.{js,ts,jsx,tsx}',
   //   './layouts/**/*.{js,ts,jsx,tsx}',
   //   './lib/**/*.{js,ts,jsx,tsx}',
   // ],
+  purge: [
+    './pages/**/*.{js,ts,jsx,tsx}',
+    './components/**/*.{js,ts,jsx,tsx}',
+    './layouts/**/*.{js,ts,jsx,tsx}',
+    './lib/**/*.{js,ts,jsx,tsx}',
+  ],
   theme: {
     screens: {
       sm: '320px',
@@ -36,8 +36,10 @@ module.exports = {
     },
   },
   plugins: [
-    'tailwindcss-animate',
-    'daisyui',
+    // eslint-disable-next-line
+    require('tailwindcss-animate'),
+    // eslint-disable-next-line
+    require('daisyui'),
   ],
   daisyui: {
     styled: true,
