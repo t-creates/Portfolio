@@ -14,5 +14,16 @@
 .logoBlue {
   border-color: rgb(0, 56, 244);
 }
+.textBlue {
+  color: rgb(0, 56, 244);
+}
 
+.heroTitle {
+  animation: color-change 5s infinite;
+}
 
+@keyframes color-change {
+  0% { color: rgb(0, 56, 244); }
+  50% { color: rgb(34 211 238); }
+  100% { color: rgb(0, 56, 244); }
+}

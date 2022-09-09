@@ -12,10 +12,14 @@ const Footer = () => {
         </div>
         <div className="flex justify-center items-center space-x-10 p-5">
           <Link href="https://www.linkedin.com/in/travis-geislinger-889b81188/">
-            <FaLinkedin className="text-4xl logoBlue hover:text-cyan-400 cursor-pointer hover:animate-pulse" />
+            <button type="button">
+              <FaLinkedin className="text-4xl logoBlue hover:text-cyan-400 cursor-pointer hover:animate-pulse" />
+            </button>
           </Link>
           <Link href="https://www.github.com/t-creates">
-            <FaGithub className="text-4xl logoBlue hover:text-cyan-400 cursor-pointer hover:animate-pulse" />
+            <button type="button">
+              <FaGithub className="text-4xl logoBlue hover:text-cyan-400 cursor-pointer hover:animate-pulse" />
+            </button>
           </Link>
           <Link href="/contact">
             <p className="font-bold hover:text-cyan-400 cursor-pointer hidden md:flex hover:animate-pulse">CONTACT</p>

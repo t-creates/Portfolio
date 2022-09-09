@@ -9,6 +9,11 @@ export default {
       type: 'string',
     },
     {
+      name: 'name',
+      title: 'Name',
+      type: 'string',
+    },
+    {
       name: 'bio',
       title: 'Bio',
       description: 'One or two sentences about yourself, or a favourite quote/tagline.',
@@ -23,13 +28,13 @@ export default {
       }
     },
     {
-      title: 'LinkedIn',
       name: 'linkedin',
+      title: 'LinkedIn',
       type: 'url',
     },
     {
-      title: 'Github',
       name: 'github',
+      title: 'Github',
       type: 'url',
     },
 

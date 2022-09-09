@@ -67,8 +67,10 @@ const Navbar = () => {
       <div className="hidden mobile-menu">
         <ul className="">
           {navLinks.map((navItem) => (
-            <Link href={navItem.link} key={navItem.key}>
-              <li className="block text-sm px-2 py-4 hover:bg-green-500 transition duration-300">{navItem.name}</li>
+            <Link href={navItem.link} key={navItem.id}>
+              <button type="button">
+                <li className="block text-sm px-2 py-4 hover:bg-green-500 transition duration-300">{navItem.name}</li>
+              </button>
             </Link>
           ))}
         </ul>
