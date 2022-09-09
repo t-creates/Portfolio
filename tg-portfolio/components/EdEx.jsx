@@ -1,9 +1,7 @@
-import React from 'react'
+import React from 'react';
 
-const EdEx = () => {
-  return (
-    <div>Ed&Ex</div>
-  )
-}
+const EdEx = () => (
+  <div>Ed&Ex</div>
+);
 
-export default EdEx
+export default EdEx;

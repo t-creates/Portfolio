@@ -1,8 +1,16 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: [
+  // content: [
+  //   './pages/**/*.{js,ts,jsx,tsx}',
+  //   './components/**/*.{js,ts,jsx,tsx}',
+  //   './layouts/**/*.{js,ts,jsx,tsx}',
+  //   './lib/**/*.{js,ts,jsx,tsx}',
+  // ],
+  purge: [
     './pages/**/*.{js,ts,jsx,tsx}',
     './components/**/*.{js,ts,jsx,tsx}',
+    './layouts/**/*.{js,ts,jsx,tsx}',
+    './lib/**/*.{js,ts,jsx,tsx}',
   ],
   theme: {
     screens: {
@@ -21,6 +29,26 @@ module.exports = {
       '2xl': '1536px',
       // => @media (min-width: 1536px) { ... }
     },
+    extend: {
+      backgroundImage: {
+        hero: "url('/pexels-alex-conchillos-3745234.jpeg')",
+      },
+    },
   },
-  plugins: [],
+  plugins: [
+    // eslint-disable-next-line
+    require('tailwindcss-animate'),
+    // eslint-disable-next-line
+    require('daisyui'),
+  ],
+  daisyui: {
+    styled: true,
+    themes: true,
+    base: true,
+    utils: true,
+    logs: true,
+    rtl: false,
+    prefix: '',
+    darkTheme: 'dark',
+  },
 };
