@@ -22,8 +22,8 @@ const Navbar = () => {
     },
     {
       id: 'nav-link-3',
-      name: 'Portfolio',
-      link: '/portfolio',
+      name: 'Works',
+      link: '/works',
     },
     {
       id: 'nav-link-4',

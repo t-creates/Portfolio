@@ -10,7 +10,7 @@ const TestClients = ({ clients }) => {
     <div>
       <div className="flex justify-center items-center mb-5">
         <h1 className="cursor-pointer py-4 px-2 border-b-4 logoBlue font-semibold
-              hover:animate-pulse hover:text-cyan-400 text-cyan-400 navName text-6xl"
+              hover:animate-pulse navName text-6xl"
         >Testimonials
         </h1>
       </div>

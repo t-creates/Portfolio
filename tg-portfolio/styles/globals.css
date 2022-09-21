@@ -4,26 +4,33 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Antonio:wght@600&display=swap');
 
-
 @layer base {
   .navName {
     font-family: 'Antonio', sans-serif;
   }
 }
 
-.logoBlue {
-  border-color: rgb(0, 56, 244);
-}
-.textBlue {
-  color: rgb(0, 56, 244);
-}
-
 .heroTitle {
   animation: color-change 5s infinite;
 }
 
-@keyframes color-change {
+.logoBlue {
+  border-color: rgb(0, 56, 244);
+}
+
+.textBlue {
+  color: rgb(0, 56, 244);
+}
+
+.word {
+  margin: auto;
+  color: white;
+  font: 700 normal 2.5em 'tahoma';
+  text-shadow: 5px 2px #222324, 2px 4px #222324, 3px 5px #222324;
+}
+
+/* @keyframes color-change {
   0% { color: rgb(0, 56, 244); }
   50% { color: rgb(34 211 238); }
   100% { color: rgb(0, 56, 244); }
-}
+} */

@@ -5,10 +5,9 @@ import { urlFor } from '../utils/client';
 
 const Hero = ({ hero }) => {
   const heroImage = urlFor(hero[0].image).url();
-  console.log(hero);
   return (
     <div className="flex justify-center">
-      <div className="flex justify-between items-center max-w-5xl lg:m-28  md:px-16 md:m-14 rounded-lg bg-slate-700/70">
+      <div className="flex justify-between items-center max-w-5xl lg:m-28  md:px-16 md:m-14 pt-5 rounded-lg bg-slate-700/70">
         <div className="p-16">
           <div className="avatar">
             <div className="w-58 rounded-full">
@@ -18,8 +17,8 @@ const Hero = ({ hero }) => {
         </div>
         <div className="flew flex-col">
           <div>
-            <h1 className="font-extrabold navName text-7xl animate-bounce fill-mode-forwards">{hero[0].name}</h1>
-            <h1 className="font-bold navName text-5xl animate-bounce repeat-1 textBlue">{hero[0].title}</h1>
+            <h1 className="font-extrabold navName text-7xl">{hero[0].name}</h1>
+            <h1 className="font-bold navName text-5xl textBlue">{hero[0].title}</h1>
             <h1 className="font-semibold navName text-3xl text-black">{hero[0].bio}</h1>
           </div>
           <div className="flex flex-col justify-center items-center">
