@@ -1,6 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
-import { urlFor } from '../utils/client';
+// import { urlFor } from '../utils/client';
 import projectData from '../utils/projectData';
 
 const Projects = () => {
