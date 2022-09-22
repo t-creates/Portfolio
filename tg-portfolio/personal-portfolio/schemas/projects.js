@@ -24,8 +24,8 @@ export default {
         }
       },
       {
-        name: 'new',
-        title: 'New',
+        name: 'neww',
+        title: 'Neww',
         type: 'boolean',
       },
       {
@@ -44,16 +44,16 @@ export default {
         type: 'array',
         of: [{type: 'string'}]
       },
-      {
-       // Slug -> like a url, a unique string
-       name: 'slug',
-       title: 'Slug',
-       type: 'slug',
-       options: {
-         source: 'name',
-         maxLength: 90,
-       }
-      },
+    {
+     // Slug -> like a url, a unique string
+     name: 'slug',
+     title: 'Slug',
+     type: 'slug',
+     options: {
+       source: 'name',
+       maxLength: 90,
+     }
+    },
 
   ]
 };

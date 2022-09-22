@@ -2,13 +2,14 @@ import sanityClient from '@sanity/client';
 import imageUrlBuilder from '@sanity/image-url';
 
 export const client = sanityClient({
-  projectId: '0v3qhuan',
-  dataset: 'production',
+  projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID,
+  dataset: process.env.NEXT_PUBLIC_SANITY_DATASET,
   apiVersion: '2022-08-16',
   useCdn: true,
-  token: 'sklOw2TUyDMBucS3Vjbga9uWDZgbRT3hdoo0IwYvLiZ4xgcAeiMbmFjAcPMtwrPJDoFq35vIReTMYs4vgcekG5zL95EIETomk04m9qGvGDXmeeEVK9hQcybuqm914sMuUHCLRcby8z4BwO364dwGbZuBw41qCGoGFhNVn1rOQiyVarTDXCSZ',
+  token: process.env.NEXT_PUBLIC_SANITY_TOKEN,
 });
 
+// Sanity gives access to where the Url's are stored
 const builder = imageUrlBuilder(client);
 
 export const urlFor = (source) => builder.image(source);

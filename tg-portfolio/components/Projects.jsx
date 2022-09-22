@@ -1,45 +1,31 @@
 import React from 'react';
-import Image from 'next/image';
 import Link from 'next/link';
-// import { urlFor } from '../utils/client';
-import projectData from '../utils/projectData';
+import { v4 } from 'uuid';
+import { urlFor } from '../utils/client';
 
-const Projects = () => {
-// const projectImage = urlFor(projects.image && projects[0].image).url();
-  const projects = projectData;
-  return (
-    <div className="mt-10 mx-24">
-      <div className="p-6 rounded-lg bg-slate-700/70">
-        <h1 className="navName text-4xl font-bold logoBlue pb-8 px-8 border-b-4">Projects</h1>
-        <div className="flex flex-wrap justify-between overflow-auto gap-16 p-11">
-          {projects.map((project) => (
-            <div className="card w-96 bg-base-100 shadow-xl">
-              <div className="relative">
-                <figure><Image src={project.image} alt={project.name} /></figure>
-              </div>
-              <div className="card-body">
-                <h2 className="card-title">
-                  {project.name}
-                  {project.new ? <div className="badge badge-secondary">NEW</div> : null}
-                </h2>
-                <p>{project.description}</p>
-                <Link href={project.viewProject} key={project.id}>
-                  <button type="button" className="btn text-black hover:text-white bg-cyan-400/75">View Project</button>
-                </Link>
-                <Link href={project.sourceCode} key={project.id}>
-                  <button type="button" className="btn text-black hover:text-white bg-blue-700 ">View Code</button>
-                </Link>
-                <div className="card-actions justify-end">
-                  {project.badge.map((badge) => (
-                    <div className="badge badge-outline">{badge}</div>
-                  ))}
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
+const Projects = ({ projects: { image, name, badge, sourceCode, website, description, neww, slug } }) => (
+  <div className="card w-96 bg-base-100 bg-slate-600/75 shadow-xl">
+    <div className="relative">
+      <figure><img src={urlFor(image)} alt={name} /></figure>
+    </div>
+    <div className="card-body">
+      <h2 className="card-title">
+        {name}
+        {neww ? <div className="badge badge-secondary">NEW</div> : null}
+      </h2>
+      <p>{description}</p>
+      <Link href={website} key={v4}>
+        <button type="button" className="btn border-none text-black hover:text-white bg-cyan-400/75">View Project</button>
+      </Link>
+      <Link href={sourceCode} key={slug.current}>
+        <button type="button" className="btn border-none text-black hover:text-white bg-blue-700 ">View Code</button>
+      </Link>
+      <div className="card-actions justify-end">
+        {badge.map((badges, i) => (
+          <div className="badge badge-outline" key={i}>{badges}</div>
+        ))}
       </div>
     </div>
-  );
-};
+  </div>
+);
 export default Projects;
