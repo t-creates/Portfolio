@@ -1,10 +1,11 @@
 import React from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 // import { urlFor } from '../utils/client';
 import projectData from '../utils/projectData';
 
 const Projects = () => {
-// const projectImage = urlFor(projects.image && projects[0].image).url;
+// const projectImage = urlFor(projects.image && projects[0].image).url();
   const projects = projectData;
   return (
     <div className="mt-10 mx-24">
@@ -22,6 +23,12 @@ const Projects = () => {
                   {project.new ? <div className="badge badge-secondary">NEW</div> : null}
                 </h2>
                 <p>{project.description}</p>
+                <Link href={project.viewProject} key={project.id}>
+                  <button type="button" className="btn text-black hover:text-white bg-cyan-400/75">View Project</button>
+                </Link>
+                <Link href={project.sourceCode} key={project.id}>
+                  <button type="button" className="btn text-black hover:text-white bg-blue-700 ">View Code</button>
+                </Link>
                 <div className="card-actions justify-end">
                   {project.badge.map((badge) => (
                     <div className="badge badge-outline">{badge}</div>
