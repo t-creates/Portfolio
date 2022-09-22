@@ -15,16 +15,16 @@ const Hero = ({ hero }) => (
       </div>
       <div className="flew flex-col">
         <div>
-          <h1 className="font-extrabold navName text-7xl">{hero[0].name}</h1>
-          <h1 className="font-bold navName text-5xl textBlue">{hero[0].title}</h1>
-          <h1 className="font-semibold navName text-3xl text-black">{hero[0].bio}</h1>
+          <h1 className="font-extrabold navName text-7xl animate-in fade-in zoom-in delay-150 duration-700">{hero[0].name}</h1>
+          <h1 className="font-bold navName text-5xl textBlue animate-in fade-in zoom-in delay-300 duration-700">{hero[0].title}</h1>
+          <h1 className="font-semibold navName text-3xl text-black animate-in zoom-in delay-700 duration-700">{hero[0].bio}</h1>
         </div>
         <div className="flex flex-col justify-center items-center">
           <Link href="../public/travisGeislingerResume.pdf">
             <button
               type="button"
               className="bg-transparent bg-cyan-400 text-black font-semibold hover:text-black py-2 px-4 border-2
-           border-none hover:border-transparent rounded w-48 m-2 mt-9
+           border-none hover:border-transparent rounded w-48 m-2 mt-9 animate-in fade-in zoom-in delay-700 duration-700
            "
             >
               Resume

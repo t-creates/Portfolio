@@ -4,7 +4,7 @@ import { v4 } from 'uuid';
 import { urlFor } from '../utils/client';
 
 const Projects = ({ projects: { image, name, badge, sourceCode, website, description, neww, slug } }) => (
-  <div className="card w-96 bg-base-100 bg-slate-600/75 shadow-xl">
+  <div className="card w-96 bg-base-100 bg-slate-600/75 shadow-xl animate-in zoom-in spin-in-90 duration-1000">
     <div className="relative">
       <figure><img src={urlFor(image)} alt={name} /></figure>
     </div>
