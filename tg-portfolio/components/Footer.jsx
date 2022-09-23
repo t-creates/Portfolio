@@ -6,36 +6,27 @@ const Footer = () => {
   console.log('Footer');
   return (
     <div>
-      <footer className="p-5 mt-28">
+      <footer className="p-5 mt-11">
         <div className="lg:px-40">
-          <hr className="border-4 logoBlue rounded-full" />
+          <hr className="border-4 border-green-700/100 rounded-full" />
         </div>
         <div className="flex justify-center items-center space-x-10 p-5">
           <Link href="https://www.linkedin.com/in/travis-geislinger-889b81188/">
             <button type="button">
-              <FaLinkedin className="text-4xl logoBlue hover:text-cyan-400 cursor-pointer hover:animate-pulse" />
+              <FaLinkedin className="text-4xl hover:text-green-700/100 cursor-pointer hover:animate-pulse" />
             </button>
           </Link>
           <Link href="https://www.github.com/t-creates">
             <button type="button">
-              <FaGithub className="text-4xl logoBlue hover:text-cyan-400 cursor-pointer hover:animate-pulse" />
+              <FaGithub className="text-4xl hover:text-green-700/100 cursor-pointer hover:animate-pulse" />
             </button>
           </Link>
           <Link href="/contact">
-            <p className="font-bold hover:text-cyan-400 cursor-pointer hidden md:flex hover:animate-pulse">CONTACT</p>
+            <p className="font-bold hover:text-green-700/100 cursor-pointer hidden md:flex hover:animate-pulse">CONTACT</p>
           </Link>
           <p className="font-extrabold hidden md:flex"> | | </p>
-          <Link href="/">
-            <div className="text-xl font-extrabold items-center py-4 px-2 hidden md:flex">
-              <img
-                src="/default.png"
-                alt="Travis Geislinger"
-                className="h-14 w-14 mr-2 rounded-full cursor-pointer hover:animate-pulse"
-              />
-            </div>
-          </Link>
           <Link href="/about">
-            <h3 className="font-bold hover:text-cyan-400 cursor-pointer hidden md:flex hover:animate-pulse">Travis Geislinger</h3>
+            <h3 className="font-bold hover:text-green-700/100 cursor-pointer hidden md:flex hover:animate-pulse">Travis Geislinger</h3>
           </Link>
         </div>
       </footer>

@@ -12,9 +12,8 @@ const Home = ({ hero, clientsTest }) => (
     </Head>
     <Hero hero={hero} />
     {/* Client Testimonials */}
-    <div className="mt-10 mx-24">
-      <div className="p-6 rounded-lg bg-slate-700/80">
-        <h1 className="navName text-4xl font-bold logoBlue pb-8 px-8 border-b-4">Testimonials</h1>
+    <div className="md:mt-10 md:mx-24 sm:mx-5">
+        <h1 className="navName text-black text-4xl font-bold border-green-700/100 pb-8 px-8 border-b-4">Testimonials</h1>
         <div className="flex justify-center items-center">
           <div className="carousel carousel-center p-10 space-x-10  rounded-box max-w-8xl overflow-x-auto">
             {clientsTest?.map((clientTest) => <Testimonials key={clientTest._id} clients={clientTest} />)}
@@ -22,7 +21,7 @@ const Home = ({ hero, clientsTest }) => (
         </div>
       </div>
     </div>
-  </div>
+
 );
 export const getServerSideProps = async () => {
   // Hero Query

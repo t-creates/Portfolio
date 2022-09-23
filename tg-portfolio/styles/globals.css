@@ -2,13 +2,25 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Antonio:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Reem+Kufi+Ink&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bungee+Spice&display=swap');
 
 @layer base {
   .navName {
     font-family: 'Antonio', sans-serif;
   }
 }
+
+.test {
+  font-family: 'Bungee Spice', cursive;
+}
+
+.aboutTitle {
+  font-family: 'Reem Kufi Ink', sans-serif;
+}
+
 
 .heroTitle {
   animation: color-change 5s infinite;

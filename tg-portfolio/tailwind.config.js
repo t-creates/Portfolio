@@ -31,7 +31,8 @@ module.exports = {
     },
     extend: {
       backgroundImage: {
-        hero: "url('/pexels-alex-conchillos-3745234.jpeg')",
+        hero: "url('/bg3.jpeg')",
+        tgBg: "url('/tg-bg.jpeg')"
       },
     },
   },
