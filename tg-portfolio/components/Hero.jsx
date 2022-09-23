@@ -16,8 +16,8 @@ const Hero = ({ hero }) => (
       <div className="flew flex-col">
         <div>
           <h1 className="font-extrabold navName text-7xl  text-black/90  animate-in fade-in zoom-in delay-150 duration-700">{hero[0].name}</h1>
-          <h1 className="font-bold navName text-5xl textBlue animate-in fade-in zoom-in delay-300 duration-700">{hero[0].title}</h1>
-          <h1 className="font-semibold navName text-3xl text-gray-400 animate-in zoom-in delay-700 duration-700">{hero[0].bio}</h1>
+          <h2 className="font-bold navName text-5xl textBlue animate-in fade-in zoom-in delay-300 duration-700">{hero[0].title}</h2>
+          <h3 className="font-semibold navName text-3xl text-gray-400 animate-in zoom-in delay-700 duration-700">{hero[0].bio}</h3>
         </div>
         <div className="flex flex-col justify-center items-center">
           <Link href="../public/travisGeislingerResume.pdf">
