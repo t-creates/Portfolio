@@ -1,6 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
-import { urlFor } from '../utils/client';
+import { urlFor } from '../../utils/client';
 
 const Programming = ({ technolos }) => (
   <div className="flex md:flex-row place-content-start sm:flex-col justify-between scrollbar-hide ">

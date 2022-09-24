@@ -1,5 +1,5 @@
 import React from 'react';
-import { urlFor } from '../utils/client';
+import { urlFor } from '../../utils/client';
 
 const TestClients = ({ clients: { image, name, bio, company } }) => (
   <div>

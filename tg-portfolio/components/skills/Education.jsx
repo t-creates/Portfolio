@@ -1,5 +1,5 @@
 import React from 'react';
-import { urlFor } from '../utils/client';
+import { urlFor } from '../../utils/client';
 
 const Education = ({ schools: { school, date, title, image } }) => (
   <div className="flex flex-auto gap-2 flex-row p-5 overflow-auto items-center
