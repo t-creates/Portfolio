@@ -36,8 +36,7 @@ const Navbar = () => {
     <nav className=" bg-transparent shadow-xl ">
       <div className="max-w-10xl mx-auto lg:px-48 md:px-16">
         <div className="flex justify-between">
-          <div className="flex lg:space-x-7">
-          </div>
+          <div className="flex lg:space-x-7" />
           <div className="hidden md:flex items-center space-x-11">
             {navLinks.map((navItem) => (
               <Link href={navItem.link} key={navItem.id}>

@@ -32,7 +32,7 @@ module.exports = {
     extend: {
       backgroundImage: {
         hero: "url('/bg3.jpeg')",
-        tgBg: "url('/tg-bg.jpeg')"
+        tgBg: "url('/tg-bg.jpeg')",
       },
     },
   },
@@ -41,6 +41,8 @@ module.exports = {
     require('tailwindcss-animate'),
     // eslint-disable-next-line
     require('daisyui'),
+    // eslint-disable-next-line
+      require('tailwind-scrollbar-hide')
   ],
   daisyui: {
     styled: true,
