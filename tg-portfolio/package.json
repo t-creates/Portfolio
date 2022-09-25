@@ -13,6 +13,7 @@
     "@sanity/client": "^3.4.1",
     "@sanity/image-url": "^1.0.1",
     "daisyui": "^2.25.0",
+    "file-loader": "^6.2.0",
     "next": "12.2.5",
     "next-sanity": "^0.8.4",
     "next-sanity-image": "^4.1.0",
