@@ -1,7 +1,9 @@
 import React from 'react';
 import Head from 'next/head';
+import { Carousel } from 'react-responsive-carousel';
 import { Hero, Testimonials } from '../components';
 import { client } from '../utils/client';
+import 'react-responsive-carousel/lib/styles/carousel.min.css';
 
 const Home = ({ hero, clientsTest }) => (
   <div className="">
@@ -12,13 +14,13 @@ const Home = ({ hero, clientsTest }) => (
     </Head>
     <Hero hero={hero} />
     {/* Client Testimonials */}
-    <div className="mt-10 md:mx-24 sm:mx-5">
+    <div className="mt-10 md:mx-24 sm:mx-0 ">
       <h1 className="navName text-black text-4xl font-bold border-green-700/100 pb-8 px-8 border-b-4">Testimonials</h1>
-      <div className="flex justify-center items-center">
-        <div className="carousel carousel-center p-10 space-x-10  rounded-box max-w-8xl overflow-x-auto">
+      <Carousel autoPlay infiniteLoop showStatus={false}>
+        <div className="p-10 space-x-10 h-auto scrollbar-hide flex flex-row overflow-auto gap-2 rounded-box max-w-8xl overflow-x-auto">
           {clientsTest?.map((clientTest) => <Testimonials key={clientTest._id} clients={clientTest} />)}
         </div>
-      </div>
+      </Carousel>
     </div>
   </div>
 

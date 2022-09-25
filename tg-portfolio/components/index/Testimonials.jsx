@@ -9,9 +9,9 @@ const TestClients = ({ clients: { image, name, bio, company } }) => (
         <img src={urlFor(image)} alt="Client" className="rounded-xl" />
       </figure>
       <div className="card-body items-center text-center p-5">
-        <h2 className="card-title font-extrabold">{name}</h2>
-        <h3 className="card-title font-semibold">{company}</h3>
-        <p>{bio.length > 111 ? `${bio.substring(0, 111)}...` : bio}</p>
+        <h2 className="card-title text-white font-extrabold">{name}</h2>
+        <h3 className="card-title text-white font-semibold">{company}</h3>
+        <p className="text-white">{bio.length > 111 ? `${bio.substring(0, 111)}...` : bio}</p>
         <div className="card-actions flex flex-row gap-1 justify-center items-center mt-2" />
       </div>
     </div>

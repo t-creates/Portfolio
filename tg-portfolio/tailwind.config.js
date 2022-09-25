@@ -42,7 +42,7 @@ module.exports = {
     // eslint-disable-next-line
     require('daisyui'),
     // eslint-disable-next-line
-      require('tailwind-scrollbar-hide')
+    require('tailwind-scrollbar-hide')
   ],
   daisyui: {
     styled: true,

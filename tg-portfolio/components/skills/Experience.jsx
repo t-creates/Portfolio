@@ -10,7 +10,7 @@ const Experience = ({ companies }) => (
             <h2 className="font-semibold aboutTitle text-3xl text-black/75 ">{companies[0].title}</h2>
           </div>
           <div>
-            <p>{companies[0].experience}</p>
+            <p className="text-white/90">{companies[0].experience}</p>
           </div>
         </div>
       </div>
@@ -21,7 +21,7 @@ const Experience = ({ companies }) => (
             <h2 className="font-semibold aboutTitle text-3xl text-black/75 ">{companies[1].title}</h2>
           </div>
           <div>
-            <p>{companies[1].experience}</p>
+            <p className="text-white/90">{companies[1].experience}</p>
           </div>
         </div>
       </div>
@@ -32,15 +32,15 @@ const Experience = ({ companies }) => (
             <h2 className="font-semibold aboutTitle text-3xl text-black/75 ">{companies[2].title}</h2>
           </div>
           <div>
-            <p>{companies[2].experience}</p>
+            <p className="text-white/90">{companies[2].experience}</p>
           </div>
         </div>
       </div>
     </div>
     <div className="flex justify-center w-full py-2 gap-2">
-      <a href="#item1" className="btn btn-xs">1</a>
-      <a href="#item2" className="btn btn-xs">2</a>
-      <a href="#item3" className="btn btn-xs">3</a>
+      <a href="#item1" className="btn btn-xs text-white/90">1</a>
+      <a href="#item2" className="btn btn-xs text-white/90">2</a>
+      <a href="#item3" className="btn btn-xs text-white/90">3</a>
     </div>
   </div>
 );
