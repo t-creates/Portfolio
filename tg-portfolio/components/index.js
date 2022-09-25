@@ -10,4 +10,5 @@ export { default as Contact } from './Contact';
 export { default as Projects } from './Projects';
 export { default as Hero } from './index/Hero';
 export { default as Experience } from './skills/Experience';
+export { default as ExperienceColumn } from './skills/ExperienceColumn';
 
