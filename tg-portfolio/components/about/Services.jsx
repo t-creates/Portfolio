@@ -31,23 +31,23 @@ const Services = () => {
       <div className="md:p-6 sm:p-2 rounded-lg bg-neutral/60 animate-in slide-in-from-bottom-48 duration-1000">
         <h1 className="test text-4xl text-black font-bold border-green-700/100 pb-8 px-8 border-b-4">Services</h1>
         <div className="flex flex-auto justify-between sm:gap-5 flex-row p-5 overflow-auto scrollbar-hide">
-          {services.map((service) => (
-            service.id !== 'service-4' ? (
-              <>
-                <div className="flex flex-row items-center ">
-                  <Image src={service.image} width={65} height={65} />
-                  <h2 className="text-white/90 font-bold">{service.title}</h2>
-                </div>
-                <div className="flex flex-row items-center">
-                  <p className="font-extrabold hidden md:flex pl-5 text-black"> | | </p>
-                </div>
-              </>
-            ) : (
+          {services.map((service, index) => (
+            <>
               <div className="flex flex-row items-center ">
                 <Image src={service.image} width={65} height={65} />
                 <h2 className="text-white/90 font-bold">{service.title}</h2>
               </div>
-            )
+              {index !== services.length - 1 ? (
+                <div className="flex flex-row items-center">
+                  <p className="font-extrabold hidden md:flex pl-5 text-black"> | | </p>
+                </div>
+              )
+                : (
+                  <div className="hidden flex-row items-center">
+                    <p className="font-extrabold hidden md:flex pl-5 text-black"> | | </p>
+                  </div>
+                )}
+            </>
           ))}
         </div>
         <div className="flex flex-col justify-center items-center ">
