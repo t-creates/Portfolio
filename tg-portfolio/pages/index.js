@@ -15,12 +15,14 @@ const Home = ({ hero, clientsTest }) => (
     <Hero hero={hero} />
     {/* Client Testimonials */}
     <div className="mt-10 md:mx-24 sm:mx-0 ">
-      <h1 className="navName text-black text-4xl font-bold border-green-700/100 pb-8 px-8 border-b-4">Testimonials</h1>
-      <Carousel autoPlay infiniteLoop showStatus={false}>
-        <div className="p-10 space-x-10 h-auto scrollbar-hide flex flex-row overflow-auto gap-2 rounded-box max-w-8xl overflow-x-auto">
-          {clientsTest?.map((clientTest) => <Testimonials key={clientTest._id} clients={clientTest} />)}
-        </div>
-      </Carousel>
+      <div className="p-6 rounded-lg bg-none">
+        <h1 className="navName text-black text-4xl font-bold border-green-700/100 pb-5 px-8 border-b-4">Testimonials</h1>
+        <Carousel autoPlay infiniteLoop showStatus={false} showThumbs={false}>
+          <div className="p-10 space-x-10 h-auto scrollbar-hide flex flex-row overflow-auto gap-2 rounded-box max-w-8xl overflow-x-auto">
+            {clientsTest?.map((clientTest) => <Testimonials key={clientTest._id} clients={clientTest} />)}
+          </div>
+        </Carousel>
+      </div>
     </div>
   </div>
 

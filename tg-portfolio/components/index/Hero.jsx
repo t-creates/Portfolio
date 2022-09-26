@@ -5,7 +5,7 @@ import { FaLinkedin, FaGithub } from 'react-icons/fa';
 
 const Hero = ({ hero }) => (
   <div className="flex justify-center">
-    <div className="flex justify-between items-center max-w-5xl lg:m-28  md:px-16 md:m-14 pt-5 rounded-lg ">
+    <div className="flex justify-between items-center max-w-5xl lg:m-28 sm:mt-11 md:px-16 md:m-14 pt-5 rounded-lg ">
 
       {/* UNCOMMENT IF YOU WANT TO ADD A PORTFOLIO AVATAR PHOTO */}
 
@@ -24,7 +24,7 @@ const Hero = ({ hero }) => (
           <h3 className="p-2 font-semibold test text-3xl text-black/90 animate-in zoom-in delay-700 duration-700">{hero[0].bio}</h3>
         </div>
         <div className="flex flex-col justify-center items-center">
-          <Link href="../public/travisGeislingerResume.pdf">
+          <Link href="/travisGeislingerResume.pdf" locale={false}>
             <button
               type="button"
               className=" bg-green-700/100 text-black font-semibold hover:text-white hover:bg-black py-2 px-4 border-2

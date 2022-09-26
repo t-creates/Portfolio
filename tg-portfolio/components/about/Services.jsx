@@ -61,7 +61,12 @@ const Services = () => {
             <p className=" pt-5 text-white/90 font-bold">Need help getting your project live?</p>
           </div>
           <div>
-            <p className=" pt-5 text-white/90 font-bold">Hit that <Link href="/contact"><span className="text-green-700/100 font-bold hover:cursor-pointer hover:animate-pulse">CONTACT</span></Link> link.</p>
+            <p className=" pt-5 text-white/90 font-bold">
+              Hit that
+              <Link href="/contact">
+                <span className="text-green-700/100 font-bold hover:cursor-pointer animate-pulse hover:animate-pulse"> CONTACT</span>
+              </Link> link.
+            </p>
           </div>
         </div>
       </div>
