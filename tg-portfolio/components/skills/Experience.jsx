@@ -16,7 +16,7 @@ const Experience = ({ companies }) => (
     </div>
     <div className="flex justify-center w-full py-2 gap-2">
       {companies.map((company, index) => (
-        <a href={`#${company.title}`} className="btn btn-xs text-white/90">{index + 1}</a>
+        <a href={`#${company.title}`} className="btn btn-xs text-white/90" key={company._id}>{index + 1}</a>
       ))}
     </div>
   </div>

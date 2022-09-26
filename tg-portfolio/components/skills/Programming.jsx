@@ -30,7 +30,9 @@ const Programming = ({ technolos }) => {
     <div className="flex lg:flex-row md:flex-col place-content-start sm:flex-col justify-between  ">
       <div className="flex flex-col items-start text-green-700 font-bold animate-in zoom-in duration-1000">
         {skillBar.map((skill) => (
-          <div className="m-3"><h1>{skill.title}</h1> <progress className="progress md:w-96 sm:w-64" value={skill.value} max="100" /></div>
+          <div className="m-3" key={skill.id}>
+            <h1>{skill.title}</h1> <progress className="progress md:w-96 sm:w-64" value={skill.value} max="100" />
+          </div>
         ))}
       </div>
       <div className="md:ml-11 sm:mt-9  w-full">
@@ -42,8 +44,8 @@ const Programming = ({ technolos }) => {
                     justify-between gap-4 p-11 sm:p-2 sm:pt-5 scrollbar-hide "
           >
             {technolos.map((techno) => (
-              <div className="animate-in zoom-in delay-500 duration-1000 ">
-                <Link href={techno.link} key={techno._id}>
+              <div className="animate-in zoom-in delay-500 duration-1000 " key={techno._id}>
+                <Link href={techno.link}>
                   <img
                     src={urlFor(techno.image)}
                     alt="techno"

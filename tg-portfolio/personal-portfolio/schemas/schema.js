@@ -10,7 +10,7 @@ import education from './education'
 import testimonials from './testimonials'
 import projects from './projects'
 import technologies from './technologies'
-import contact from './contact'
+
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -26,6 +26,5 @@ export default createSchema({
     testimonials,
     projects,
     technologies,
-    contact
   ]),
 })

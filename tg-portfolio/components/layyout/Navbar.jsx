@@ -65,8 +65,8 @@ const Navbar = () => {
             <ul className="">
               <div className="flex flex-auto flex-row mr-5 gap-1">
                 {navLinks.map((navItem) => (
-                  <div>
-                    <Link href={navItem.link} key={navItem.id}>
+                  <div key={navItem.id}>
+                    <Link href={navItem.link}>
                       <button type="button">
                         <li
                           key={navItem.listId}

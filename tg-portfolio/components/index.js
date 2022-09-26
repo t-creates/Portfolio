@@ -1,5 +1,4 @@
 export { default as Navbar } from './layyout/Navbar';
-export { default as Sidebar } from './Sidebar';
 export { default as Footer } from './layyout/Footer';
 export { default as About } from './about/About';
 export { default as Services } from './about/Services';
