@@ -9,31 +9,26 @@ const Navbar = () => {
       id: 'nav-link-0',
       name: 'Home',
       link: '/',
-      listId: 'nav-list-0',
     },
     {
       id: 'nav-link-1',
       name: 'About',
       link: '/about',
-      listId: 'nav-list-1',
     },
     {
       id: 'nav-link-2',
       name: 'Skills',
       link: '/skills',
-      listId: 'nav-list-2',
     },
     {
       id: 'nav-link-3',
       name: 'Works',
       link: '/works',
-      listId: 'nav-list-3',
     },
     {
       id: 'nav-link-4',
       name: 'Contact',
       link: '/contact',
-      listId: 'nav-list-4',
     },
   ];
 
@@ -61,26 +56,21 @@ const Navbar = () => {
         {/* Mobile Menu */}
         <div className="md:hidden flex items-center bg-green-800/90 w-full flex-row justify-between fixed">
           <button onClick={toggleMenu} type="button"> <HiMenu className="h-8 w-8 text-white" /> </button>
-          <div style={{ display: open ? 'block' : 'none' }}>
-            <ul className="">
-              <div className="flex flex-auto flex-row mr-5 gap-1">
-                {navLinks.map((navItem) => (
-                  <div key={navItem.id}>
-                    <Link href={navItem.link}>
-                      <button type="button">
-                        <li
-                          key={navItem.listId}
-                          className="block text-sm px-2 py-4 hover:bg-green-500 transition duration-300"
-                        >
-                          {navItem.name}
-                        </li>
-                      </button>
-                    </Link>
-                  </div>
-                ))}
-              </div>
-            </ul>
-          </div>
+          <ul className="" style={{ display: open ? 'block' : 'none' }}>
+            <div className="flex flex-auto flex-row mr-5 gap-1">
+              {navLinks.map((navItem) => (
+                <Link href={navItem.link} key={navItem.id}>
+                  <button type="button">
+                    <li
+                      className="block text-sm px-2 py-4 hover:bg-green-500 transition duration-300"
+                    >
+                      {navItem.name}
+                    </li>
+                  </button>
+                </Link>
+              ))}
+            </div>
+          </ul>
         </div>
       </div>
     </nav>

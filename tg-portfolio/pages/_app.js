@@ -11,7 +11,7 @@ const MyApp = ({ Component, pageProps }) => {
   }, []);
 
   if (loading) {
-    return <div className="md:mt-96  sm:mt-48 flex justify-center place-content-center"> <div className="loader w-full h-full" /> </div>;
+    return <div className="md:mt-96  sm:mt-48 flex justify-center place-content-center"> <div className="loader w-full h-screen" /> </div>;
   }
   return (
     <Layout>
