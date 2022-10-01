@@ -26,10 +26,10 @@ const ContactForm = () => {
 
     const res = await fetch('/api/sendgrid', {
       body: JSON.stringify({
-        name,
-        email,
-        subject,
-        message,
+        name: form.name,
+        email: form.email,
+        subject: form.subject,
+        message: form.message,
       }),
       headers: {
         'Content-Type': 'application/json',
@@ -39,12 +39,13 @@ const ContactForm = () => {
 
     const { error } = await res.json();
     if (error) {
+      // add timeout to show message
       setShowMessage('failure');
-
       // Reset form fields
       setForm('');
       return;
     }
+    // add a timeout for the success message
     setShowMessage('success');
     // Reset form fields
     setForm('');
