@@ -1,16 +1,24 @@
 import React, { useState } from 'react';
 
 const ContactForm = () => {
-  const [name, setName] = useState('');
-  const [email, setEmail] = useState('');
-  const [subject, setSubject] = useState('');
-  const [message, setMessage] = useState('');
-
-  // Add value to obj array with value set to proper state!!!
+  const [form, setForm] = useState({
+    name: '',
+    email: '',
+    subject: '',
+    message: '',
+  });
 
   // Setting success or failure messages states
-  const [showSuccessMessage, setShowSuccessMessage] = useState(false);
-  const [showFailureMessage, setShowFailureMessage] = useState(false);
+  const [showMessage, setShowMessage] = useState({
+    type: null,
+    message: '',
+  }, {
+    type: 'failure',
+    message: 'Oops! Something went wrong, please try again.',
+  }, {
+    type: 'success',
+    message: 'Thank you! Your Message has been delivered.',
+  });
 
   // Handling Form Submit
   const handleSubmit = async (e) => {
@@ -31,26 +39,15 @@ const ContactForm = () => {
 
     const { error } = await res.json();
     if (error) {
-      console.log(error);
-      setShowSuccessMessage(false);
-      setShowFailureMessage(true);
+      setShowMessage('failure');
 
       // Reset form fields
-      setName('');
-      setEmail('');
-      setMessage('');
-      setSubject('');
+      setForm('');
       return;
     }
-    setShowSuccessMessage(true);
-    setShowFailureMessage(false);
+    setShowMessage('success');
     // Reset form fields
-    setName('');
-    setEmail('');
-    setMessage('');
-    setSubject('');
-
-    console.log(name, email, subject, message);
+    setForm('');
   };
 
   return (
@@ -67,8 +64,8 @@ const ContactForm = () => {
             className="input input-bordered w-full focus:ring-2 focus:ring-green-700/100"
             autoComplete="on"
             required
-            value={name}
-            onChange={(e) => setName(e.target.value)}
+            value={form.name}
+            onChange={(e) => setForm({ ...form, name: e.target.value })}
           />
           <input
             type="email"
@@ -79,8 +76,8 @@ const ContactForm = () => {
             className="input input-bordered w-full focus:ring-2 focus:ring-green-700/100"
             autoComplete="on"
             required
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
+            value={form.email}
+            onChange={(e) => setForm({ ...form, email: e.target.value })}
           />
           <input
             type="text"
@@ -91,19 +88,19 @@ const ContactForm = () => {
             className="input input-bordered w-full focus:ring-2 focus:ring-green-700/100"
             autoComplete="on"
             required
-            value={subject}
-            onChange={(e) => setSubject(e.target.value)}
+            value={form.subject}
+            onChange={(e) => setForm({ ...form, subject: e.target.value })}
           />
           <textarea
             className="textarea textarea-bordered h-24 focus:ring-2 focus:ring-green-700/100"
+            placeholder="MESSAGE"
+            htmlFor="message"
             id="message"
             name="message"
-            htmlFor="message"
-            placeholder="MESSAGE"
             minLength="10"
             required
-            value={message}
-            onChange={(e) => setMessage(e.target.value)}
+            value={form.message}
+            onChange={(e) => setForm({ ...form, message: e.target.value })}
           />
           <div className="flex justify-center flex-wrap">
             <button
@@ -116,15 +113,14 @@ const ContactForm = () => {
             >SEND
             </button>
             <div className="text-left">
-              {showSuccessMessage && (
-              <p className="text-green-500 font-semibold text-sm mx-2 pt-5">
-                Thank you! Your Message has been delivered.
-              </p>
-              )}
-              {showFailureMessage && (
-              <p className="text-red-500 font-semibold text-sm mx-2 pt-5">
-                Oops! Something went wrong, please try again.
-              </p>
+              {showMessage.type === 'success' ? (
+                <p className="text-green-500 font-semibold text-sm mx-2 pt-5">
+                  {showMessage.message}
+                </p>
+              ) : (
+                <p className="text-red-500 font-semibold text-sm mx-2 pt-5">
+                  {showMessage.message}
+                </p>
               )}
             </div>
           </div>

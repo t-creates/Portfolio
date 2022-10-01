@@ -54,7 +54,7 @@ const Navbar = () => {
           </div>
         </div>
         {/* Mobile Menu */}
-        <div className="md:hidden flex items-center bg-green-800/90 w-full flex-row justify-between fixed">
+        <div className="md:hidden flex items-center bg-green-800/90 w-full flex-row justify-between fixed z-50">
           <button onClick={toggleMenu} type="button"> <HiMenu className="h-8 w-8 text-white" /> </button>
           <ul className="" style={{ display: open ? 'block' : 'none' }}>
             <div className="flex flex-auto flex-row mr-5 gap-1">
