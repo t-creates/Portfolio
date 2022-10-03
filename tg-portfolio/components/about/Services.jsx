@@ -32,8 +32,8 @@ const Services = () => {
         <h1 className="test text-4xl text-black font-bold border-green-700/100 pb-8 px-8 border-b-4">Services</h1>
         <div className="flex flex-auto justify-between sm:gap-5 flex-row p-5 overflow-auto scrollbar-hide">
           {services.map((service, index) => (
-            <>
-              <div className="flex flex-row items-center ">
+            <div key={index}>
+              <div className="flex flex-row items-center">
                 <Image src={service.image} width={65} height={65} />
                 <h2 className="text-white/90 font-bold">{service.title}</h2>
               </div>
@@ -47,7 +47,7 @@ const Services = () => {
                     <p className="font-extrabold hidden md:flex pl-5 text-black"> | | </p>
                   </div>
                 )}
-            </>
+            </div>
           ))}
         </div>
         <div className="flex flex-col justify-center items-center ">

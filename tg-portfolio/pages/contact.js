@@ -1,5 +1,5 @@
 import React from 'react';
-import Contact from '../components/Contact';
+import Contact from '../components/contact/Contact';
 
 const contact = () => (
   <div className="mt-10 md:mx-24 sm:m-5 sm:mt-11">
