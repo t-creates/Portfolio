@@ -10,14 +10,8 @@ const ContactForm = () => {
 
   // Setting success or failure messages states
   const [showMessage, setShowMessage] = useState({
-    type: null,
+    type: '',
     message: '',
-  }, {
-    type: 'failure',
-    message: 'Oops! Something went wrong, please try again.',
-  }, {
-    type: 'success',
-    message: 'Thank you! Your Message has been delivered.',
   });
 
   // Handling Form Submit
@@ -40,13 +34,19 @@ const ContactForm = () => {
     const { error } = await res.json();
     if (error) {
       // add timeout to show message
-      setShowMessage('failure');
+      setShowMessage({
+        type: 'failure',
+        message: 'Oops! Something went wrong, please try again.',
+      });
       // Reset form fields
       setForm('');
       return;
     }
     // add a timeout for the success message
-    setShowMessage('success');
+    setShowMessage({
+      type: 'success',
+      message: 'Thank you! Your Message has been delivered.',
+    });
     // Reset form fields
     setForm('');
   };
