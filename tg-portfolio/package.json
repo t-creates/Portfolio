@@ -25,7 +25,8 @@
     "slick-carousel": "^1.8.1",
     "tailwind-scrollbar-hide": "^1.1.7",
     "tailwindcss-animate": "^1.0.5",
-    "uuid": "^9.0.0"
+    "uuid": "^9.0.0",
+    "vercel": "^28.4.6"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.8",

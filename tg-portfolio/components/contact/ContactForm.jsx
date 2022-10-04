@@ -39,7 +39,12 @@ const ContactForm = () => {
         message: 'Oops! Something went wrong, please try again.',
       });
       // Reset form fields
-      setForm('');
+      setForm({
+        name: '',
+        email: '',
+        subject: '',
+        message: '',
+      });
       return;
     }
     // add a timeout for the success message
@@ -48,7 +53,12 @@ const ContactForm = () => {
       message: 'Thank you! Your Message has been delivered.',
     });
     // Reset form fields
-    setForm('');
+    setForm({
+      name: '',
+      email: '',
+      subject: '',
+      message: '',
+    });
   };
 
   return (
