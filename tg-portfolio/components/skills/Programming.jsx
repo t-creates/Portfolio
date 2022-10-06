@@ -40,7 +40,7 @@ const Programming = ({ technolos }) => {
           <h1 className="test text-3xl text-black">Technologies</h1>
         </div>
         <div className="">
-          <div className="lg:max-h-96 round-full grow flex lg:flex-col flex-wrap
+          <div className="lg:max-h-96 round-full grow items-center flex lg:flex-col flex-wrap
                     justify-between gap-4 p-11 sm:p-2 sm:pt-5 scrollbar-hide "
           >
             {technolos.map((techno) => (
