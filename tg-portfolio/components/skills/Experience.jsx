@@ -2,7 +2,7 @@ import React from 'react';
 import ExperienceColumn from './ExperienceColumn';
 
 const Experience = ({ companies }) => (
-  <div>
+  <>
     <div className="carousel rounded-lg w-full animate-in slide-in-from-bottom-48 duration-1000">
       {companies.map((company) => (
         <ExperienceColumn
@@ -19,7 +19,7 @@ const Experience = ({ companies }) => (
         <a href={`#${company.title}`} className="btn btn-xs text-white/90" key={company._id}>{index + 1}</a>
       ))}
     </div>
-  </div>
+  </>
 );
 
 export default Experience;
