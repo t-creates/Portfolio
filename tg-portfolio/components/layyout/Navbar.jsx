@@ -57,7 +57,7 @@ const Navbar = () => {
         <div className="md:hidden flex items-center bg-green-800/90 w-full flex-row justify-between fixed z-50">
           <button onClick={toggleMenu} type="button"> <HiMenu className="h-8 w-8 text-white" /> </button>
           <ul className="" style={{ display: open ? 'block' : 'none' }}>
-            <div className="flex flex-auto flex-row mr-5 gap-1">
+            <div className="flex flex-auto flex-row mr-5">
               {navLinks.map((navItem) => (
                 <Link href={navItem.link} key={navItem.id}>
                   <button type="button">

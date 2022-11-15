@@ -4,20 +4,28 @@ import '../styles/globals.css';
 import Layout from '../components/layyout/Layout';
 
 const MyApp = ({ Component, pageProps }) => {
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
-    setTimeout(() => setLoading(false), 2500);
+    setLoading(true);
+    fetch('https://travisg.tech')
+      .then(() => setLoading(false))
+      .catch(() => setLoading(false));
   }, []);
 
-  if (loading) {
-    return <div className="md:mt-96  sm:mt-48 flex justify-center place-content-center"> <div className="loader w-full h-screen" /> </div>;
-  }
   return (
-    <Layout>
-      {/* // eslint-disable-next-line react/jsx-props-no-spreading */}
-      <Component {...pageProps} />
-    </Layout>
+    <div>
+      {!loading ? (
+        <Layout>
+          {/* // eslint-disable-next-line react/jsx-props-no-spreading */}
+          <Component {...pageProps} />
+        </Layout>
+      ) : (
+        <div className="md:mt-96  sm:mt-48 flex justify-center place-content-center">
+          <div className="loader w-full h-screen" />
+        </div>
+      )}
+    </div>
   );
 };
 
