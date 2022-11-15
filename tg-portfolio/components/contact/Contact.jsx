@@ -1,5 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import dynamic from 'next/dynamic';
 import ContactForm from './ContactForm';
 
@@ -26,12 +27,12 @@ const Contact = () => {
             </div>
             <div>
               <Link href="https://www.github.com/t-creates">
-                <img src="/Github.png" alt="github" width={250} height={75} className="cursor-pointer" />
+                <Image src="/Github.png" alt="github" width={250} height={75} className="cursor-pointer" />
               </Link>
             </div>
             <div className="mx-2">
               <Link href="https://www.linkedin.com/in/travis-geislinger-889b81188/">
-                <img src="/Li-Logo.png" alt="linkedin" width={250} height={60} className="rounded-lg cursor-pointer" />
+                <Image src="/Li-Logo.png" alt="linkedin" width={250} height={60} className="rounded-lg cursor-pointer" />
               </Link>
             </div>
           </div>
