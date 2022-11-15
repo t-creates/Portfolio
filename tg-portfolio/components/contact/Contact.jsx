@@ -18,18 +18,18 @@ const Contact = () => {
           <div className="flex flex-col items-center justify-around">
             <div>
               <div className="flex place-content-end">
-                <button type="button" onClick={showAlert} className="tooltip tooltiptext">
+                <button type="button" onClick={showAlert} className="">
                   <CC content={textToCopy} />
                 </button>
               </div>
-              <h2 className="email text-3xl pb-5 cursor-pointer">geislinger@pm.me</h2>
+              <h2 className="email md:text-3xl sm:text-lg pb-5 cursor-pointer">geislinger@pm.me</h2>
             </div>
             <div>
               <Link href="https://www.github.com/t-creates">
                 <img src="/Github.png" alt="github" width={250} height={75} className="cursor-pointer" />
               </Link>
             </div>
-            <div>
+            <div className="mx-2">
               <Link href="https://www.linkedin.com/in/travis-geislinger-889b81188/">
                 <img src="/Li-Logo.png" alt="linkedin" width={250} height={60} className="rounded-lg cursor-pointer" />
               </Link>
