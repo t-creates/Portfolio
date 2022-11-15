@@ -32,7 +32,7 @@ const Contact = () => {
             </div>
             <div className="mx-2">
               <Link href="https://www.linkedin.com/in/travis-geislinger-889b81188/">
-                <Image src="/Li-Logo.png" alt="linkedin" width={250} height={60} className="rounded-lg cursor-pointer" />
+                <Image src="/Li-Logo.svg" alt="linkedin" width={250} height={60} className="rounded-lg cursor-pointer" />
               </Link>
             </div>
           </div>
