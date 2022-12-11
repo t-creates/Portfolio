@@ -1,5 +1,4 @@
 import React from 'react';
-import Link from 'next/link';
 import Image from 'next/image';
 import dynamic from 'next/dynamic';
 import ContactForm from './ContactForm';
@@ -26,14 +25,14 @@ const Contact = () => {
               <h2 className="email md:text-3xl sm:text-lg pb-5 cursor-pointer">geislinger@pm.me</h2>
             </div>
             <div>
-              <Link href="https://www.github.com/t-creates">
+              <a target="_blank" href="https://www.github.com/t-creates" rel="noreferrer">
                 <Image src="/Github.png" alt="github" width={250} height={75} className="cursor-pointer" />
-              </Link>
+              </a>
             </div>
             <div className="mx-2">
-              <Link href="https://www.linkedin.com/in/travis-geislinger-889b81188/">
+              <a target="_blank" href="https://www.linkedin.com/in/travis-geislinger-889b81188/" rel="noreferrer">
                 <Image src="/LI-Logo.svg" alt="linkedin" width={250} height={60} className="rounded-lg cursor-pointer" />
-              </Link>
+              </a>
             </div>
           </div>
           <div className="flex flex-col lg:items-start w-full lg:ml-16">

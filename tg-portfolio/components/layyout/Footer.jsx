@@ -9,16 +9,16 @@ const Footer = () => (
         <hr className="border-4 border-green-700/100 rounded-full" />
       </div>
       <div className="flex justify-center items-center space-x-10 p-5">
-        <Link href="https://www.linkedin.com/in/travis-geislinger-889b81188/">
+        <a target="_blank" rel="noreferrer" href="https://www.linkedin.com/in/travis-geislinger-889b81188/">
           <button type="button">
             <FaLinkedin className="text-4xl hover:text-green-700/100 cursor-pointer hover:animate-pulse" />
           </button>
-        </Link>
-        <Link href="https://www.github.com/t-creates">
+        </a>
+        <a target="_blank" rel="noreferrer" href="https://www.github.com/t-creates">
           <button type="button">
             <FaGithub className="text-4xl hover:text-green-700/100 cursor-pointer hover:animate-pulse" />
           </button>
-        </Link>
+        </a>
         <Link href="/contact">
           <p className="font-bold hover:text-green-700/100 cursor-pointer hidden md:flex hover:animate-pulse">CONTACT</p>
         </Link>

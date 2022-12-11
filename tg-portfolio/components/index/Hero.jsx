@@ -1,4 +1,3 @@
-import Link from 'next/link';
 import React from 'react';
 import { FaLinkedin, FaGithub } from 'react-icons/fa';
 // import { urlFor } from '../utils/client';
@@ -24,7 +23,7 @@ const Hero = ({ hero }) => (
           <h3 className="p-2 font-semibold test text-3xl text-black/90">{hero[0].bio}</h3>
         </div>
         <div className="flex flex-col justify-center items-center">
-          <Link href="/travisGeislingerResume.pdf" locale={false}>
+          <a target="_blank" rel="noreferrer" href="/travisGeislingerResume.pdf" locale={false}>
             <button
               type="button"
               className=" bg-green-700/100 text-black font-semibold hover:text-white hover:bg-black py-2 px-4 border-2
@@ -33,21 +32,21 @@ const Hero = ({ hero }) => (
             >
               Resume
             </button>
-          </Link>
+          </a>
           <div className="p-3 flex flex-row">
             <div className="p-3">
-              <Link href="https://www.linkedin.com/in/travis-geislinger-889b81188/">
+              <a target="_blank" rel="noreferrer" href="https://www.linkedin.com/in/travis-geislinger-889b81188/">
                 <button type="button">
                   <FaLinkedin className="text-4xl text-green-700/95 hover:text-black cursor-pointer" />
                 </button>
-              </Link>
+              </a>
             </div>
             <div className="p-3">
-              <Link href="https://www.github.com/t-creates">
+              <a target="_blank" rel="noreferrer" href="https://www.github.com/t-creates">
                 <button type="button">
                   <FaGithub className="text-4xl text-green-700/95 hover:text-black cursor-pointer" />
                 </button>
-              </Link>
+              </a>
             </div>
           </div>
         </div>
