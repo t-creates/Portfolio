@@ -6,16 +6,15 @@ import ContactForm from './ContactForm';
 const Contact = () => {
   const textToCopy = 'geislinger@pm.me';
   const CC = dynamic(() => import('../copyClipboard').then((mod) => mod.CopyClipboard), { ssr: false });
-  // This function is not working properly!!
   const showAlert = () => {
     alert('Email copied to clipboard');
   };
 
   return (
-    <div className="mt-10 md:mx-3 lg:mx-24 sm:mx-0">
+    <div className="mt-10 md:px-3 lg:px-24 sm:px-0">
       <div className="md:p-6 sm:p-2 rounded-lg bg-neutral/60">
         <div className="flex flex-row gap-11 w-full lg:flex-nowrap sm:flex-wrap sm:justify-center">
-          <div className="flex flex-col items-center justify-around">
+          <div className="flex flex-col items-start justify-around">
             <div>
               <div className="flex place-content-end">
                 <button type="button" onClick={showAlert} className="">
@@ -26,7 +25,7 @@ const Contact = () => {
             </div>
             <div>
               <a target="_blank" href="https://www.github.com/t-creates" rel="noreferrer">
-                <Image src="/Github.png" alt="github" width={250} height={75} className="cursor-pointer" />
+                <Image src="/Github.png" alt="github" width={250} height={85} className="cursor-pointer" />
               </a>
             </div>
             <div className="mx-2">

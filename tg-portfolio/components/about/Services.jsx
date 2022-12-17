@@ -39,7 +39,7 @@ const Services = () => {
               </div>
               {index !== services.length - 1 ? (
                 <div className="flex items-center">
-                  <p className="font-extrabold hidden md:flex pl-5 text-black"> | | </p>
+                  <p className="font-extrabold hidden md:flex pl-3 text-black"> | | </p>
                 </div>
               )
                 : (

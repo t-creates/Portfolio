@@ -4,31 +4,39 @@ import { client } from '../utils/client';
 
 const Skills = ({ ed, ex, techno }) => (
   <div>
-    <div className="mt-10 md:mx-24 sm:m-5 sm:mt-11">
+    <div className="mt-10 lg:mx-36 md:mx-20 sm:m-5 sm:mt-11">
       <div className="p-6 rounded-lg bg-none">
-        <h1 className="navName text-black text-4xl font-bold border-green-700/100 pb-5 px-8 border-b-4">Programming</h1>
+        <h1 className="navName text-black text-4xl font-bold border-green-700/100 pb-5 md:px-8 border-b-4
+        md:text-left sm:text-center tracking-in-expand"
+        >Programming
+        </h1>
         <div className="w-full h-full p-11 sm:p-2 sm:pt-5">
           <Programming technolos={techno} />
         </div>
       </div>
     </div>
-    <div className="mt-10 md:mx-24 sm:m-5">
+    <div className="mt-10 lg:mx-36 md:mx-20  sm:m-2">
       <div className="p-6 rounded-lg bg-none">
-        <h1 className="navName text-black text-4xl font-bold border-green-700/100 pb-5 px-8 border-b-4">Experience</h1>
+        <h1 className="navName text-black text-4xl font-bold border-green-700/100 pb-5 px-8 border-b-4
+        md:text-left sm:text-center tracking-in-expand"
+        >Experience
+        </h1>
         <div className="w-full h-full p-11 sm:p-2 sm:pt-5">
           <Experience companies={ex} />
         </div>
       </div>
     </div>
-    <div className="mt-10 md:mx-24 sm:m-5">
+    <div className="mt-10 lg:mx-36 md:mx-20  sm:m-2">
       <div className="p-6 rounded-lg bg-none">
-        <h1 className="navName text-white/75 text-4xl font-bold border-green-700/100 pb-5 px-8 border-b-4">Education</h1>
-        <div className="flex flex-wrap overflow-auto gap-2 p-11 sm:p-2 sm:pt-5">
+        <h1 className="navName text-black text-4xl font-bold border-green-700/100 pb-5 px-8 border-b-4
+        md:text-left sm:text-center tracking-in-expand"
+        >Education
+        </h1>
+        <div className="grid md:grid-cols-2 sm:grid-rows-2 overflow-auto gap-2 p-11 sm:p-2 sm:pt-5">
           {ed?.map((edu) => <Education key={edu._id} schools={edu} />)}
         </div>
       </div>
     </div>
-
   </div>
 );
 

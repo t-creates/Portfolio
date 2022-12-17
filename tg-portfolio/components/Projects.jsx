@@ -4,16 +4,16 @@ import { v4 } from 'uuid';
 import { urlFor } from '../utils/client';
 
 const Projects = ({ projects: { image, name, badge, sourceCode, website, description, neww, slug } }) => (
-  <div className="card w-96  bg-neutral/50 md:mt-5 shadow-xl animate-in zoom-in spin-in-90 duration-1000">
+  <div className="card lg:w-80 md:w-64 bg-neutral/50 md:mt-5 shadow-xl animate-in zoom-in spin-in-90 duration-1000 my-3">
     <div className="relative">
       <figure><img src={urlFor(image)} alt={name} /></figure>
     </div>
     <div className="card-body">
-      <h2 className="card-title ">
+      <h2 className="card-title text-black ">
         {name}
         {neww ? <div className="badge badge-secondary">NEW</div> : null}
       </h2>
-      <p>{description}</p>
+      <p className="text-black"> {description}</p>
       <Link href={website} key={v4}>
         <button
           type="button"
@@ -27,7 +27,7 @@ const Projects = ({ projects: { image, name, badge, sourceCode, website, descrip
       </Link>
       <div className="card-actions justify-end">
         {badge.map((badges, i) => (
-          <div className="badge badge-outline " key={i}>{badges}</div>
+          <div className="badge badge-outline text-black/75" key={i}>{badges}</div>
         ))}
       </div>
     </div>

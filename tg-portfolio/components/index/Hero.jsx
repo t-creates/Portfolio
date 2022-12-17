@@ -16,17 +16,17 @@ const Hero = ({ hero }) => (
         </div>
       </div> */}
 
-      <div className="flew flex-col animate-in fade-in zoom-in delay-700 duration-700">
+      <div className="flew flex-col">
         <div>
-          <h1 className="p-2 font-extrabold navName text-7xl  text-black/90">{hero[0].name}</h1>
-          <h2 className="p-2 font-bold aboutTitle text-5xl text-green-700/95">{hero[0].title}</h2>
-          <h3 className="p-2 font-semibold test text-3xl text-black/90">{hero[0].bio}</h3>
+          <h1 className="p-2 font-extrabold navName text-7xl  text-black/90 tracking-in-expand">{hero[0].name}</h1>
+          <h2 className="p-2 font-bold aboutTitle text-5xl text-green-700/95 tracking-in-expand">Software Engineer</h2>
+          <h3 className="p-2 font-semibold test text-3xl text-black/90 tracking-in-expand">Engineering software to make your life easier</h3>
         </div>
         <div className="flex flex-col justify-center items-center">
           <a target="_blank" rel="noreferrer" href="/travisGeislingerResume.pdf" locale={false}>
             <button
               type="button"
-              className=" bg-green-700/100 text-black font-semibold hover:text-white hover:bg-black py-2 px-4 border-2
+              className="bg-green-700/100 text-black font-semibold hover:text-white hover:bg-black py-2 px-4 border-2
            border-none hover:border-transparent rounded w-48 m-2 mt-9
            "
             >
