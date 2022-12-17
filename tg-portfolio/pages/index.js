@@ -32,7 +32,7 @@ const Home = ({ hero, projects }) => (
     <div className="py-10 md:px-24 sm:pt-11">
       <div className="pt-11 rounded-lg bg-none">
         <h1 className="navName text-black text-4xl font-bold pb-5 px-8">Check Out Some Of My Recent Projects</h1>
-        <div className="flex flex-wrap justify-between overflow-auto gap-1  sm:p-2 sm:pt-5">
+        <div className="flex flex-wrap justify-between overflow-auto gap-1 lg:mx-40 sm:p-4 sm:pt-5">
           {projects?.slice(3, 6).map((project) => <Projects key={project._id} projects={project} />)}
         </div>
         <div className="flex items-center justify-center mt-5">
@@ -48,7 +48,9 @@ const Home = ({ hero, projects }) => (
     <div className="pt-10 md:px-24 sm:pt-11 bg-white/80 pb-5">
       <div className="p-6 rounded-lg bg-none">
         <h1 className="navName text-black text-4xl font-bold pb-5 px-8">Contact</h1>
-        <Contact />
+        <div className="mx-14">
+          <Contact />
+        </div>
       </div>
     </div>
   </div>
