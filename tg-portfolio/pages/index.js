@@ -1,7 +1,7 @@
 import React from 'react';
 import Head from 'next/head';
-import { Carousel } from 'react-responsive-carousel';
-import { Hero, Testimonials, About, Services, Projects } from '../components';
+// import { Carousel } from 'react-responsive-carousel';
+import { Hero, About, Services, Projects } from '../components';
 import { client } from '../utils/client';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import Contact from '../components/contact/Contact';
