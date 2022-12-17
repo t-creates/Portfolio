@@ -48,7 +48,7 @@ const Home = ({ hero, projects }) => (
     <div className="pt-10 md:px-24 sm:pt-11 bg-white/80 pb-5">
       <div className="p-6 rounded-lg bg-none">
         <h1 className="navName text-black text-4xl font-bold pb-5 px-8">Contact</h1>
-        <div className="mx-14">
+        <div className="lg:mx-14 md:mx-0 sm:mx-0">
           <Contact />
         </div>
       </div>
