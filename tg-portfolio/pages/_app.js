@@ -4,7 +4,7 @@ import '../styles/globals.css';
 import Layout from '../components/layyout/Layout';
 
 const MyApp = ({ Component, pageProps }) => {
-  const [loading, setLoading] = useState(false);
+  const [isLoading, setLoading] = useState(false);
 
   useEffect(() => {
     setLoading(true);
@@ -15,7 +15,7 @@ const MyApp = ({ Component, pageProps }) => {
 
   return (
     <div>
-      {!loading ? (
+      {!isLoading ? (
         <Layout>
           {/* // eslint-disable-next-line react/jsx-props-no-spreading */}
           <Component {...pageProps} />

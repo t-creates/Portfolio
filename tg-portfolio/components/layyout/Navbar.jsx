@@ -12,21 +12,16 @@ const Navbar = () => {
     },
     {
       id: 'nav-link-1',
-      name: 'About',
-      link: '/about',
-    },
-    {
-      id: 'nav-link-2',
       name: 'Skills',
       link: '/skills',
     },
     {
-      id: 'nav-link-3',
+      id: 'nav-link-2',
       name: 'Works',
       link: '/works',
     },
     {
-      id: 'nav-link-4',
+      id: 'nav-link-3',
       name: 'Contact',
       link: '/contact',
     },
@@ -45,7 +40,7 @@ const Navbar = () => {
           <div className="hidden md:flex items-center space-x-11">
             {navLinks.map((navItem) => (
               <Link href={navItem.link} key={navItem.id}>
-                <p className="cursor-pointer py-4 px-2  font-semibold
+                <p className="cursor-pointer py-4 px-2 lg:text-xl  font-semibold
               hover:animate-pulse hover:text-black text-green-700/95 navName"
                 >{navItem.name}
                 </p>
