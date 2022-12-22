@@ -23,7 +23,7 @@ const Hero = ({ hero }) => (
           <h3 className="p-2 font-semibold test md:text-3xl sm:text-sm text-black/90 tracking-in-expand">Engineering software to make your life easier</h3>
         </div>
         <div className="flex flex-col justify-center items-center">
-          <a target="_blank" rel="noreferrer" href="/travisGeislingerResume.pdf" locale={false}>
+          <a target="_blank" rel="noreferrer" href="/travisGeislingerResume.pdf">
             <button
               type="button"
               className="bg-green-700/100 text-black font-semibold hover:text-white hover:bg-black py-2 px-4 border-2
