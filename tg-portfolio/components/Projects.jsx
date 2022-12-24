@@ -1,5 +1,4 @@
 import React from 'react';
-import Link from 'next/link';
 import { v4 } from 'uuid';
 import { urlFor } from '../utils/client';
 
