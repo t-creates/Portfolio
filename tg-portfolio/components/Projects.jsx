@@ -14,22 +14,26 @@ const Projects = ({ projects: { image, name, badge, sourceCode, website, descrip
         {neww ? <div className="badge badge-secondary">NEW</div> : null}
       </h2>
       <p className="text-black"> {description}</p>
-      <Link href={website} key={v4}>
-        <button
-          type="button"
-          className="btn  bg-green-700/90 text-black font-semibold hover:text-white hover:bg-black py-2 px-4 border-2
-           border-none hover:border-transparent rounded"
-        >View Project
-        </button>
-      </Link>
-      <Link href={sourceCode} key={slug.current}>
-        <button type="button" className="btn border-none text-black hover:text-white bg-emerald-900/100 ">View Code</button>
-      </Link>
       <div className="card-actions justify-end">
         {badge.map((badges, i) => (
           <div className="badge badge-outline text-black/75" key={i}>{badges}</div>
         ))}
       </div>
+      <a href={website} key={v4} rel="noopener noreferrer" target="_blank">
+        <button
+          type="button"
+          className="btn w-full bg-green-700/90 text-black font-semibold hover:text-white hover:bg-black py-2 px-4 border-2
+           border-none hover:border-transparent rounded"
+        >View Project
+        </button>
+      </a>
+      <a href={sourceCode} rel="noopener noreferrer" target="_blank">
+        <button
+          type="button"
+          className="btn w-full border-none rounded text-black hover:text-white bg-emerald-900/100 "
+        >View Code
+        </button>
+      </a>
     </div>
   </div>
 );
