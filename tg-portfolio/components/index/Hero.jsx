@@ -20,7 +20,7 @@ const Hero = ({ hero }) => (
         <div>
           <h1 className="p-2 font-extrabold navName md:text-7xl sm:text-5xl  text-black/90  tracking-in-expand">{hero[0].name}</h1>
           <h2 className="p-2 font-bold aboutTitle md:text-5xl sm:text-3xl text-green-700/95 tracking-in-expand">Software Engineer</h2>
-          <h3 className="p-2 font-semibold test md:text-3xl sm:text-sm text-black/90 tracking-in-expand">Engineering software to make your life easier</h3>
+          <h3 className="p-2 font-semibold test md:text-3xl sm:text-sm text-black/90 tracking-in-expand">{hero[0].bio}</h3>
         </div>
         <div className="flex flex-col justify-center items-center">
           <a target="_blank" rel="noreferrer" href="/travisGeislingerResume.pdf">
