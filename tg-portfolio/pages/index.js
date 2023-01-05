@@ -33,7 +33,18 @@ const Home = ({ hero, projects }) => (
       <div className="pt-11 rounded-lg bg-none">
         <h1 className="navName text-black text-4xl font-bold pb-5 px-8">Check Out Some Of My Recent Projects</h1>
         <div className="flex flex-wrap justify-between overflow-auto gap-1 lg:mx-40 sm:p-4 sm:pt-5">
-          {projects?.slice(3, 6).map((project) => <Projects key={project._id} projects={project} />)}
+          {/* New Projects */}
+          {projects?.map((project) => {
+            if (project.neww) {
+              return (
+                <Projects
+                  key={project._id}
+                  projects={project}
+                />
+              );
+            }
+            return null;
+          })}
         </div>
         <div className="flex items-center justify-center mt-5">
           <a
