@@ -28,7 +28,7 @@ const Services = () => {
 
   return (
     <div className="mt-10 md:mx-3 lg:mx-24 sm:mx-0">
-      <div className="md:p-6 sm:p-2 rounded-lg bg-neutral/60 animate-in slide-in-from-bottom-48 duration-1000">
+      <div className="md:p-6 sm:p-2 rounded-lg bg-neutral/50 animate-in slide-in-from-bottom-48 duration-1000">
         <h1 className="test text-4xl text-black font-bold border-green-700/100 pb-8 px-8 border-b-4">Services</h1>
         <div className="flex flex-auto sm:gap-5 flex-row p-5 overflow-auto scrollbar-hide">
           {services.map((service, index) => (
