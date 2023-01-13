@@ -12,7 +12,7 @@ const Contact = () => {
 
   return (
     <div className="mt-10 md:px-3 lg:px-24 sm:px-0">
-      <div className="md:p-6 sm:p-2 rounded-lg bg-neutral/60">
+      <div className="md:p-6 sm:p-2 rounded-lg bg-neutral/50">
         <div className="flex flex-row gap-11 w-full lg:flex-nowrap sm:flex-wrap sm:justify-center">
           <div className="flex flex-col items-start justify-around">
             <div>
