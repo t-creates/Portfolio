@@ -40,10 +40,10 @@ const Services = () => {
       <h1 className="aboutTitle text-black text-5xl font-bold pb-10 px-8">Expertise</h1>
       <div className="grid lg:grid-cols-2 gap-5 grid-cols-1 scrollbar-hide mt-10">
         {services.map((service, index) => (
-          <div className="flex flex-1 flex-wrap rounded-md hover:shadow-2xl md:min-w-[350px] sm:min-w-fit justify-start p-5" key={index}>
+          <div className="flex flex-1 flex-wrap rounded-md hover:shadow-2xl md:min-w-[350px] sm:min-w-fit min-h-[300px] justify-start p-5" key={index}>
             <div className="flex flex-1 items-center flex-wrap">
-              <div className={`flex justify-center items-center rounded-lg bg-neutral/20 p-5 max-h-24 ${service.text}`}>
-                <div className="relative w-20 h-20">
+              <div className={`flex justify-center items-center rounded-lg bg-neutral/20 p-5 max-h-24 min-h-24 ${service.text}`}>
+                <div className="relative w-20 h-20 ">
                   <Image src={service.image} layout="fill" />
                 </div>
               </div>

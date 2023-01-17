@@ -17,7 +17,7 @@ const About = () => (
       <p className="pt-5 px-5 text-black/75 font-bold test">Currently I am interested in creating intuitive and useful user experiences.
       </p>
       <Link href="/contact">
-        <p className="text-black font-bold hover:cursor-pointer animate-pulse p-5">Want to work together?</p>
+        <p className="text-black aboutTitle text-2xl font-bold hover:cursor-pointer animate-pulse p-5">Want to work together?</p>
       </Link>
     </div>
   </div>

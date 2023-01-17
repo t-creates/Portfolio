@@ -64,54 +64,66 @@ const ContactForm = () => {
   return (
     <div className="w-full">
       <form onSubmit={handleSubmit} method="post" className="flex flex-col">
-        <div className="form-control w-full gap-5 mt-11">
-          <input
-            type="text"
-            placeholder="NAME"
-            htmlFor="name"
-            id="name"
-            name="name"
-            className="input input-bordered w-full focus:ring-2 focus:ring-green-700/100"
-            autoComplete="on"
-            required
-            value={form.name}
-            onChange={(e) => setForm({ ...form, name: e.target.value })}
-          />
-          <input
-            type="email"
-            placeholder="EMAIL"
-            htmlFor="email"
-            id="email"
-            name="email"
-            className="input input-bordered w-full focus:ring-2 focus:ring-green-700/100"
-            autoComplete="on"
-            required
-            value={form.email}
-            onChange={(e) => setForm({ ...form, email: e.target.value })}
-          />
-          <input
-            type="text"
-            placeholder="SUBJECT"
-            htmlFor="email"
-            id="email"
-            name="email"
-            className="input input-bordered w-full focus:ring-2 focus:ring-green-700/100"
-            autoComplete="on"
-            required
-            value={form.subject}
-            onChange={(e) => setForm({ ...form, subject: e.target.value })}
-          />
-          <textarea
-            className="textarea textarea-bordered h-24 focus:ring-2 focus:ring-green-700/100"
-            placeholder="MESSAGE"
-            htmlFor="message"
-            id="message"
-            name="message"
-            minLength="10"
-            required
-            value={form.message}
-            onChange={(e) => setForm({ ...form, message: e.target.value })}
-          />
+        <div className="form-control w-full gap-2 mt-11">
+          <div>
+            <p className="test text-base text-green-700/100">Name</p>
+            <input
+              type="text"
+              placeholder="Enter your name..."
+              htmlFor="name"
+              id="name"
+              name="name"
+              className="input input-bordered w-full focus:ring-2 focus:ring-green-700/100 test"
+              autoComplete="on"
+              required
+              value={form.name}
+              onChange={(e) => setForm({ ...form, name: e.target.value })}
+            />
+          </div>
+          <div>
+            <p className="test text-base text-green-700/100">Email</p>
+            <input
+              type="email"
+              placeholder="Enter your email..."
+              htmlFor="email"
+              id="email"
+              name="email"
+              className="input input-bordered w-full focus:ring-2 focus:ring-green-700/100 test"
+              autoComplete="on"
+              required
+              value={form.email}
+              onChange={(e) => setForm({ ...form, email: e.target.value })}
+            />
+          </div>
+          <div>
+            <p className="test text-base text-green-700/100">Subject</p>
+            <input
+              type="text"
+              placeholder="Enter your subject..."
+              htmlFor="email"
+              id="email"
+              name="email"
+              className="input input-bordered w-full focus:ring-2 focus:ring-green-700/100 test"
+              autoComplete="on"
+              required
+              value={form.subject}
+              onChange={(e) => setForm({ ...form, subject: e.target.value })}
+            />
+          </div>
+          <div>
+            <p className="test text-base text-green-700/100">Message</p>
+            <textarea
+              className="textarea textarea-bordered h-24 focus:ring-2 focus:ring-green-700/100 w-full test"
+              placeholder="Enter your message..."
+              htmlFor="message"
+              id="message"
+              name="message"
+              minLength="10"
+              required
+              value={form.message}
+              onChange={(e) => setForm({ ...form, message: e.target.value })}
+            />
+          </div>
           <div className="flex justify-center flex-wrap">
             <button
               type="submit"
@@ -119,7 +131,7 @@ const ContactForm = () => {
                     hover:text-white hover:bg-black py-2 px-4 border-2
                       border-none hover:border-transparent rounded
                       focus:ring-2 focus:ring-green-300/100 focus:outline-none
-                      disabled:opacity-75 disabled:cursor-not-allowed"
+                      disabled:opacity-75 disabled:cursor-not-allowed test"
             >SEND
             </button>
             <div className="text-left">
