@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { HiMenu } from 'react-icons/hi';
 
 const Navbar = () => {
@@ -33,15 +34,19 @@ const Navbar = () => {
 
   return (
     // Navbar
-    <nav className=" bg-transparent shadow-xl">
-      <div className="max-w-10xl mx-auto lg:px-48 md:px-16">
-        <div className="flex justify-between">
+    <nav className="w-full bg-[#fff]">
+      <div className="mx-auto lg:px-48 md:px-16 border-b-[1px] md:py-[12.5px]">
+        <div className="md:flex justify-between sm:hidden">
+          <div className="md:flex items-center sm:hidden">
+            <Image src="/default-monochrome-black.svg" width={50} height={50} />
+          </div>
           <div className="flex lg:space-x-7" />
-          <div className="hidden md:flex items-center space-x-11">
+          <div className="md:flex items-center space-x-11">
+            {/* Logo */}
             {navLinks.map((navItem) => (
               <Link href={navItem.link} key={navItem.id}>
                 <p className="cursor-pointer py-4 px-2 lg:text-xl  font-semibold
-              hover:animate-pulse hover:text-black text-green-700/95 navName"
+              hover:animate-pulse hover:text-black text-black/80 navName"
                 >{navItem.name}
                 </p>
               </Link>
@@ -49,10 +54,13 @@ const Navbar = () => {
           </div>
         </div>
         {/* Mobile Menu */}
-        <div className="md:hidden flex items-center bg-green-800/90 w-full flex-row justify-between fixed z-50">
-          <button onClick={toggleMenu} type="button"> <HiMenu className="h-8 w-8 text-white" /> </button>
-          <ul className="" style={{ display: open ? 'block' : 'none' }}>
-            <div className="flex flex-auto flex-row mr-5">
+        <div className="md:hidden fixed z-50 w-full border-b-[1px] text-black bg-[#fff]">
+          <div className="flex flex-1 justify-between px-5">
+            <button onClick={toggleMenu} type="button"> <HiMenu className="h-8 w-8 text-black" /> </button>
+            <Image src="/default-monochrome-black.svg" width={50} height={50} />
+          </div>
+          <ul className="" style={{ display: open ? 'flex' : 'none' }}>
+            <div className="flex flex-1 justify-around">
               {navLinks.map((navItem) => (
                 <Link href={navItem.link} key={navItem.id}>
                   <button type="button">

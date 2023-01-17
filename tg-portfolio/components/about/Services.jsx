@@ -1,5 +1,4 @@
 import React from 'react';
-import Link from 'next/link';
 import Image from 'next/image';
 
 const Services = () => {
@@ -8,69 +7,54 @@ const Services = () => {
       id: 'service-1',
       title: 'Full Stack Development',
       image: '/icons8-stack-64.png',
+      text: 'servicesYellow',
+      description: 'The process of designing, creating, testing, and maintaining software using a variety of programming languages and technologies.',
     },
     {
       id: 'service-2',
       title: 'Web Development',
       image: '/webDev.png',
+      text: 'servicesRed',
+      description: `Specifically dealing with the creation and maintenance of websites and web applications. 
+      Such as e-commerce platforms or content management systems, as well as any interactive or dynamic features`,
     },
     {
       id: 'service-3',
       title: 'Freelance',
       image: '/freelance.png',
+      text: 'servicesGreen',
+      description: 'Providing services to clients on a project-by-project basis with the ability to deliver high quality work to client satisfaction.',
     },
     {
       id: 'service-4',
       title: 'Consulting',
       image: '/consulting1.png',
+      text: 'servicesBlue',
+      description: 'Using technical expertise to advise and guide organizations or individuals on how to use technology to achieve their goals.',
     },
   ];
 
   return (
-    <div className="mt-10 md:mx-3 lg:mx-24 sm:mx-0">
-      <div className="md:p-6 sm:p-2 rounded-lg bg-neutral/50 animate-in slide-in-from-bottom-48 duration-1000">
-        <h1 className="test text-4xl text-black font-bold border-green-700/100 pb-8 px-8 border-b-4">Services</h1>
-        <div className="flex flex-auto sm:gap-5 flex-row p-5 overflow-auto scrollbar-hide">
-          {services.map((service, index) => (
-            <div className="flex flex-row flex-auto justify-evenly" key={index}>
-              <div className="flex flex-row items-center">
-                <Image src={service.image} width={65} height={65} />
-                <h2 className="text-white/90 font-bold">{service.title}</h2>
-              </div>
-              {index !== services.length - 1 ? (
-                <div className="flex items-center">
-                  <p className="font-extrabold hidden md:flex pl-3 text-black"> | | </p>
+
+    <div className="md:p-6 sm:p-2 animate-in slide-in-from-bottom-48 duration-1000">
+      <h1 className="aboutTitle text-black text-5xl font-bold pb-10 px-8">Expertise</h1>
+      <div className="grid lg:grid-cols-2 gap-5 grid-cols-1 scrollbar-hide mt-10">
+        {services.map((service, index) => (
+          <div className="flex flex-1 flex-wrap rounded-md hover:shadow-xl md:min-w-[350px] sm:min-w-fit justify-start p-5" key={index}>
+            <div className="flex flex-1 items-center flex-wrap">
+              <div className={`flex justify-center items-center rounded-lg bg-neutral/20 p-5 max-h-24 ${service.text}`}>
+                <div className="relative w-20 h-20">
+                  <Image src={service.image} layout="fill" />
                 </div>
-              )
-                : (
-                  <div className="hidden items-center">
-                    <p className="font-extrabold hidden md:flex pl-5 text-black"> | | </p>
-                  </div>
-                )}
+              </div>
+              <h2 className="text-black/75 text-2xl pl-5 font-bold">{service.title}</h2>
             </div>
-          ))}
-        </div>
-        <div className="flex flex-col justify-center items-center ">
-          <div className="">
-            <p className="pt-5 text-white/90 font-bold">Want to grow your through an online presence with an elegant landing page or website?</p>
+            <p className="pt-5 text-lg text-black/70">{service.description}</p>
           </div>
-          <div>
-            <p className="pt-5 text-white/90 font-bold">Want an online store to take you business to the next level?</p>
-          </div>
-          <div>
-            <p className=" pt-5 text-white/90 font-bold">Need help getting your project live?</p>
-          </div>
-          <div>
-            <p className=" pt-5 text-white/90 font-bold">
-              Hit that
-              <Link href="/contact">
-                <span className="text-green-700/100 font-bold hover:cursor-pointer animate-pulse hover:animate-pulse"> CONTACT</span>
-              </Link> link.
-            </p>
-          </div>
-        </div>
+        ))}
       </div>
     </div>
+
   );
 };
 export default Services;

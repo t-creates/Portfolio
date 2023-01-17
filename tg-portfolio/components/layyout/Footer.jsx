@@ -3,7 +3,7 @@ import { FaLinkedin, FaGithub } from 'react-icons/fa';
 import Link from 'next/link';
 
 const Footer = () => (
-  <div>
+  <div className="bg-[#fff] border-t-[1px]">
     <footer className="p-5 pt-10">
       <div className="lg:px-40">
         <hr className="border-4 border-green-700/100 rounded-full" />
