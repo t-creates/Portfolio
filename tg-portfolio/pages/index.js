@@ -62,13 +62,13 @@ const Home = ({ hero, projects }) => (
       </div>
     </div>
     <div className="md:px-16 lg:px-24 sm:p-1 sm:pt-11 my-20">
-      <div className="w-fill 2xl:flex">
-        <div className="mt-10 md:px-3 lg:px-24 sm:px-0 z-10 2xl:min-w-[75%]">
+      <div className="w-fill 2xl:flex p-6">
+        <div className="mt-10 md:p-11 lg:px-24 sm:px-0 z-10 2xl:min-w-[75%]">
           <h1 className="aboutTitle text-black text-5xl font-bold pb-5 px-8">Contact</h1>
           <Contact />
         </div>
-        <div className="2xl:flex sm:hidden text-black">
-          <img src="/default-monochrome-black.svg" alt="logo" className="w-60 h-60" />
+        <div className="2xl:flex 2xl:justify-center 2xl:pt-8 sm:hidden text-black">
+          <img src="/default-monochrome-black.svg" alt="logo" className="w-40 h-40" />
         </div>
       </div>
     </div>
