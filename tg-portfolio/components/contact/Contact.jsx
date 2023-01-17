@@ -12,16 +12,16 @@ const Contact = () => {
 
   return (
     <div className="mt-10 md:px-3 lg:px-24 sm:px-0">
-      <div className="md:p-6 sm:p-2 rounded-lg bg-neutral/50">
+      <div className="md:p-6 sm:p-2 rounded-lg bg-neutral/30">
         <div className="flex flex-row gap-11 w-full lg:flex-nowrap sm:flex-wrap sm:justify-center">
           <div className="flex flex-col items-start justify-around">
             <div>
-              <div className="flex place-content-end">
+              <div className="flex place-content-end text-white rounded-lg">
                 <button type="button" onClick={showAlert} className="">
                   <CC content={textToCopy} />
                 </button>
               </div>
-              <h2 className="email md:text-3xl sm:text-lg pb-5 cursor-pointer">geislinger@pm.me</h2>
+              <h2 className="email md:text-3xl sm:text-lg pb-5 cursor-pointer text-white">geislinger@pm.me</h2>
             </div>
             <div>
               <a target="_blank" href="https://www.github.com/t-creates" rel="noreferrer">

@@ -63,7 +63,6 @@ const ContactForm = () => {
 
   return (
     <div className="w-full">
-      <h1 className="test md:text-4xl sm:text-3xl font-bold text-black border-green-700/100 pb-8 px-8 border-b-4">Message Me</h1>
       <form onSubmit={handleSubmit} method="post" className="flex flex-col">
         <div className="form-control w-full gap-5 mt-11">
           <input

@@ -3,7 +3,8 @@ import { urlFor } from '../../utils/client';
 
 const Education = ({ schools: { school, date, title, image } }) => (
   <div className="flex flex-auto gap-3 py-3 flex-row overflow-auto items-center
-   justify-items-center  animate-in slide-in-from-left delay-1000 duration-1000"
+   justify-items-center  animate-in slide-in-from-left delay-1000 duration-1000
+  hover:shadow-2xl rounded-md"
   >
     <div className="w-24 mask mask-squircle">
       <img src={urlFor(image)} alt="schoolz" />

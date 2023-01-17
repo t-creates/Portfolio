@@ -35,10 +35,10 @@ const Navbar = () => {
   return (
     // Navbar
     <nav className="w-full bg-[#fff]">
-      <div className="mx-auto lg:px-48 md:px-16 border-b-[1px] md:py-[12.5px]">
+      <div className="mx-auto lg:px-48 md:px-16 border-b-[1px]">
         <div className="md:flex justify-between sm:hidden">
           <div className="md:flex items-center sm:hidden">
-            <Image src="/default-monochrome-black.svg" width={50} height={50} />
+            <Image src="/default-monochrome-black.svg" width={75} height={75} />
           </div>
           <div className="flex lg:space-x-7" />
           <div className="md:flex items-center space-x-11">
