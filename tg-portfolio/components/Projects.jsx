@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { v4 } from 'uuid';
 import { urlFor } from '../utils/client';
 
-const Projects = ({ projects: { image, name, badge, sourceCode, website, description, neww } }) => {
+const Projects = ({ projects: { image, name, sourceCode, website, description, neww } }) => {
   const [show, setShow] = useState(false);
 
   return (
