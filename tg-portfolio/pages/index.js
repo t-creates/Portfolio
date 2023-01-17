@@ -19,20 +19,18 @@ const Home = ({ hero, projects }) => (
         </Carousel>
       </div>
     </div> */}
-    <div className="mt-10 md:px-16 lg:px-24 sm:p-1 sm:pt-11 bg-white/80">
-      <div className="p-6 rounded-lg bg-none">
-        <h1 className="navName text-black text-4xl font-bold pb-5 px-8">A Little About Me</h1>
+    <div className="md:px-16 lg:px-24 sm:p-1 sm:pt-11">
+      <div className="p-6">
         <div className="w-full h-full md:p-11 sm:pt-5 mb-10">
-          <About />
           <Services />
         </div>
       </div>
     </div>
     {/* <Skills /> */}
-    <div className="py-10 md:px-24 sm:pt-11">
-      <div className="pt-11 rounded-lg bg-none">
-        <h1 className="navName text-black text-4xl font-bold pb-5 px-8">Check Out Some Of My Recent Projects</h1>
-        <div className="flex flex-wrap justify-between overflow-auto gap-1 lg:mx-40 sm:p-4 sm:pt-5">
+    <div className="mt-10 md:px-6 lg:px-24 sm:p-1 sm:pt-11">
+      <div className="mt-10 lg:mx-24 sm:mx-0">
+        <h1 className="aboutTitle text-black text-5xl font-bold pb-10 px-8">Recent Projects</h1>
+        <div className="grid lg:grid-cols-3 grid-cols-1 gap-5 justify-between overflow-auto">
           {/* New Projects */}
           {projects?.map((project) => {
             if (project.neww) {
@@ -56,11 +54,21 @@ const Home = ({ hero, projects }) => (
         </div>
       </div>
     </div>
-    <div className="pt-10 md:px-24 sm:pt-11 bg-white/80 pb-5">
-      <div className="p-6 rounded-lg bg-none">
-        <h1 className="navName text-black text-4xl font-bold pb-5 px-8">Contact</h1>
-        <div className="lg:mx-14 md:mx-0 sm:mx-0">
+    <div className="mt-10 md:px-16 lg:px-24 sm:p-1 sm:pt-11">
+      <div className="p-6">
+        <div className="w-full h-full md:p-11 sm:pt-5 mb-10">
+          <About />
+        </div>
+      </div>
+    </div>
+    <div className="md:px-16 lg:px-24 sm:p-1 sm:pt-11 my-20">
+      <div className="w-fill 2xl:flex">
+        <div className="mt-10 md:px-3 lg:px-24 sm:px-0 z-10 2xl:min-w-[75%]">
+          <h1 className="aboutTitle text-black text-5xl font-bold pb-5 px-8">Contact</h1>
           <Contact />
+        </div>
+        <div className="2xl:flex sm:hidden text-black">
+          <img src="/default-monochrome-black.svg" alt="logo" className="w-60 h-60" />
         </div>
       </div>
     </div>

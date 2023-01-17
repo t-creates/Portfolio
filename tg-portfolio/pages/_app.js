@@ -16,7 +16,11 @@ const MyApp = ({ Component, pageProps }) => {
 
   return (
     <div>
-      {!isLoading ? (
+      {isLoading ? (
+        <div className="md:mt-96  sm:mt-48 flex justify-center place-content-center">
+          <div className="loader w-full h-screen" />
+        </div>
+      ) : (
         <>
           <Head>
             <title>Travis Geislinger</title>
@@ -28,10 +32,6 @@ const MyApp = ({ Component, pageProps }) => {
             <Component {...pageProps} />
           </Layout>
         </>
-      ) : (
-        <div className="md:mt-96  sm:mt-48 flex justify-center place-content-center">
-          <div className="loader w-full h-screen" />
-        </div>
       )}
     </div>
   );

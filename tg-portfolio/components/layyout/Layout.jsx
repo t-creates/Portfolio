@@ -2,7 +2,7 @@ import Navbar from './Navbar';
 import Footer from './Footer';
 
 const Layout = ({ children }) => (
-  <div className=" bg-cover bg-no-repeat bg-slate-200">
+  <div className="bg-cover bg-no-repeat w-full h-full bg-[#f9fafe]">
     <Navbar />
     <main>{children}</main>
     <Footer />
