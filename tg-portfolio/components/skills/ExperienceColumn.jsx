@@ -8,7 +8,7 @@ const ExperienceColumn = ({ company, title, experience, id }) => (
         <h2 className="font-semibold aboutTitle text-3xl text-black/75 ">{title}</h2>
       </div>
       <div>
-        <p className="text-white">{experience}</p>
+        <p className="text-white test">{experience}</p>
       </div>
     </div>
   </div>

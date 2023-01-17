@@ -14,9 +14,9 @@ const Contact = () => {
     <div className="mt-10 md:px-3 lg:px-24 sm:px-0">
       <div className="md:p-6 sm:p-2 rounded-lg bg-neutral/30">
         <div className="flex flex-row gap-11 w-full lg:flex-nowrap sm:flex-wrap sm:justify-center">
-          <div className="flex flex-col items-start justify-around">
+          <div className="flex flex-col items-start justify-around sm:gap-2">
             <div>
-              <div className="flex place-content-end text-white rounded-lg">
+              <div className="flex place-content-end text-white rounded-lg sm:pt-5">
                 <button type="button" onClick={showAlert} className="">
                   <CC content={textToCopy} />
                 </button>
