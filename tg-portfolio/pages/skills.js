@@ -4,9 +4,9 @@ import { client } from '../utils/client';
 
 const Skills = ({ ed, ex, techno }) => (
   <div>
-    <div className="mt-10 lg:mx-36 md:mx-20 sm:m-5 sm:mt-11">
+    <div className="mt-10 lg:mx-36 md:mx-20 sm:m-5 sm:mt-20">
       <div className="p-6 rounded-lg bg-none">
-        <h1 className="navName text-black text-4xl font-bold border-green-700/100 pb-5 md:px-8 border-b-4
+        <h1 className="aboutTitle text-black text-4xl font-bold border-green-700/100 pb-5 md:px-8 border-b-4
         md:text-left sm:text-center tracking-in-expand"
         >Programming
         </h1>
@@ -17,7 +17,7 @@ const Skills = ({ ed, ex, techno }) => (
     </div>
     <div className="mt-10 lg:mx-36 md:mx-20  sm:m-2">
       <div className="p-6 rounded-lg bg-none">
-        <h1 className="navName text-black text-4xl font-bold border-green-700/100 pb-5 px-8 border-b-4
+        <h1 className="aboutTitle text-black text-4xl font-bold border-green-700/100 pb-5 px-8 border-b-4
         md:text-left sm:text-center tracking-in-expand"
         >Experience
         </h1>
@@ -28,7 +28,7 @@ const Skills = ({ ed, ex, techno }) => (
     </div>
     <div className="mt-10 lg:mx-36 md:mx-20  sm:m-2">
       <div className="p-6 rounded-lg bg-none">
-        <h1 className="navName text-black text-4xl font-bold border-green-700/100 pb-5 px-8 border-b-4
+        <h1 className="aboutTitle text-black text-4xl font-bold border-green-700/100 pb-5 px-8 border-b-4
         md:text-left sm:text-center tracking-in-expand"
         >Education
         </h1>

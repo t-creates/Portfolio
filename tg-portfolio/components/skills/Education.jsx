@@ -9,7 +9,7 @@ const Education = ({ schools: { school, date, title, image } }) => (
     <div className="w-24 mask mask-squircle">
       <img src={urlFor(image)} alt="schoolz" />
     </div>
-    <div className="text-xl text-black font-bold">
+    <div className="text-xl text-black font-bold test">
       <h1 className="">{school}</h1>
       <h2>{title}</h2>
       <h3 className="text-base text-black/80">{date}</h3>
