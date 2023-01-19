@@ -10,7 +10,6 @@ const MyApp = ({ Component, pageProps }) => {
 
   useEffect(() => {
     setLoading(true);
-    setTimeout(() => setLoading(false), 3000);
     const website = fetch('https://travisg.tech');
     website.then(() => setLoading(false))
       .catch(() => setLoading(false));

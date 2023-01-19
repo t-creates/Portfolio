@@ -38,9 +38,9 @@ const Navbar = () => {
       <div className="mx-auto lg:px-48 md:px-16 border-b-[1px]">
         <div className="md:flex justify-between sm:hidden">
           <div className="md:flex items-center sm:hidden">
-            <Link href="/">
+            <a href="/">
               <Image src="/default-monochrome-black.svg" width={75} height={75} className="hover:cursor-pointer" />
-            </Link>
+            </a>
           </div>
           <div className="flex lg:space-x-7" />
           <div className="md:flex items-center space-x-11">
@@ -59,9 +59,9 @@ const Navbar = () => {
         <div className="md:hidden fixed z-50 w-full border-b-[1px] text-black bg-[#fff]">
           <div className="flex flex-1 justify-between px-5">
             <button onClick={toggleMenu} type="button"> <HiMenu className="h-8 w-8 text-black" /> </button>
-            <Link href="/">
+            <a href="/">
               <Image src="/default-monochrome-black.svg" width={50} height={50} />
-            </Link>
+            </a>
           </div>
           <ul className="" style={{ display: open ? 'flex' : 'none' }}>
             <div className="flex flex-1 justify-around">
