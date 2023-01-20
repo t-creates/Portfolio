@@ -17,6 +17,11 @@ export default {
       }
     },
     {
+      name: 'landingPage',
+      title: 'Landing Page',
+      type: 'boolean',
+    },
+    {
       name: 'link',
       title: 'Link',
       type: 'url',

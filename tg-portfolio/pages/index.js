@@ -1,15 +1,19 @@
 import React from 'react';
-// import { Carousel } from 'react-responsive-carousel';
-import { Hero, About, Services, Projects } from '../components';
-import { client } from '../utils/client';
+import { Carousel } from 'react-responsive-carousel';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
+
+import { Hero, About, Services, Projects } from '../components';
+import { client, urlFor } from '../utils/client';
 import Contact from '../components/contact/Contact';
 
-const Home = ({ hero, projects }) => (
-  <div className="">
-    <Hero hero={hero} />
-    {/* Client Testimonials */}
-    {/* <div className="mt-10 md:mx-24 sm:mx-0 ">
+const Home = ({ hero, projects, techno }) => {
+  const filteredTechnologies = techno.filter((technology) => technology.landingPage === true);
+
+  return (
+    <div className="">
+      <Hero hero={hero} />
+      {/* Client Testimonials */}
+      {/* <div className="mt-10 md:mx-24 sm:mx-0 ">
       <div className="p-6 rounded-lg bg-none">
         <h1 className="navName text-black text-4xl font-bold border-green-700/100 pb-5 px-8 border-b-4">Testimonials</h1>
         <Carousel autoPlay infiniteLoop showStatus={false} showThumbs={false}>
@@ -19,62 +23,86 @@ const Home = ({ hero, projects }) => (
         </Carousel>
       </div>
     </div> */}
-    <div className="md:px-16 lg:px-24 sm:p-1 sm:pt-11">
-      <div className="p-6">
-        <div className="w-full h-full md:p-11 sm:pt-5 mb-10">
-          <Services />
+      <div className="md:px-16 lg:px-24 sm:p-1 sm:pt-11">
+        <div className="p-6">
+          <div className="w-full h-full md:p-11 sm:pt-5 mb-10">
+            <Services />
+          </div>
         </div>
       </div>
-    </div>
-    {/* <Skills /> */}
-    <div className="mt-10 md:px-6 lg:px-24 sm:p-1 sm:pt-11">
-      <div className="mt-10 lg:mx-24 sm:mx-0">
-        <h1 className="aboutTitle text-black text-5xl font-bold pb-10 px-8">Recent Projects</h1>
-        <div className="grid lg:grid-cols-3 grid-cols-1 gap-5 justify-between overflow-auto">
-          {/* New Projects */}
-          {projects?.map((project) => {
-            if (project.neww) {
-              return (
-                <Projects
-                  key={project._id}
-                  projects={project}
-                />
-              );
-            }
-            return null;
-          })}
-        </div>
-        <div className="flex items-center justify-center mt-5">
-          <a
-            href="/works"
-            className="bg-green-700/100 text-black text-lg font-semibold hover:text-white hover:bg-black py-4 px-4 border-2
+      {/* <Skills /> */}
+      <div className="mt-10 md:px-6 lg:px-24 sm:p-1 sm:pt-11">
+        <div className="mt-10 lg:mx-24 sm:mx-0">
+          <h1 className="aboutTitle text-black text-5xl font-bold pb-10 px-8">Recent Projects</h1>
+          <div className="grid lg:grid-cols-3 grid-cols-1 gap-5 justify-between overflow-auto">
+            {/* New Projects */}
+            {projects?.map((project) => {
+              if (project.neww) {
+                return (
+                  <Projects
+                    key={project._id}
+                    projects={project}
+                  />
+                );
+              }
+              return null;
+            })}
+          </div>
+          <div className="flex items-center justify-center mt-5">
+            <a
+              href="/works"
+              className="bg-green-700/100 text-black text-lg font-semibold hover:text-white hover:bg-black py-4 px-4 border-2
            border-none hover:border-transparent rounded w-60 m-2 mt-9 text-center test"
-          >View All Projects
-          </a>
+            >View All Projects
+            </a>
+          </div>
+        </div>
+      </div>
+      <div className="mt-10 md:px-16 lg:px-24 sm:p-1 sm:pt-11">
+        <div className="p-6">
+          <div className="w-full h-full md:p-11 sm:pt-5 mb-10">
+            <About />
+          </div>
+        </div>
+      </div>
+      <div className="mt-10 md:px-16 lg:px-24 sm:p-1 sm:pt-11 md:block sm:hidden">
+        <div className="w-full h-full sm:pt-5 mb-10 lg:mx-24">
+          <h1 className="aboutTitle text-black text-5xl font-bold pb-10 px-8">Technologies</h1>
+          <div className=" flex scrollbar-hide flex-row justify-center items-center rounded-md overflow-x-auto overflow-auto">
+            <Carousel
+              autoPlay
+              infiniteLoop
+              showStatus={false}
+              showThumbs={false}
+              interval={2000}
+              centerMode
+              centerSlidePercentage={20}
+              width="80%"
+            >
+              {filteredTechnologies.map((technology) => (
+                <div className="w-48 h-fit">
+                  <img key={technology.name} src={urlFor(technology.image)} alt={technology.name} className="h-40 w-40 rounded-md" />
+                </div>
+              ))}
+            </Carousel>
+          </div>
+        </div>
+      </div>
+      <div className="md:px-16 lg:px-24 sm:p-1 sm:pt-11 my-20">
+        <div className="w-fill 2xl:flex p-6">
+          <div className="mt-10 md:p-11 lg:px-24 sm:px-0 z-10 2xl:min-w-[75%]">
+            <h1 className="aboutTitle text-black text-5xl font-bold pb-5 px-8">Contact</h1>
+            <Contact />
+          </div>
+          <div className="2xl:flex 2xl:justify-center 2xl:pt-8 sm:hidden text-black">
+            <img src="/default-monochrome-black.svg" alt="logo" className="w-40 h-40" />
+          </div>
         </div>
       </div>
     </div>
-    <div className="mt-10 md:px-16 lg:px-24 sm:p-1 sm:pt-11">
-      <div className="p-6">
-        <div className="w-full h-full md:p-11 sm:pt-5 mb-10">
-          <About />
-        </div>
-      </div>
-    </div>
-    <div className="md:px-16 lg:px-24 sm:p-1 sm:pt-11 my-20">
-      <div className="w-fill 2xl:flex p-6">
-        <div className="mt-10 md:p-11 lg:px-24 sm:px-0 z-10 2xl:min-w-[75%]">
-          <h1 className="aboutTitle text-black text-5xl font-bold pb-5 px-8">Contact</h1>
-          <Contact />
-        </div>
-        <div className="2xl:flex 2xl:justify-center 2xl:pt-8 sm:hidden text-black">
-          <img src="/default-monochrome-black.svg" alt="logo" className="w-40 h-40" />
-        </div>
-      </div>
-    </div>
-  </div>
 
-);
+  );
+};
 
 // Data Fetching
 export const getServerSideProps = async () => {
@@ -90,11 +118,16 @@ export const getServerSideProps = async () => {
   const projectsQuery = '*[_type == "projects"]';
   const projects = await client.fetch(projectsQuery);
 
+  // Technologies Query
+  const techQuery = '*[_type == "technologies"]';
+  const techno = await client.fetch(techQuery);
+
   return {
     props: {
       hero,
       clientsTest,
       projects,
+      techno,
     },
   };
 };
