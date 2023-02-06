@@ -56,7 +56,7 @@ Make sure you have all the necessary prerequisites installed on your system. Fol
     git clone https://github.com/t-creates/portfolio.git
     ```
     
-- This will create a new directory called "portfolio_rich" in the current location, containing the code for the Portfolio project.
+- This will create a new directory called "portfolio" in the current location, containing the code for the Portfolio project.
 - Navigate to the project directory by running the following command:
     
     ```bash
