@@ -3,7 +3,7 @@ import Link from 'next/link';
 
 const About = () => (
   <div className="sm:p-2 md:p-6 animate-in slide-in-from-bottom-48 duration-1000">
-    <h1 className="aboutTitle text-black text-5xl font-bold pb-5 px-8">A Little About Me</h1>
+    <h1 className="aboutTitle text-black text-5xl font-bold pb-5 px-5">A Little About Me</h1>
     <div className="text-xl">
       <p className="p-5 text-black/75 font-bold test">I am a Full Stack Developer located in Canada. I have a passion for creating software that
         can help make the lives of its users more enjoyable.
