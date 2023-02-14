@@ -16,23 +16,24 @@ const Projects = ({ projects: { image, name, sourceCode, website, description, n
         <a href={website} key={v4} rel="noopener noreferrer" target="_blank">
           <button
             type="button"
-            className="btn bg-green-700/90 text-black font-semibold hover:text-white hover:bg-black py-2 px-4 border-2
-           border-none hover:border-transparent rounded mb-10 w-48 test"
+            className="btn bg-green-700/90 text-white font-semibold hover:text-white hover:bg-black py-2 px-4
+           border-none rounded mb-10 w-48 test hover:border-solid hover:border-2 hover:border-green-700/90"
           >View Project
           </button>
         </a>
         <a href={sourceCode} rel="noopener noreferrer" target="_blank">
           <button
             type="button"
-            className="btn w-48 border-none rounded text-black hover:text-white bg-green-700/90 test"
+            className="btn w-48 border-none rounded text-white hover:text-white bg-green-700/90 test
+            hover:border-solid hover:border-2 hover:border-green-700/90"
           >View Code
           </button>
         </a>
       </span>
-      <div className="relative">
-        <img src={urlFor(image)} alt={name} className="rounded-t-md object-fit" />
+      <div className="relative w-full h-[90%]">
+        <img src={urlFor(image)} alt={name} className="rounded-t-md object-fill" />
       </div>
-      <div className="pt-5 px-2">
+      <div className="pt-2 px-2 flex flex-col justify-between h-full">
         <h2 className="text-2xl flex flex-1 justify-between font-medium text-black aboutTitle">
           {name}
           {neww ? <div className="badge badge-secondary bg-green-700/90 border-none test">NEW</div> : null}

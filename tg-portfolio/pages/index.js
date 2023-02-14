@@ -32,8 +32,8 @@ const Home = ({ hero, projects, techno }) => {
       </div>
       {/* <Skills /> */}
       <div className="mt-10 md:px-6 lg:px-24 sm:p-1 sm:pt-11">
-        <div className="mt-10 lg:mx-24 sm:mx-0">
-          <h1 className="aboutTitle text-black text-5xl font-bold pb-10 px-8">Recent Projects</h1>
+        <div className="lg:mx-24 sm:mx-0">
+          <h1 className="aboutTitle text-black text-5xl font-bold pb-10">Recent Projects</h1>
           <div className="grid lg:grid-cols-3 grid-cols-1 gap-5 justify-between overflow-auto">
             {/* New Projects */}
             {projects?.map((project) => {
@@ -51,15 +51,15 @@ const Home = ({ hero, projects, techno }) => {
           <div className="flex items-center justify-center mt-5">
             <a
               href="/works"
-              className="bg-green-700/100 text-black text-lg font-semibold hover:text-white hover:bg-black py-4 px-4 border-2
-           border-none hover:border-transparent rounded w-60 m-2 mt-9 text-center test"
+              className="bg-green-700/100 text-white text-lg font-semibold hover:bg-black py-4 px-4 border-2
+            hover:border-green-700/90 border-transparent rounded w-60 m-2 mt-9 text-center test"
             >View All Projects
             </a>
           </div>
         </div>
       </div>
       <div className="mt-10 md:px-16 lg:px-24 sm:p-1 sm:pt-11">
-        <div className="p-6">
+        <div className="">
           <div className="w-full h-full md:p-11 sm:pt-5 mb-10">
             <About />
           </div>
@@ -67,7 +67,7 @@ const Home = ({ hero, projects, techno }) => {
       </div>
       <div className="mt-10 md:px-16 lg:px-24 sm:p-1 sm:pt-11 md:block sm:hidden">
         <div className="w-full h-full sm:pt-5 mb-10 lg:mx-24">
-          <h1 className="aboutTitle text-black text-5xl font-bold pb-10 px-8">Technologies</h1>
+          <h1 className="aboutTitle text-black text-5xl font-bold pb-10">Technologies</h1>
           <div className=" flex scrollbar-hide flex-row justify-center items-center rounded-md overflow-x-auto overflow-auto">
             <Carousel
               autoPlay
@@ -90,8 +90,8 @@ const Home = ({ hero, projects, techno }) => {
       </div>
       <div className="md:px-16 lg:px-24 sm:p-1 sm:pt-11 my-20">
         <div className="w-fill 2xl:flex p-6">
-          <div className="mt-10 md:p-11 lg:px-24 sm:px-0 z-10 2xl:min-w-[75%]">
-            <h1 className="aboutTitle text-black text-5xl font-bold pb-5 px-8">Contact</h1>
+          <div className="mt-10 md:p-0 lg:px-24 sm:px-0 z-10 2xl:min-w-[75%]">
+            <h1 className="aboutTitle text-black text-5xl font-bold pb-5">Contact</h1>
             <Contact />
           </div>
           <div className="2xl:flex 2xl:justify-center 2xl:pt-8 sm:hidden text-black">

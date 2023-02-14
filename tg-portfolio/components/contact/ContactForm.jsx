@@ -127,9 +127,9 @@ const ContactForm = () => {
           <div className="flex justify-center flex-wrap">
             <button
               type="submit"
-              className="btn md:btn-wide sm:w-36 bg-green-700/100 text-black font-semibold
-                    hover:text-white hover:bg-black py-2 px-4 border-2
-                      border-none hover:border-transparent rounded
+              className="btn md:btn-wide sm:w-36 bg-green-700/100 font-semibold
+                    text-white hover:bg-black py-2 px-4 border-2
+                       hover:border-green-700/90 rounded border-transparent
                       focus:ring-2 focus:ring-green-300/100 focus:outline-none
                       disabled:opacity-75 disabled:cursor-not-allowed test"
             >SEND
