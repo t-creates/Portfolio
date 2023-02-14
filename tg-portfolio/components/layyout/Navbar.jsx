@@ -48,7 +48,7 @@ const Navbar = () => {
             {navLinks.map((navItem) => (
               <Link href={navItem.link} key={navItem.id}>
                 <p className="cursor-pointer py-4 px-2 lg:text-xl  font-semibold
-              hover:animate-pulse hover:text-black text-black/80 test"
+              hover:animate-pulse hover:text-black text-black/80 aboutTitle"
                 >{navItem.name}
                 </p>
               </Link>

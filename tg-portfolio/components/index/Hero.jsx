@@ -27,7 +27,7 @@ const Hero = ({ hero }) => (
             <button
               type="button"
               className="bg-green-700/100 text-white font-semibold hover:bg-black py-2 px-4 border-2
-            hover:border-green-700/90 rounded w-48 m-2 mt-9
+            hover:border-green-700/90 rounded w-48 m-2 mt-9 border-transparent text-center test
            "
             >
               Resume

@@ -80,8 +80,8 @@ const Home = ({ hero, projects, techno }) => {
               width="80%"
             >
               {filteredTechnologies.map((technology) => (
-                <div className="w-48 h-fit">
-                  <img key={technology.name} src={urlFor(technology.image)} alt={technology.name} className="h-40 w-40 rounded-md" />
+                <div className="w-48 h-fit" key={technology.name}>
+                  <img src={urlFor(technology.image)} alt={technology.name} className="h-40 w-40 rounded-md" />
                 </div>
               ))}
             </Carousel>
