@@ -74,14 +74,15 @@ const Home = ({ hero, projects, techno }) => {
               infiniteLoop
               showStatus={false}
               showThumbs={false}
+              showIndicators={false}
               interval={2000}
               centerMode
               centerSlidePercentage={20}
               width="80%"
             >
               {filteredTechnologies.map((technology) => (
-                <div className="w-48 h-fit" key={technology.name}>
-                  <img src={urlFor(technology.image)} alt={technology.name} className="h-40 w-40 rounded-md" />
+                <div className="w-48 h-48 bg-none" key={technology.name}>
+                  <img src={urlFor(technology.image)} alt={technology.name} className="h-full w-full object-contain rounded-md bg-none" />
                 </div>
               ))}
             </Carousel>

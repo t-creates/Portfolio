@@ -11,7 +11,7 @@ const MyApp = ({ Component, pageProps }) => {
   useEffect(() => {
     setLoading(true);
     const website = fetch('https://travisg.tech');
-    website.then(() => setLoading(false))
+    website.then(() => { })
       .catch(() => setLoading(false));
   }, []);
 
