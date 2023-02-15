@@ -11,7 +11,7 @@ const MyApp = ({ Component, pageProps }) => {
   useEffect(() => {
     setLoading(true);
     const website = fetch('https://travisg.tech');
-    website.then(() => { })
+    website.then(() => { setTimeout(() => setLoading(false), 3000); })
       .catch(() => setLoading(false));
   }, []);
 
@@ -20,7 +20,7 @@ const MyApp = ({ Component, pageProps }) => {
       {isLoading ? (
         <div className="md:mt-96  sm:mt-48 flex justify-center">
           {/* <div className="loader w-full h-screen" /> */}
-          <lottie-player src="https://assets2.lottiefiles.com/packages/lf20_QPcsIl8rGS.json" background="transparent" speed="1" style={{ width: '300px', height: '300px' }} loop autoplay />
+          <div className="lds-roller"><div /><div /><div /><div /><div /><div /><div /><div /></div>
         </div>
       ) : (
         <>
