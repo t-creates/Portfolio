@@ -1,5 +1,4 @@
 import React from 'react';
-import Image from 'next/image';
 
 import { urlFor } from '../../utils/client';
 
@@ -10,15 +9,14 @@ const Programming = ({ technolos }) => (
         sm:justify-center md:justify-between md:gap-4 sm:gap-1 sm:pt-5 scrollbar-hide"
       >
         {technolos.map((techno) => (
-          <div className="animate-in zoom-in duration-1000" key={techno._id}>
+          <div className="animate-in zoom-in duration-1000 h-fit w-48 bg-none" key={techno._id}>
             <a href={techno.link} target="_blank" rel="noreferrer">
-              <Image
+              <img
                 src={urlFor(techno.image).url()}
                 alt="techno"
-                width={150}
-                height={150}
-                className="hover:cursor-pointer rounded-2xl
-                     delay-500 duration-1000"
+                layout="fill"
+                className="hover:cursor-pointer hover:scale-125 bg-none transform transition-transform
+                     delay-500 duration-1000 object-contain"
               />
             </a>
           </div>
