@@ -16,24 +16,24 @@ const Hero = ({ hero }) => (
         </div>
       </div> */}
 
-      <div className="flew flex-col">
-        <div>
+      <div className="">
+        <div className="gap-2 flex flex-col">
           <h1 className="p-2 font-extrabold navName md:text-7xl sm:text-5xl  text-black/90  tracking-in-expand">Travis</h1>
           <h2 className="p-2 font-bold aboutTitle md:text-5xl sm:text-3xl text-black/80 tracking-in-expand">Software Engineer</h2>
-          <h3 className="p-2 font-semibold aboutTitle 2xl:text-3xl md:text-2xl sm:text-sm text-black/70 pb-5 tracking-in-expand">{hero[0].bio}</h3>
+          <h3 className="p-2 font-normal aboutTitle 2xl:text-3xl md:text-2xl sm:text-sm text-black/70 pb-5 tracking-in-expand">{hero[0].bio}</h3>
         </div>
-        <div className="flex flex-col justify-center items-center slide-in-from-bottom-96 animate-in duration-1000">
+        <div className="flex flex-col justify-center items-start slide-in-from-bottom-96 animate-in duration-1000">
           <a target="_blank" rel="noreferrer" href="/travisGeislingerResume.pdf">
             <button
               type="button"
-              className="bg-green-700/100 text-white font-semibold hover:bg-black py-2 px-4 border-2
-            hover:border-green-700/90 rounded w-48 m-2 mt-9 border-transparent text-center test
+              className="bg-green-700/100 text-white hover:bg-black py-2 px-4 border-2
+            hover:border-green-700/90 rounded w-48 m-2 border-transparent text-center test
            "
             >
               Resume
             </button>
           </a>
-          <div className="p-3 flex">
+          <div className="p-3 flex justify-around w-48">
             <div className="p-3">
               <a target="_blank" rel="noreferrer" href="https://www.linkedin.com/in/travis-geislinger-889b81188/">
                 <button type="button">

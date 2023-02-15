@@ -36,20 +36,20 @@ const Services = () => {
 
   return (
 
-    <div className="md:p-6 sm:p-2 animate-in slide-in-from-bottom-48 duration-1000">
+    <div className="md:p-6 sm:p-2 animate-in slide-in-from-bottom-48 duration-100">
       <h1 className="aboutTitle text-black text-5xl font-bold pb-10 px-8">Expertise</h1>
       <div className="grid lg:grid-cols-2 gap-5 grid-cols-1 scrollbar-hide mt-10">
         {services.map((service, index) => (
-          <div className="flex flex-1 flex-wrap rounded-md hover:shadow-2xl md:min-w-[350px] sm:min-w-fit min-h-[300px] justify-start p-5" key={index}>
-            <div className="flex flex-1 items-center flex-wrap">
+          <div className="flex flex-1 flex-wrap rounded-md hover:shadow-2xl bg-white md:min-w-[350px] sm:min-w-fit min-h-[350px] justify-start p-5" key={index}>
+            <div className="flex flex-col justify-around items-start flex-wrap">
               <div className={`flex justify-center items-center rounded-lg bg-neutral/20 p-5 max-h-24 min-h-24 ${service.text}`}>
                 <div className="relative w-20 h-20 ">
                   <Image src={service.image} layout="fill" />
                 </div>
               </div>
-              <h2 className="text-black/75 text-2xl pl-5 md:pt-0 sm:pt-5 font-bold test">{service.title}</h2>
+              <h2 className="text-black/75 text-2xl md:pt-0 sm:pt-5 font-bold test">{service.title}</h2>
             </div>
-            <p className="pt-5 text-lg text-black/70 test">{service.description}</p>
+            <p className="pt-5 text-lg text-black/70 test items-end">{service.description}</p>
           </div>
         ))}
       </div>

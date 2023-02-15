@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 import Image from 'next/image';
 import { HiMenu } from 'react-icons/hi';
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
+  const router = useRouter();
   const navLinks = [
     {
       id: 'nav-link-0',
@@ -46,11 +48,16 @@ const Navbar = () => {
           <div className="md:flex items-center space-x-11">
             {/* Logo */}
             {navLinks.map((navItem) => (
-              <Link href={navItem.link} key={navItem.id}>
-                <p className="cursor-pointer py-4 px-2 lg:text-xl  font-semibold
-              hover:animate-pulse hover:text-black text-black/80 aboutTitle"
+              <Link
+                href={navItem.link}
+                key={navItem.id}
+              >
+                <a
+                  className={`cursor-pointer py-4 px-2 lg:text-xl hover:animate-pulse hover:text-black
+                aboutTitle ${router.pathname === navItem.link ? 'text-black/80' : 'text-gray-500'}`}
+                  href={navItem.link}
                 >{navItem.name}
-                </p>
+                </a>
               </Link>
             ))}
           </div>
