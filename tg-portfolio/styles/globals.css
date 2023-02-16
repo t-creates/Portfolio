@@ -36,22 +36,6 @@
   font-family: 'Reem Kufi Ink', sans-serif;
 }
 
-.servicesBlue {
-  background-color: rgb(0, 100, 255, 0.4);
-}
-
-.servicesRed {
-  background-color: rgb(255, 0, 0, 0.4);
-}
-
-.servicesGreen {
-  background-color: rgb(0, 255, 0, 0.4);
-}
-
-.servicesYellow {
-  background-color: rgb(255, 255, 0, 0.4);
-}
-
 .heroTitle {
   animation: color-change 5s infinite;
 }
@@ -277,6 +261,14 @@
   }
 }
 
+/* Expertise */
+svg#freepik_stories-code-typing:not(.animated) .animable {opacity: 0;}
+svg#freepik_stories-code-typing.animated #freepik--Plant--inject-49 {animation: 1.5s Infinite  linear shake;animation-delay: 0s;}
+svg#freepik_stories-code-typing.animated #freepik--Keyboard--inject-49 {animation: 1.5s Infinite  linear heartbeat;animation-delay: 0s;}
+svg#freepik_stories-code-typing.animated #freepik--speech-bubbles--inject-49 {animation: 1.5s Infinite  linear floating;animation-delay: 0s;} 
+           @keyframes shake {                10%, 90% {                    transform: translate3d(-1px, 0, 0);                  }                  20%, 80% {                    transform: translate3d(2px, 0, 0);                  }                  30%, 50%, 70% {                    transform: translate3d(-4px, 0, 0);                  }                  40%, 60% {                    transform: translate3d(4px, 0, 0);                  }            }                    
+           @keyframes heartbeat {                0% {                    transform: scale(1);                }                10% {                    transform: scale(1.1);                }                30% {                    transform: scale(1);                }                40% {                    transform: scale(1);                }                50% {                    transform: scale(1.1);                }                60% {                    transform: scale(1);                }                100% {                    transform: scale(1);                }            }                    
+           @keyframes floating {                0% {                    opacity: 1;                    transform: translateY(0px);                }                50% {                    transform: translateY(-10px);                }                100% {                    opacity: 1;                    transform: translateY(0px);                }            }        
 
 
 /* copy to clipboard */
