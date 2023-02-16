@@ -27,7 +27,7 @@ const Home = ({ hero, projects, techno }) => (
     {/* <Skills /> */}
     <div className="mt-10 md:px-6 lg:px-16 sm:p-1 sm:pt-11">
       <div className="lg:mx-24 sm:mx-0">
-        <h1 className="aboutTitle text-black sm:text-4xl md:text-5xl font-bold pb-10">Recent Projects</h1>
+        <h1 className="aboutTitle text-black sm:text-4xl md:text-5xl font-bold pb-5">Recent Projects</h1>
         <div className="grid lg:grid-cols-3 grid-cols-1 gap-8 justify-between overflow-auto w-full">
           {/* New Projects */}
           {projects?.map((project) => {
@@ -53,13 +53,13 @@ const Home = ({ hero, projects, techno }) => (
       </div>
     </div>
     <div className="mt-10 lg:px-24 sm:p-1 sm:pt-11">
-      <div className="w-full h-full md:p-11 sm:pt-5 mb-10">
+      <div className="w-full h-full md:p-11 sm:pt-5 mb-5">
         <About />
       </div>
     </div>
-    <div className="mt-10 md:px-6 lg:px-24 sm:p-1 sm:pt-11 block">
+    <div className="mt-5 md:px-6 lg:px-24 sm:p-1 sm:pt-11 block">
       <div className="w-full h-full md:p-6 sm:pt-5 mb-10 lg:m-12 sm:m-0">
-        <h1 className="aboutTitle text-black sm:text-4xl md:text-5xl font-bold pb-10">Toolbox
+        <h1 className="aboutTitle text-black sm:text-4xl md:text-5xl font-bold pb-5">Toolbox
         </h1>
         <div className="scrollbar-hide md:grid md:grid-cols-5 md:justify-between md:gap-0 items-center sm:flex sm:flex-wrap sm:gap-5 sm:flex-row sm:justify-center">
           {techno.map((technology) => (
@@ -70,7 +70,7 @@ const Home = ({ hero, projects, techno }) => (
         </div>
       </div>
     </div>
-    <div className="md:px-16 lg:px-24 sm:p-1 sm:pt-11 my-20">
+    <div className="md:px-16 lg:px-24 sm:p-1 sm:pt-11 mt-10">
       <div className="w-fill 2xl:flex">
         <div className="mt-10 md:p-0 lg:px-24 sm:px-0 z-10 2xl:min-w-[75%]">
           <h1 className="aboutTitle text-black sm:text-4xl md:text-5xl font-bold pb-5">Contact</h1>
