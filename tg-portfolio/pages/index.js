@@ -58,7 +58,7 @@ const Home = ({ hero, projects, techno }) => (
       </div>
     </div>
     <div className="mt-10 md:px-6 lg:px-24 sm:p-1 sm:pt-11 block">
-      <div className="w-full h-full md:p-11 sm:pt-5 mb-10 lg:m-12 sm:m-0">
+      <div className="w-full h-full md:p-6 sm:pt-5 mb-10 lg:m-12 sm:m-0">
         <h1 className="aboutTitle text-black sm:text-4xl md:text-5xl font-bold pb-10">Toolbox
         </h1>
         <div className="scrollbar-hide md:grid md:grid-cols-5 md:justify-between md:gap-0 items-center sm:flex sm:flex-wrap sm:gap-5 sm:flex-row sm:justify-center">

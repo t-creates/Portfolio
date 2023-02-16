@@ -21,7 +21,7 @@ const Hero = ({ hero }) => (
               className="bg-green-700/100 text-white hover:bg-black py-2 px-4 border-2
             hover:border-green-700/90 rounded w-48 h-12 m-2 border-transparent text-center test"
             >
-              Resume
+              Resume/CV
             </button>
           </a>
           <div className="p-3 flex justify-around w-48">
