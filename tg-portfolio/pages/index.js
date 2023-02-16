@@ -61,7 +61,7 @@ const Home = ({ hero, projects, techno }) => (
     </div>
     <div className="mt-10 md:px-6 lg:px-24 sm:p-6 sm:pt-11 block">
       <div className="w-full h-full md:p-11 sm:pt-5 mb-10 lg:m-12">
-        <h1 className="aboutTitle text-black text-5xl font-bold pb-10">Technologies</h1>
+        <h1 className="aboutTitle text-black text-5xl font-bold pb-10">Toolbox</h1>
         <div className="scrollbar-hide md:grid md:grid-cols-5 md:justify-between md:gap-0 items-center sm:flex sm:flex-wrap sm:gap-5 sm:flex-row sm:justify-center">
           {techno.map((technology) => (
             <div className="xl:w-40 xl:h-40 lg:w-32 lg:h-32 sm:h-24 sm:w-24 bg-none" key={technology.name}>
