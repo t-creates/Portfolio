@@ -37,7 +37,7 @@ const Services = () => {
   return (
 
     <div className="md:p-6 sm:p-2 animate-in slide-in-from-bottom-48 duration-100">
-      <h1 className="aboutTitle text-black text-5xl font-bold pb-10 px-8">Expertise</h1>
+      <h1 className="aboutTitle text-black text-5xl font-bold pb-10">Expertise</h1>
       <div className="grid lg:grid-cols-2 gap-5 grid-cols-1 scrollbar-hide mt-10">
         {services.map((service, index) => (
           <div className="flex flex-1 flex-wrap rounded-md hover:shadow-2xl bg-white md:min-w-[350px] sm:min-w-fit min-h-[350px] justify-start p-5" key={index}>
