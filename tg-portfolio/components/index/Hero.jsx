@@ -3,32 +3,23 @@ import { FaLinkedin, FaGithub } from 'react-icons/fa';
 // import { urlFor } from '../utils/client';
 
 const Hero = ({ hero }) => (
-  <div className="flex justify-center mainHero">
-    <div className="flex justify-between items-center max-w-5xl lg:m-28 sm:mt-11 md:px-16 md:m-14 pt-5 rounded-lg">
-
-      {/* UNCOMMENT IF YOU WANT TO ADD A PORTFOLIO AVATAR PHOTO */}
-
-      {/* <div className="p-16">
-        <div className="avatar">
-          <div className="w-58 rounded-full">
-            <img className="mask mask-squircle" src={urlFor(hero[0].image)} />
-          </div>
-        </div>
-      </div> */}
-
+  <div className="flex justify-center w-full mainHero">
+    <div className="flex md:flex-row sm:flex-col-reverse md:justify-between sm:justify-center items-center sm:mt-20 md:px-16 md:my-14 pt-5 rounded-lg">
+      <div className="relative md:w-96 sm:w-64 h-fit">
+        <img className="w-full h-full object-fill" src="/icons/to-the-stars-animate.svg" />
+      </div>
       <div className="">
         <div className="gap-2 flex flex-col">
           <h1 className="p-2 font-extrabold navName md:text-7xl sm:text-5xl  text-black/90  tracking-in-expand">Travis</h1>
           <h2 className="p-2 font-bold aboutTitle md:text-5xl sm:text-3xl text-black/80 tracking-in-expand">Software Engineer</h2>
           <h3 className="p-2 font-normal aboutTitle 2xl:text-3xl md:text-2xl sm:text-sm text-black/70 pb-5 tracking-in-expand">{hero[0].bio}</h3>
         </div>
-        <div className="flex flex-col justify-center items-start slide-in-from-bottom-96 animate-in duration-1000">
+        <div className="flex flex-col justify-center md:items-start sm:items-center slide-in-from-bottom-96 animate-in duration-1000">
           <a target="_blank" rel="noreferrer" href="/travisGeislingerResume.pdf">
             <button
               type="button"
               className="bg-green-700/100 text-white hover:bg-black py-2 px-4 border-2
-            hover:border-green-700/90 rounded w-48 m-2 border-transparent text-center test
-           "
+            hover:border-green-700/90 rounded w-48 h-12 m-2 border-transparent text-center test"
             >
               Resume
             </button>
