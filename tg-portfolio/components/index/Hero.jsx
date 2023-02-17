@@ -5,15 +5,15 @@ import { FaLinkedin, FaGithub } from 'react-icons/fa';
 const Hero = ({ hero }) => (
   <div className="flex justify-center w-full mainHero">
     <div className="flex md:flex-row sm:flex-col-reverse md:justify-between sm:justify-center items-center sm:mt-[18vh] md:px-16 md:my-14 pt-5 rounded-lg">
-      <div className="relative md:w-96 sm:w-56 h-fit z-20">
+      {/* <div className="relative md:w-96 sm:w-56 h-fit z-20">
         <img className="w-full h-full object-fill" src="/icons/to-the-stars-animate.svg" />
-      </div>
+      </div> */}
       <div className="">
         <div className="gap-2 flex flex-col">
-          <img className="w-[48%] h-[48%] object-fill absolute md:top-10 sm:top-0 md:left-15 sm:right-0 -z-0" src="/icons/outer-space-animate.svg" />
+          <img className="md:w-[40%] sm:w-[60%] h-[85%] object-fill absolute md:top-24 sm:top-10 2xl:left-[800px] md:left-72 sm:right-16 -z-0" src="/icons/hawk.svg" />
           <h1 className="p-2 font-extrabold navName md:text-7xl sm:text-5xl  text-black/90  tracking-in-expand">Travis</h1>
           <h2 className="p-2 font-bold aboutTitle md:text-5xl sm:text-3xl text-black/80 tracking-in-expand">Software Engineer</h2>
-          <h3 className="p-2 font-normal aboutTitle 2xl:text-3xl md:text-2xl sm:text-sm text-black/70 pb-5 tracking-in-expand">{hero[0].bio}</h3>
+          <h3 className="p-2 font-normal aboutTitle 2xl:text-3xl md:text-2xl sm:text-base text-black/70 pb-5 tracking-in-expand">{hero[0].bio}</h3>
         </div>
         <div className="flex flex-col justify-center md:items-start sm:items-center slide-in-from-bottom-96 animate-in duration-1000">
           <a target="_blank" rel="noreferrer" href="/travisGeislingerResume.pdf">
