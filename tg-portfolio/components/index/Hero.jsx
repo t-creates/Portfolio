@@ -5,7 +5,7 @@ import { FaLinkedin, FaGithub } from 'react-icons/fa';
 const Hero = ({ hero }) => (
   <div className="flex justify-center w-full mainHero">
     <div className="flex md:flex-row sm:flex-col-reverse md:justify-between sm:justify-center items-center sm:mt-[18vh] md:px-16 md:my-14 pt-5 rounded-lg">
-      <div className="relative md:w-96 sm:w-64 h-fit z-20">
+      <div className="relative md:w-96 sm:w-56 h-fit z-20">
         <img className="w-full h-full object-fill" src="/icons/to-the-stars-animate.svg" />
       </div>
       <div className="">
@@ -25,15 +25,15 @@ const Hero = ({ hero }) => (
               Resume/CV
             </button>
           </a>
-          <div className="p-3 flex justify-around w-48">
-            <div className="p-3">
+          <div className="px-3 pt-3 flex justify-around w-48">
+            <div className="pt-3 px-3">
               <a target="_blank" rel="noreferrer" href="https://www.linkedin.com/in/travis-geislinger-889b81188/">
                 <button type="button">
                   <FaLinkedin className="text-4xl text-[#0A66C2] hover:text-black cursor-pointer" />
                 </button>
               </a>
             </div>
-            <div className="p-3">
+            <div className="pt-3 px-3">
               <a target="_blank" rel="noreferrer" href="https://www.github.com/t-creates">
                 <button type="button">
                   <FaGithub className="text-4xl text-black cursor-pointer" />
