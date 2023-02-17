@@ -53,11 +53,11 @@ const Home = ({ hero, projects, techno }) => (
       </div>
     </div>
     <div className="mt-10 lg:px-24 sm:p-1 sm:pt-11">
-      <div className="w-full h-full md:p-11 sm:pt-5 mb-5">
+      <div className="w-full h-full md:p-11 sm:pt-5">
         <About />
       </div>
     </div>
-    <div className="mt-5 md:px-6 lg:px-24 sm:p-1 sm:pt-11 block">
+    <div className="mt-10 md:px-6 lg:px-24 sm:p-1 sm:pt-11 block">
       <div className="w-full h-full md:p-6 sm:pt-5 mb-10 lg:m-12 sm:m-0">
         <h1 className="aboutTitle text-black sm:text-4xl md:text-5xl font-bold pb-5">Toolbox
         </h1>

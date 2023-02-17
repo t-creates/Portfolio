@@ -36,7 +36,7 @@ const Navbar = () => {
 
   return (
     // Navbar
-    <nav className="w-full bg-[#fff]">
+    <nav className="w-full bg-[#fff] z-100">
       <div className="mx-auto lg:px-48 md:px-16 border-b-[1px]">
         <div className="md:flex justify-between sm:hidden">
           <div className="md:flex items-center sm:hidden">
@@ -54,7 +54,7 @@ const Navbar = () => {
               >
                 <a
                   className={`cursor-pointer py-4 px-2 lg:text-xl hover:animate-pulse hover:text-black
-                aboutTitle ${router.pathname === navItem.link ? 'text-black/80' : 'text-gray-500'}`}
+                aboutTitle ${router.pathname === navItem.link ? 'text-black' : 'text-gray-500'}`}
                   href={navItem.link}
                 >{navItem.name}
                 </a>
