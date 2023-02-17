@@ -7,7 +7,7 @@ const Projects = ({ projects: { image, name, sourceCode, website, description, n
 
   return (
     <div
-      className={`rounded-md flex flex-1 flex-col bg-neutral/30 md:mt-5 shadow-xl
+      className={`rounded-md flex flex-1 flex-col bg-neutral/30 md:mt-5 shadow-xl max-w-[450px]
     animate-in zoom-in spin-in-90 duration-1000 ${show ? 'relative' : ''}`}
       onMouseEnter={() => setShow(true)}
       onMouseLeave={() => setShow(false)}
@@ -33,10 +33,10 @@ const Projects = ({ projects: { image, name, sourceCode, website, description, n
       <div className="relative w-full h-[90%]">
         <img src={urlFor(image)} alt={name} className="rounded-t-md object-fill" />
       </div>
-      <div className="pt-2 px-2 flex flex-col justify-between h-full">
+      <div className="pt-3 px-3 flex flex-col justify-between h-full">
         <h2 className="text-2xl flex flex-1 justify-between font-medium text-black aboutTitle">
           {name}
-          {neww ? <div className="badge badge-secondary bg-green-700/90 border-none test">NEW</div> : null}
+          {neww ? <div className="badge badge-secondary bg-green-700/90 text-xs border-none test">NEW</div> : null}
         </h2>
         <p className="text-black/70 pb-3 test"> {description}</p>
         {/* <div className="h-fit flex items-center flex-wrap gap-1 justify-end p-2">

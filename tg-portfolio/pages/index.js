@@ -61,7 +61,9 @@ const Home = ({ hero, projects, techno }) => (
       <div className="w-full h-full md:p-6 sm:pt-5 mb-10 lg:m-12 sm:m-0">
         <h1 className="aboutTitle text-black sm:text-4xl md:text-5xl font-bold pb-5">Toolbox
         </h1>
-        <div className="scrollbar-hide md:grid md:grid-cols-5 md:justify-between md:gap-0 items-center sm:flex sm:flex-wrap sm:gap-5 sm:flex-row sm:justify-center">
+        <div className="scrollbar-hide md:grid md:grid-cols-5 md:justify-between md:gap-0 items-center
+        sm:flex sm:flex-wrap sm:gap-5 sm:flex-row sm:justify-center"
+        >
           {techno.map((technology) => (
             <div className="xl:w-40 xl:h-40 lg:w-32 lg:h-32 sm:h-24 sm:w-24 bg-none" key={technology.name}>
               <img src={urlFor(technology.image)} alt={technology.name} className="h-full w-full object-contain rounded-md bg-none" />
