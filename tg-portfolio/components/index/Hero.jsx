@@ -10,7 +10,11 @@ const Hero = ({ hero }) => (
       </div> */}
       <div className="">
         <div className="gap-2 flex flex-col">
-          <img className="md:w-[40%] sm:w-[60%] h-[85%] object-fill absolute md:top-24 sm:top-10 2xl:left-[800px] md:left-72 sm:right-16 -z-0" src="/icons/hawk.svg" />
+          <img
+            className="md:w-[40%] sm:w-[60%] h-[85%] object-fill animate-in slide-in-from-top-96 duration-1000
+          absolute md:top-24 sm:top-10 2xl:left-[800px] md:left-72 sm:right-16 -z-0"
+            src="/icons/hawk.svg"
+          />
           <h1 className="p-2 font-extrabold navName md:text-7xl sm:text-5xl  text-black/90  tracking-in-expand">Travis</h1>
           <h2 className="p-2 font-bold aboutTitle md:text-5xl sm:text-3xl text-black/80 tracking-in-expand">Software Engineer</h2>
           <h3 className="p-2 font-normal aboutTitle 2xl:text-3xl md:text-2xl sm:text-base text-black/70 pb-5 tracking-in-expand">{hero[0].bio}</h3>
