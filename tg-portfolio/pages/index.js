@@ -46,7 +46,7 @@ const Home = ({ hero, projects, techno, ex }) => (
           <a
             href="/works"
             className="bg-green-700/100 text-white text-lg font-semibold hover:bg-black py-4 px-4 border-2
-            hover:border-green-700/90 border-transparent rounded w-60 m-2 mt-9 text-center test"
+            hover:border-green-700/90 border-transparent rounded w-60 m-2 mt-9 text-center test z-10"
           >View All Projects
           </a>
         </div>
