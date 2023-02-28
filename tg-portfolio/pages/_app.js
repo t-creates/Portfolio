@@ -2,6 +2,7 @@
 import { useState, useEffect } from 'react';
 import Head from 'next/head';
 import Script from 'next/script';
+// eslint-disable-next-line import/no-unresolved
 import { Analytics } from '@vercel/analytics/react';
 
 import '../styles/globals.css';
