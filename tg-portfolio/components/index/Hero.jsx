@@ -20,7 +20,7 @@ const Hero = ({ hero }) => (
           <h3 className="p-2 font-normal aboutTitle 2xl:text-3xl md:text-2xl sm:text-base text-black/70 pb-5 tracking-in-expand">{hero[0].bio}</h3>
         </div>
         <div className="flex flex-col justify-center md:items-start sm:items-center slide-in-from-bottom-96 animate-in duration-1000">
-          <a target="_blank" rel="noreferrer" href="/travisGeislingerResume.pdf">
+          <a target="_blank" rel="noreferrer" href="/travisGeislingerResume.pdf" className="z-10">
             <button
               type="button"
               className="bg-green-700/100 text-white hover:bg-black py-2 px-4 border-2
@@ -30,14 +30,14 @@ const Hero = ({ hero }) => (
             </button>
           </a>
           <div className="px-3 pt-3 flex justify-around w-48">
-            <div className="pt-3 px-3">
+            <div className="pt-3 px-3 z-10">
               <a target="_blank" rel="noreferrer" href="https://www.linkedin.com/in/travis-geislinger-889b81188/">
                 <button type="button">
                   <FaLinkedin className="text-4xl text-[#0A66C2] hover:text-black cursor-pointer" />
                 </button>
               </a>
             </div>
-            <div className="pt-3 px-3">
+            <div className="pt-3 px-3 z-10">
               <a target="_blank" rel="noreferrer" href="https://www.github.com/t-creates">
                 <button type="button">
                   <FaGithub className="text-4xl text-black cursor-pointer" />
