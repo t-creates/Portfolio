@@ -16,7 +16,7 @@ const Navbar = () => {
     {
       id: 'nav-link-1',
       name: 'Skills',
-      link: '/skills',
+      link: '/#experience',
     },
     {
       id: 'nav-link-2',
@@ -36,7 +36,7 @@ const Navbar = () => {
 
   return (
     // Navbar
-    <nav className="w-full bg-[#fff] z-100">
+    <nav className="w-full bg-[#fff] ">
       <div className="mx-auto lg:px-48 md:px-16 border-b-[1px]">
         <div className="md:flex justify-between sm:hidden">
           <div className="md:flex items-center sm:hidden">
@@ -53,7 +53,7 @@ const Navbar = () => {
                 key={navItem.id}
               >
                 <a
-                  className={`cursor-pointer py-4 px-2 lg:text-xl hover:animate-pulse hover:text-black
+                  className={`cursor-pointer py-4 px-2 lg:text-xl hover:animate-pulse hover:text-black z-10
                 aboutTitle ${router.pathname === navItem.link ? 'text-black' : 'text-gray-500'}`}
                   href={navItem.link}
                 >{navItem.name}

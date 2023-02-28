@@ -64,16 +64,15 @@ const ContactForm = () => {
   return (
     <div className="w-full">
       <form onSubmit={handleSubmit} method="post" className="flex flex-col">
-        <div className="form-control w-full gap-2 mt-11">
+        <div className="form-control w-full gap-5 mt-11 bg-neutral/30 p-10 rounded">
           <div>
-            <p className="test text-base text-green-700/100">Name</p>
             <input
               type="text"
-              placeholder="Enter your name..."
+              placeholder="Name..."
               htmlFor="name"
               id="name"
               name="name"
-              className="input input-bordered w-full focus:ring-2 focus:ring-green-700/100 test"
+              className="input input-bordered w-full focus:ring-2 focus:ring-green-700/100 test text-white placeholder:text-white placeholder:test"
               autoComplete="on"
               required
               value={form.name}
@@ -81,14 +80,13 @@ const ContactForm = () => {
             />
           </div>
           <div>
-            <p className="test text-base text-green-700/100">Email</p>
             <input
               type="email"
-              placeholder="Enter your email..."
+              placeholder="Email..."
               htmlFor="email"
               id="email"
               name="email"
-              className="input input-bordered w-full focus:ring-2 focus:ring-green-700/100 test"
+              className="input input-bordered w-full focus:ring-2 focus:ring-green-700/100 test text-white placeholder:text-white placeholder:test"
               autoComplete="on"
               required
               value={form.email}
@@ -96,14 +94,13 @@ const ContactForm = () => {
             />
           </div>
           <div>
-            <p className="test text-base text-green-700/100">Subject</p>
             <input
               type="text"
-              placeholder="Enter your subject..."
+              placeholder="Subject..."
               htmlFor="email"
               id="email"
               name="email"
-              className="input input-bordered w-full focus:ring-2 focus:ring-green-700/100 test"
+              className="input input-bordered w-full focus:ring-2 focus:ring-green-700/100 test placeholder:text-white placeholder:test"
               autoComplete="on"
               required
               value={form.subject}
@@ -111,10 +108,9 @@ const ContactForm = () => {
             />
           </div>
           <div>
-            <p className="test text-base text-green-700/100">Message</p>
             <textarea
-              className="textarea textarea-bordered h-24 focus:ring-2 focus:ring-green-700/100 w-full test"
-              placeholder="Enter your message..."
+              className="textarea textarea-bordered h-24 focus:ring-2 focus:ring-green-700/100 w-full test text-white placeholder:text-white placeholder:test"
+              placeholder="Message..."
               htmlFor="message"
               id="message"
               name="message"
@@ -136,11 +132,11 @@ const ContactForm = () => {
             </button>
             <div className="text-left">
               {showMessage.type === 'success' ? (
-                <p className="text-green-500 font-semibold text-sm mx-2 pt-5">
+                <p className="text-green-900 font-semibold text-sm mx-2 pt-5">
                   {showMessage.message}
                 </p>
               ) : (
-                <p className="text-red-500 font-semibold text-sm mx-2 pt-5">
+                <p className="text-red-900 font-semibold text-sm mx-2 pt-5">
                   {showMessage.message}
                 </p>
               )}

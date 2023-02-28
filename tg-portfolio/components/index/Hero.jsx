@@ -11,8 +11,8 @@ const Hero = ({ hero }) => (
       <div className="">
         <div className="gap-2 flex flex-col">
           <img
-            className="md:w-[40%] sm:w-[60%] h-[85%] object-fill animate-in slide-in-from-top-96 duration-1000
-          absolute md:top-24 sm:top-10 2xl:left-[800px] md:left-72 sm:right-16 -z-0"
+            className="w-[300vh] h-[300vh] object-contain animate-in slide-in-from-top-96 duration-1000
+          absolute top-[-230px] left-0 -z-0 sm:hidden lg:block"
             src="/icons/hawk.svg"
           />
           <h1 className="p-2 font-extrabold navName md:text-7xl sm:text-5xl  text-black/90  tracking-in-expand">Travis</h1>

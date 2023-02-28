@@ -1,6 +1,7 @@
 import React from 'react';
-import Image from 'next/image';
 import dynamic from 'next/dynamic';
+import { FaLinkedin, FaGithub } from 'react-icons/fa';
+import { AiOutlineMail } from 'react-icons/ai';
 import ContactForm from './ContactForm';
 
 const Contact = () => {
@@ -11,30 +12,41 @@ const Contact = () => {
   };
 
   return (
-    <div className="mt-10 md:px-3 lg:px-24 sm:px-0">
-      <div className="md:p-6 sm:p-2 rounded-lg bg-neutral/30">
+    <div className="mt-10 w-full h-auto">
+      <div className="sm:p-2">
         <div className="flex flex-row gap-11 w-full lg:flex-nowrap sm:flex-wrap sm:justify-center">
-          <div className="flex flex-col md:items-start sm:items-center justify-around sm:gap-2">
-            <div>
-              <div className="flex place-content-end text-white rounded-lg sm:pt-5">
+          <div className="flex flex-col md:items-start sm:items-center justify-between w-full">
+            <div className="gap-5 flex flex-col">
+              <h3 className="font-bold text-black z-30 test md:text-4xl sm:text-xl ">How can I help you?</h3>
+              <p className="font-semibold test md:text-3xl sm:text-lg text-black/75 ">Fill in the form or drop an email</p>
+            </div>
+            <div className="p-2 border-2 border-neutral/30 flex flex-row items-center sm:justify-between sm:w-full md:w-fit">
+              <AiOutlineMail className="text-4xl text-black cursor-pointer sm:pr-1 md:pr-3" />
+              <h2 className="email text-base cursor-pointer text-black">geislinger@pm.me</h2>
+              <div className="text-black rounded-lg sm:pl-1 md:pl-3">
                 <button type="button" onClick={showAlert} className="">
                   <CC content={textToCopy} />
                 </button>
               </div>
-              <h2 className="email md:text-3xl sm:text-lg pb-5 cursor-pointer text-white">geislinger@pm.me</h2>
             </div>
-            <div>
-              <a target="_blank" href="https://www.github.com/t-creates" rel="noreferrer">
-                <Image src="/Github.png" alt="github" width={250} height={85} className="cursor-pointer" />
+            <div className="p-2 border-2 border-neutral/30 md:block sm:hidden">
+              <a target="_blank" rel="noreferrer" href="https://www.linkedin.com/in/travis-geislinger-889b81188/">
+                <button type="button" className="flex flex-row items-center">
+                  <FaLinkedin className="text-4xl text-[#0A66C2] hover:text-black cursor-pointer sm:pr-1 md:pr-3" />
+                  <p className="email text-base cursor-pointer text-black">https://www.linkedin.com/in/travis-geislinger-889b81188/</p>
+                </button>
               </a>
             </div>
-            <div className="mx-2">
-              <a target="_blank" href="https://www.linkedin.com/in/travis-geislinger-889b81188/" rel="noreferrer">
-                <Image src="/LI-Logo.svg" alt="linkedin" width={250} height={60} className="rounded-lg cursor-pointer" />
+            <div className="p-2 border-2 border-neutral/30">
+              <a target="_blank" rel="noreferrer" href="https://www.github.com/t-creates">
+                <button type="button" className="flex flex-row items-center">
+                  <FaGithub className="text-4xl text-black cursor-pointer sm:pr-1 md:pr-3" />
+                  <p className="email text-base cursor-pointer text-black">https://www.github.com/t-creates</p>
+                </button>
               </a>
             </div>
           </div>
-          <div className="flex flex-col lg:items-start w-full lg:ml-16">
+          <div className="flex flex-col lg:items-end w-full lg:ml-16">
             <ContactForm />
           </div>
         </div>
