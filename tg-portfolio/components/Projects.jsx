@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { v4 } from 'uuid';
+import { FaEye, FaGithub } from 'react-icons/fa';
 import { urlFor } from '../utils/client';
 
 const Projects = ({ projects: { image, name, sourceCode, website, description, neww } }) => {
@@ -16,17 +17,19 @@ const Projects = ({ projects: { image, name, sourceCode, website, description, n
         <a href={website} key={v4} rel="noopener noreferrer" target="_blank">
           <button
             type="button"
-            className="btn bg-green-700/90 text-white font-semibold hover:text-white hover:bg-black py-2 px-4
-           border-none rounded mb-10 w-48 test hover:border-solid hover:border-2 hover:border-green-700/90"
-          >View Project
+            className="btn bg-green-700/90 text-white font-semibold hover:text-white hover:bg-black
+           border-none rounded mb-10 w-48 test hover:border-solid hover:border-2 hover:border-green-700/90 items-center justify-center"
+          >
+            <FaEye className="text-3xl text-white cursor-pointer pr-2" /> Live
           </button>
         </a>
         <a href={sourceCode} rel="noopener noreferrer" target="_blank">
           <button
             type="button"
             className="btn w-48 border-none rounded text-white hover:text-white bg-green-700/90 test
-            hover:border-solid hover:border-2 hover:border-green-700/90"
-          >View Code
+            hover:border-solid hover:border-2 hover:border-green-700/90 items-center justify-center"
+          >
+            <FaGithub className="text-3xl text-white cursor-pointer pr-2" /> Source
           </button>
         </a>
       </span>
