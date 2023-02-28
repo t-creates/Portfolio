@@ -1,11 +1,11 @@
 import React from 'react';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
 
-import { Hero, About, Services, Projects } from '../components';
+import { Hero, About, Services, Projects, Experience } from '../components';
 import { client, urlFor } from '../utils/client';
 import Contact from '../components/contact/Contact';
 
-const Home = ({ hero, projects, techno }) => (
+const Home = ({ hero, projects, techno, ex }) => (
   <div className="">
     <Hero hero={hero} />
     {/* Client Testimonials */}
@@ -28,7 +28,7 @@ const Home = ({ hero, projects, techno }) => (
     <div className="mt-10 md:px-6 lg:px-16 sm:p-1 sm:pt-11">
       <div className="lg:mx-24 sm:mx-0">
         <h1 className="aboutTitle text-black sm:text-4xl md:text-5xl font-bold pb-5">Recent Projects</h1>
-        <div className="grid lg:grid-cols-3 grid-cols-1 gap-8 justify-between overflow-auto w-full">
+        <div className="lg:grid lg:grid-cols-3 sm:grid-cols-1 md:flex sm:grid gap-5 justify-between overflow-auto w-full h-full">
           {/* New Projects */}
           {projects?.map((project) => {
             if (project.neww) {
@@ -52,12 +52,12 @@ const Home = ({ hero, projects, techno }) => (
         </div>
       </div>
     </div>
-    <div className="mt-10 lg:px-24 sm:p-1 sm:pt-11">
+    <div className="mt-10 lg:px-24 sm:p-1 sm:pt-11" id="about">
       <div className="w-full h-full md:p-11 sm:pt-5">
         <About />
       </div>
     </div>
-    <div className="mt-10 md:px-6 lg:px-24 sm:p-1 sm:pt-11 block">
+    <div className="mt-10 md:px-6 lg:px-24 sm:p-1 sm:pt-11 block" id="experience">
       <div className="w-full h-full md:p-6 sm:pt-5 mb-10 lg:m-12 sm:m-0">
         <h1 className="aboutTitle text-black sm:text-4xl md:text-5xl font-bold pb-5">Toolbox
         </h1>
@@ -72,15 +72,17 @@ const Home = ({ hero, projects, techno }) => (
         </div>
       </div>
     </div>
-    <div className="md:px-16 lg:px-24 sm:p-1 sm:pt-11 mt-10">
-      <div className="w-fill 2xl:flex">
-        <div className="mt-10 md:p-0 lg:px-24 sm:px-0 z-10 2xl:min-w-[75%]">
-          <h1 className="aboutTitle text-black sm:text-4xl md:text-5xl font-bold pb-5">Contact</h1>
-          <Contact />
-        </div>
-        <div className="2xl:flex 2xl:justify-center 2xl:pt-8 sm:hidden text-black">
-          <img src="/default-monochrome-black.svg" alt="logo" className="w-40 h-40" />
-        </div>
+    <div className="md:px-16 lg:px-24 sm:p-1 sm:pt-11 my-10">
+      <div className="w-full h-full md:p-6 sm:pt-5 mb-10 lg:m-12 sm:m-0">
+        <h1 className="aboutTitle text-black sm:text-4xl md:text-5xl font-bold pb-5">Experience
+        </h1>
+        <Experience companies={ex} />
+      </div>
+    </div>
+    <div className="md:px-16 lg:px-24 sm:p-1 sm:pt-11 mt-10 w-full">
+      <div className="w-full h-full md:p-6 sm:pt-5 mb-10 lg:m-12 sm:m-0">
+        <h1 className="aboutTitle text-black sm:text-4xl md:text-5xl font-bold md:pb-5 sm:p-0">Contact</h1>
+        <Contact />
       </div>
     </div>
   </div>
@@ -105,12 +107,17 @@ export const getServerSideProps = async () => {
   const techQuery = '*[_type == "technologies"]';
   const techno = await client.fetch(techQuery);
 
+  // Experience Query
+  const exQuery = '*[_type == "experience"]';
+  const ex = await client.fetch(exQuery);
+
   return {
     props: {
       hero,
       clientsTest,
       projects,
       techno,
+      ex,
     },
   };
 };

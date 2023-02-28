@@ -23,7 +23,7 @@ const Footer = () => (
           <p className="font-bold text-black hover:text-green-700/100 cursor-pointer hidden md:flex hover:animate-pulse">CONTACT</p>
         </Link>
         <p className="font-extrabold hidden md:flex text-black"> | | </p>
-        <Link href="/about">
+        <Link href="/#about">
           <h3 className="font-bold text-black hover:text-green-700/100 cursor-pointer hidden md:flex hover:animate-pulse">Travis Geislinger</h3>
         </Link>
       </div>
