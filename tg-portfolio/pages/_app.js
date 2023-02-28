@@ -2,6 +2,8 @@
 import { useState, useEffect } from 'react';
 import Head from 'next/head';
 import Script from 'next/script';
+import { Analytics } from '@vercel/analytics/react';
+
 import '../styles/globals.css';
 import Layout from '../components/layyout/Layout';
 
@@ -34,6 +36,7 @@ const MyApp = ({ Component, pageProps }) => {
             {/* // eslint-disable-next-line react/jsx-props-no-spreading */}
             <Component {...pageProps} />
           </Layout>
+          <Analytics />
         </>
       )}
     </div>
