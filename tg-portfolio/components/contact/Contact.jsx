@@ -15,7 +15,7 @@ const Contact = () => {
     <div className="mt-10 w-full h-auto">
       <div className="sm:p-2">
         <div className="flex flex-row gap-11 w-full lg:flex-nowrap sm:flex-wrap sm:justify-center">
-          <div className="flex flex-col md:items-start sm:items-center justify-between w-full">
+          <div className="flex flex-col md:items-start sm:items-center justify-between sm:gap-5 md:gap-0 w-full">
             <div className="gap-5 flex flex-col">
               <h3 className="font-bold text-black z-30 test md:text-4xl sm:text-xl ">How can I help you?</h3>
               <p className="font-semibold test md:text-3xl sm:text-lg text-black/75 ">Fill in the form or drop an email</p>
