@@ -66,7 +66,7 @@ const Home = ({ hero, projects, techno, ex }) => (
         >
           {techno.map((technology) => (
             <div className="xl:w-40 xl:h-40 lg:w-32 lg:h-32 sm:h-24 sm:w-24 bg-none" key={technology.name}>
-              <img src={urlFor(technology.image)} alt={technology.name} className="h-full w-full object-contain rounded-md bg-none z-10" />
+              <img src={urlFor(technology.image)} alt={technology.name} className="h-full w-full object-contain rounded-md bg-none" />
             </div>
           ))}
         </div>
