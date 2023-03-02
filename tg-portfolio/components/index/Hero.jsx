@@ -52,7 +52,10 @@ const Hero = ({ hero }) => (
           </div>
         </div>
       </div>
-      <div className="md:w-[66%] h-auto z-0 md:pr-12 sm:pr-0 md:relative sm:absolute sm:w-[40%] md:top-0 md:right-0 sm:top-[15%] sm:right-[5%]">
+      <div className="md:w-[66%] h-auto z-0 md:pr-12 sm:pr-0 md:relative
+       sm:absolute sm:w-[40%] md:top-0 md:right-0 sm:top-[15%] sm:right-[5%]
+       slide-in-from-top-96 animate-in duration-1000"
+      >
         <img className="w-full h-full object-cover rounded-full" src="/avatarImage.png" />
       </div>
     </div>
