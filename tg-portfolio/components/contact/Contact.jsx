@@ -20,7 +20,7 @@ const Contact = () => {
               <h3 className="font-bold text-black z-30 test md:text-4xl sm:text-xl ">How can I help you?</h3>
               <p className="font-semibold test md:text-3xl sm:text-lg text-black/75 ">Fill in the form or drop an email</p>
             </div>
-            <div className="p-2 border-2 border-neutral/30 flex flex-row items-center sm:justify-between sm:w-full md:w-fit">
+            <div className="p-2 border-2 border-neutral/30 flex flex-row items-center sm:justify-between sm:w-full md:w-fit rounded">
               <AiOutlineMail className="text-4xl text-black cursor-pointer sm:pr-1 md:pr-3" />
               <h2 className="email text-base cursor-pointer text-black">geislinger@pm.me</h2>
               <div className="text-black rounded-lg sm:pl-1 md:pl-3">
@@ -29,7 +29,7 @@ const Contact = () => {
                 </button>
               </div>
             </div>
-            <div className="p-2 border-2 border-neutral/30 md:block sm:hidden">
+            <div className="p-2 border-2 border-neutral/30 md:block sm:hidden rounded">
               <a target="_blank" rel="noreferrer" href="https://www.linkedin.com/in/travis-geislinger-889b81188/">
                 <button type="button" className="flex flex-row items-center">
                   <FaLinkedin className="text-4xl text-[#0A66C2] hover:text-black cursor-pointer sm:pr-1 md:pr-3" />
@@ -37,7 +37,7 @@ const Contact = () => {
                 </button>
               </a>
             </div>
-            <div className="p-2 border-2 border-neutral/30">
+            <div className="p-2 border-2 border-neutral/30 rounded">
               <a target="_blank" rel="noreferrer" href="https://www.github.com/t-creates">
                 <button type="button" className="flex flex-row items-center">
                   <FaGithub className="text-4xl text-black cursor-pointer sm:pr-1 md:pr-3" />
