@@ -6,7 +6,7 @@ const Footer = () => (
   <div className="bg-[#fff] border-t-[1px] mt-20">
     <footer className="p-5 pt-10">
       <div className="lg:px-40">
-        <hr className="border-4 border-green-700/100 rounded-full" />
+        <hr className="border-1 border-green-700/100" />
       </div>
       <div className="flex justify-center items-center space-x-10 p-5">
         <a target="_blank" rel="noreferrer" href="https://www.linkedin.com/in/travis-geislinger-889b81188/">
