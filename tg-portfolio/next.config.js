@@ -22,7 +22,7 @@ const nextConfig = {
 const ContentSecurityPolicy = `
   default-src 'self';
   script-src 'self';
-  analytics-src 'vitals.vercel-insights.com';
+  analytics-src 'https://vitals.vercel-insights.com/v1/vitals';
   font-src 'self';  
 `;
 
