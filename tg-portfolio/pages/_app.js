@@ -37,7 +37,16 @@ const MyApp = ({ Component, pageProps }) => {
             {/* // eslint-disable-next-line react/jsx-props-no-spreading */}
             <Component {...pageProps} />
           </Layout>
-          <Analytics />
+
+          <Analytics
+            beforeSend={(event) => {
+              // Ignore all events that have a `/private` inside the URL
+              if (event.url.includes('/private')) {
+                return null;
+              }
+              return event;
+            }}
+          />
         </>
       )}
     </div>
