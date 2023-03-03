@@ -20,7 +20,7 @@ const Hero = ({ hero }) => (
           <h1 className="p-2 font-extrabold navName md:text-7xl sm:text-5xl  text-black/90  tracking-in-expand">I am Travis.</h1>
           <h2 className="p-2 font-semibold aboutTitle md:text-5xl sm:text-2xl md:leading-[4rem] text-black/80 tracking-in-expand">A
             <span className="md:p-2 sm:p-1 font-bold text-green-700/100">Software Engineer</span>
-            living in Alberta, Canada
+            living in Alberta, Canada.
           </h2>
           <h3 className="p-2 font-normal aboutTitle 2xl:text-3xl md:text-2xl sm:text-base text-black/70 pb-5 tracking-in-expand">{hero[0].bio}</h3>
         </div>
