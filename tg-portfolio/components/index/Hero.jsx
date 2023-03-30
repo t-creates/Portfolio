@@ -26,7 +26,11 @@ const Hero = ({ hero }) => (
             {hero[0].bio}
           </h3>
         </div>
-        <div className="flex flex-col justify-center md:items-start sm:items-center slide-in-from-left-[1000px] animate-in duration-700">
+        <div
+          className="flex flex-col justify-center md:items-start sm:items-center"
+          data-aos="fade-up"
+          data-aos-duration="1000"
+        >
           <a target="_blank" rel="noreferrer" href="/travisGeislingerResume.pdf" className="z-10">
             <button
               type="button"
