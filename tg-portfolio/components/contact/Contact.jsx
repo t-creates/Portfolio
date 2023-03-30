@@ -12,7 +12,11 @@ const Contact = () => {
   };
 
   return (
-    <div className="mt-10 w-full h-auto">
+    <div
+      className="mt-10 w-full h-auto"
+      data-aos="zoom-in"
+      data-aos-duration="1000"
+    >
       <div className="sm:p-2">
         <div className="flex flex-row gap-11 w-full lg:flex-nowrap sm:flex-wrap sm:justify-center">
           <div className="flex flex-col md:items-start sm:items-center justify-between sm:gap-5 md:gap-0 w-full">
