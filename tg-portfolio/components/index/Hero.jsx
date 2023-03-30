@@ -11,7 +11,7 @@ const Hero = ({ hero }) => (
         <img className="w-full h-full object-fill rounded-full bg-opacity-0" src="/avatarImage.png" />
       </div> */}
       <div className="md:pl-12 sm:pl-0">
-        <div className="gap-2 flex flex-col w-fit">
+        <div className="gap-2 flex flex-col w-fit slide-in-from-left-[1000px] animate-in duration-700">
           {/* <img
             className="w-48 h-48 object-contain rounded-lg"
             src="/avatarImage.png"
@@ -22,9 +22,11 @@ const Hero = ({ hero }) => (
             <span className="md:p-2 sm:p-1 font-bold text-green-700/100">Software Engineer</span>
             living in Alberta, Canada.
           </h2>
-          <h3 className="p-2 font-normal aboutTitle 2xl:text-3xl md:text-2xl sm:text-base text-black/70 pb-5 tracking-in-expand">{hero[0].bio}</h3>
+          <h3 className="p-2 font-normal aboutTitle 2xl:text-3xl md:text-2xl sm:text-base text-black/70 pb-5 tracking-in-expand delay-700">
+            {hero[0].bio}
+          </h3>
         </div>
-        <div className="flex flex-col justify-center md:items-start sm:items-center slide-in-from-bottom-96 animate-in duration-1000">
+        <div className="flex flex-col justify-center md:items-start sm:items-center slide-in-from-left-[1000px] animate-in duration-700">
           <a target="_blank" rel="noreferrer" href="/travisGeislingerResume.pdf" className="z-10">
             <button
               type="button"
@@ -54,7 +56,7 @@ const Hero = ({ hero }) => (
       </div>
       <div className="md:w-[66%] h-auto z-0 md:pr-12 sm:pr-0 md:relative
        sm:absolute sm:w-[40%] md:top-0 md:right-0 sm:top-[15%] sm:right-[5%]
-       slide-in-from-top-96 animate-in duration-1000"
+       slide-in-from-right-[1000px] animate-in duration-1000"
       >
         <img
           className="w-full h-full object-cover md:rounded-l-none md:rounded-r-full

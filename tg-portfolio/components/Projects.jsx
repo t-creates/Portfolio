@@ -9,7 +9,7 @@ const Projects = ({ projects: { image, name, sourceCode, website, description, n
   return (
     <div
       className={`rounded-md flex flex-1 flex-col bg-neutral/30 md:mt-5 shadow-xl max-w-[450px]
-    animate-in zoom-in spin-in-90 duration-1000 ${show ? 'relative' : ''}`}
+     ${show ? 'relative' : ''}`}
       onMouseEnter={() => setShow(true)}
       onMouseLeave={() => setShow(false)}
     >

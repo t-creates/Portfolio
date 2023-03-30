@@ -27,8 +27,17 @@ const Home = ({ hero, projects, techno, ex }) => (
     {/* <Skills /> */}
     <div className="mt-10 md:px-6 lg:px-16 sm:p-1 sm:pt-11">
       <div className="lg:mx-24 sm:mx-0">
-        <h1 className="aboutTitle text-black sm:text-4xl md:text-5xl font-bold pb-5">Recent Projects</h1>
-        <div className="lg:grid lg:grid-cols-3 sm:grid-cols-1 md:flex sm:grid gap-5 justify-between overflow-auto w-full h-full">
+        <h1
+          className="aboutTitle text-black sm:text-4xl md:text-5xl font-bold pb-5"
+          data-aos="fade-up"
+          data-aos-duration="800"
+        >Recent Projects
+        </h1>
+        <div
+          className="lg:grid lg:grid-cols-3 sm:grid-cols-1 md:flex sm:grid gap-5 justify-between overflow-auto w-full h-full"
+          data-aos="fade-up"
+          data-aos-duration="1000"
+        >
           {/* New Projects */}
           {projects?.map((project) => {
             if (project.neww) {
@@ -53,16 +62,27 @@ const Home = ({ hero, projects, techno, ex }) => (
       </div>
     </div>
     <div className="mt-10 lg:px-24 sm:p-1 sm:pt-11" id="about">
-      <div className="w-full h-full md:p-11 sm:pt-5">
+      <div
+        className="w-full h-full md:p-11 sm:pt-5"
+        data-aos="fade-up"
+        data-aos-duration="1000"
+      >
         <About />
       </div>
     </div>
     <div className="mt-10 md:px-6 lg:px-24 sm:p-1 sm:pt-11 block" id="experience">
       <div className="w-full h-full md:p-6 sm:pt-5 mb-10 lg:m-12 sm:m-0">
-        <h1 className="aboutTitle text-black sm:text-4xl md:text-5xl font-bold pb-5">Toolbox
+        <h1
+          className="aboutTitle text-black sm:text-4xl md:text-5xl font-bold pb-5"
+          data-aos="fade-up"
+          data-aos-duration="800"
+        >Toolbox
         </h1>
-        <div className="scrollbar-hide md:grid md:grid-cols-5 md:justify-between md:gap-0 items-center
+        <div
+          className="scrollbar-hide md:grid md:grid-cols-5 md:justify-between md:gap-0 items-center
         sm:flex sm:flex-wrap sm:gap-5 sm:flex-row sm:justify-center"
+          data-aos="zoom-in"
+          data-aos-duration="1000"
         >
           {techno.map((technology) => (
             <div className="xl:w-40 xl:h-40 lg:w-32 lg:h-32 sm:h-24 sm:w-24 bg-none" key={technology.name}>
@@ -73,7 +93,11 @@ const Home = ({ hero, projects, techno, ex }) => (
       </div>
     </div>
     <div className="md:px-16 lg:px-24 sm:p-1 sm:pt-11 my-10">
-      <div className="w-full h-full md:p-6 sm:pt-5 mb-10 lg:m-12 sm:m-0">
+      <div
+        className="w-full h-full md:p-6 sm:pt-5 mb-10 lg:m-12 sm:m-0"
+        data-aos="fade-up"
+        data-aos-duration="1000"
+      >
         <h1 className="aboutTitle text-black sm:text-4xl md:text-5xl font-bold pb-5">Experience
         </h1>
         <Experience companies={ex} />
@@ -81,7 +105,12 @@ const Home = ({ hero, projects, techno, ex }) => (
     </div>
     <div className="md:px-16 lg:px-24 sm:p-1 sm:pt-11 mt-10 w-full">
       <div className="w-full h-full md:p-6 sm:pt-5 mb-10 lg:m-12 sm:m-0">
-        <h1 className="aboutTitle text-black sm:text-4xl md:text-5xl font-bold md:pb-5 sm:p-0">Contact</h1>
+        <h1
+          className="aboutTitle text-black sm:text-4xl md:text-5xl font-bold md:pb-5 sm:p-0"
+          data-aos="fade-up"
+          data-aos-duration="800"
+        >Contact
+        </h1>
         <Contact />
       </div>
     </div>
