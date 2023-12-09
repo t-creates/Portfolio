@@ -33,7 +33,7 @@ const Projects = ({ projects: { image, name, sourceCode, website, description, n
           </button>
         </a>
       </span>
-      <div className="relative w-full max-h-[75%] min-h-[75%]">
+      <div className="relative w-full max-h-[75%] min-h-[60%]">
         <img src={urlFor(image)} alt={name} className="rounded-t-md object-contain" />
       </div>
       <div className="pt-3 px-3 flex flex-col justify-between min-h-[25%] max-h-[25%]">
