@@ -33,10 +33,10 @@ const Projects = ({ projects: { image, name, sourceCode, website, description, n
           </button>
         </a>
       </span>
-      <div className="relative w-full h-[90%]">
+      <div className="relative w-full">
         <img src={urlFor(image)} alt={name} className="rounded-t-md object-contain" />
       </div>
-      <div className="pt-3 px-3 flex flex-col justify-between h-full">
+      <div className="pt-3 px-3 flex flex-col justify-between h-[25%]">
         <h2 className="text-2xl flex flex-1 justify-between font-medium text-black aboutTitle">
           {name}
           {neww ? <div className="badge badge-secondary bg-green-700/90 text-xs border-none test">NEW</div> : null}
