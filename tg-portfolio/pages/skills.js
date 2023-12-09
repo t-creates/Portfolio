@@ -4,7 +4,7 @@ import { client } from '../utils/client';
 
 const Skills = ({ ed, ex, techno }) => (
   <div>
-    <div className="mt-10 lg:mx-36 md:mx-20 sm:m-5 sm:mt-20">
+    <div className="mt-10 lg:mx-36 md:mx-20 sm:m-5">
       <div className="p-6 rounded-lg bg-none">
         <h1 className="aboutTitle text-black text-4xl font-bold border-green-700/100 pb-5 md:px-8 border-b-4
         md:text-left sm:text-center tracking-in-expand"
