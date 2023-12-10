@@ -34,7 +34,7 @@ const Projects = ({ projects: { image, name, sourceCode, website, description, n
         </a>
       </span>
       <div className="relative w-full h-[233px]">
-        <img src={urlFor(image)} alt={name} className="rounded-t-md object-contain h-[233px]" />
+        <img src={urlFor(image)} alt={name} className="rounded-t-md object-fill h-[233px]" />
       </div>
       <div className="pt-3 px-3 flex flex-col justify-between h-[67px]">
         <h2 className="text-2xl flex flex-1 justify-between font-medium text-black aboutTitle">
