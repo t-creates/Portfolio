@@ -8,7 +8,7 @@ const Projects = ({ projects: { image, name, sourceCode, website, description, n
 
   return (
     <div
-      className={`rounded-md flex flex-1 flex-col bg-neutral/30 md:mt-5 shadow-xl max-w-[450px] h-[450px]
+      className={`rounded-md flex flex-1 flex-col bg-neutral/30 md:mt-5 shadow-xl max-w-[450px] h-[333px]
      ${show ? 'relative' : ''}`}
       onMouseEnter={() => setShow(true)}
       onMouseLeave={() => setShow(false)}
@@ -33,10 +33,10 @@ const Projects = ({ projects: { image, name, sourceCode, website, description, n
           </button>
         </a>
       </span>
-      <div className="relative w-full h-[350px]">
-        <img src={urlFor(image)} alt={name} className="rounded-t-md object-contain h-300px" />
+      <div className="relative w-full h-[233px]">
+        <img src={urlFor(image)} alt={name} className="rounded-t-md object-contain h-[233px]" />
       </div>
-      <div className="pt-3 px-3 flex flex-col justify-between h-[100px]">
+      <div className="pt-3 px-3 flex flex-col justify-between h-[67px]">
         <h2 className="text-2xl flex flex-1 justify-between font-medium text-black aboutTitle">
           {name}
           {neww ? <div className="badge badge-secondary bg-green-700/90 text-xs border-none test">NEW</div> : null}
