@@ -34,7 +34,7 @@ const Home = ({ hero, projects, techno, ex }) => (
         >Recent Projects
         </h1>
         <div
-          className="lg:grid lg:grid-cols-3 sm:grid-cols-1 md:flex sm:grid gap-5 justify-between overflow-auto w-full h-full"
+          className="lg:grid lg:grid-cols-3 sm:grid-cols-1 md:flex sm:grid gap-5 justify-between overflow-auto w-full h-full scrollbar-hide"
           data-aos="fade-up"
           data-aos-duration="1000"
         >
