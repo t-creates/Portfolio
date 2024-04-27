@@ -7,8 +7,8 @@ const Experience = ({ companies }) => (
       {companies.map((company) => (
         <ExperienceColumn
           key={company._id}
-          company={company.Company}
-          title={company.title}
+          company={company.title}
+          title={company.Company}
           experience={company.experience}
           id={company.title}
         />
