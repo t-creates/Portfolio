@@ -16,7 +16,7 @@ const Experience = ({ companies }) => (
     </div>
     <div className="flex justify-center w-full py-2 gap-2">
       {companies.slice().reverse().map((company, index) => (
-        <a key={company._id} className="btn btn-xs text-white/90" href={`#${company.title}`}>{index + 1}</a>
+        <a key={company._id} className="btn btn-xs text-white/90" href={`#${company.Company}`}>{index + 1}</a>
       ))}
     </div>
   </>
