@@ -7,11 +7,12 @@ const Experience = ({ companies }) => (
       <>
         <div
           key={company._id}
-          className={`relative flex items-center ${index % 2 === 0 ? 'justify-start border-l-2 border-gray-400' : 'justify-end border-r-2 border-gray-400'} mb-8`}
+          className={`relative flex items-center 
+          ${index % 2 === 0 ? 'justify-start border-r-2 border-gray-400' : 'justify-end border-l-2 border-gray-400'} mb-8`}
         >
           {/* Experience content container */}
           <div
-            className={`p-6 border-2 border-gray-200 rounded-lg ${index % 2 === 0 ? 'mr-auto' : 'ml-auto'}`}
+            className={`m-6 ${index % 2 === 0 ? 'mr-auto' : 'ml-auto'}`}
             style={{ width: '75%' }}
           >
             <ExperienceColumn
@@ -22,7 +23,7 @@ const Experience = ({ companies }) => (
             />
           </div>
         </div>
-        <div className="left-1/2 h-[25px] w-0.5 bg-gray-300" />
+        <div className="left-1/2 h-[25px] w-0.5 bg-gray-400" />
       </>
     ))}
   </div>
