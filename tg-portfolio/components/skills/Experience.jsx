@@ -22,7 +22,7 @@ const Experience = ({ companies }) => (
             />
           </div>
         </div>
-        <div className="left-1/2 h-full w-0.5 bg-gray-300" />
+        <div className="left-1/2 h-[25px] w-0.5 bg-gray-300" />
       </>
     ))}
   </div>
