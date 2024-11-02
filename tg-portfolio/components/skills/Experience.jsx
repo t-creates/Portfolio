@@ -1,29 +1,33 @@
 import React from 'react';
 import ExperienceColumn from './ExperienceColumn';
 
-const Experience = ({ companies }) => (
-  <div className="w-full rounded-lg animate-in slide-in-from-bottom-48 duration-1000">
-    {companies.map((company, index) => (
-      <div
-        key={company._id}
-        className={`relative flex items-center 
-          ${index % 2 === 0 ? 'justify-start border-r-2 border-gray-400 border-b-2' : 'justify-end border-l-2 border-b-2 border-gray-400'}`}
-      >
-        {/* Experience content container */}
+const Experience = ({ companies }) => {
+  const sortedCompanies = [...companies].sort((a, b) => a.date - b.date);
+
+  (
+    <div className="w-full rounded-lg animate-in slide-in-from-bottom-48 duration-1000">
+      {sortedCompanies.map((company, index) => (
         <div
-          className={`m-6 ${index % 2 === 0 ? 'mr-auto' : 'ml-auto'}`}
-          style={{ width: '75%' }}
+          key={company._id}
+          className={`relative flex items-center 
+          ${index % 2 === 0 ? 'justify-start border-r-2 border-gray-400 border-b-2' : 'justify-end border-l-2 border-b-2 border-gray-400'}`}
         >
-          <ExperienceColumn
-            company={company.Company}
-            title={company.title}
-            experience={company.experience}
-            id={company.Company}
-          />
+          {/* Experience content container */}
+          <div
+            className={`m-6 ${index % 2 === 0 ? 'mr-auto' : 'ml-auto'}`}
+            style={{ width: '75%' }}
+          >
+            <ExperienceColumn
+              company={company.Company}
+              title={company.title}
+              experience={company.experience}
+              id={company.Company}
+            />
+          </div>
         </div>
-      </div>
-    ))}
-  </div>
-);
+      ))}
+    </div>
+  );
+};
 
 export default Experience;
