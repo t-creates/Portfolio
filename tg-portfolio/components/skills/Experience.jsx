@@ -3,7 +3,7 @@ import ExperienceColumn from './ExperienceColumn';
 
 const Experience = ({ companies }) => (
   <>
-    <div className="carousel rounded-lg w-full animate-in slide-in-from-bottom-48 duration-1000">
+    <div className=" rounded-lg w-full animate-in slide-in-from-bottom-48 duration-1000">
       {companies.map((company) => (
         <ExperienceColumn
           key={company._id}
