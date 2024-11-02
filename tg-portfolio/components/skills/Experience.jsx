@@ -7,12 +7,12 @@ const Experience = ({ companies }) => (
       <>
         <div
           key={company._id}
-          className={`relative flex items-center ${index % 2 === 0 ? 'justify-start' : 'justify-end'} mb-8`}
+          className={`relative flex items-center ${index % 2 === 0 ? 'justify-start border-l-2 border-gray-400' : 'justify-end border-r-2 border-gray-400'} mb-8`}
         >
           {/* Experience content container */}
           <div
-            className={`max-w-md p-6 border-2 border-gray-200 rounded-lg ${index % 2 === 0 ? 'mr-auto' : 'ml-auto'}`}
-            style={{ width: '66%' }}
+            className={`p-6 border-2 border-gray-200 rounded-lg ${index % 2 === 0 ? 'mr-auto' : 'ml-auto'}`}
+            style={{ width: '75%' }}
           >
             <ExperienceColumn
               company={company.Company}
