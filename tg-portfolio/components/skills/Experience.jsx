@@ -12,7 +12,7 @@ const Experience = ({ companies }) => (
         >
           {/* Experience content container */}
           <div
-            className={`m-6 ${index % 2 === 0 ? 'mr-auto' : 'ml-auto'}`}
+            className={`m-3 p-3 ${index % 2 === 0 ? 'mr-auto' : 'ml-auto border-x-2 border-gray-400'}`}
             style={{ width: '75%' }}
           >
             <ExperienceColumn
