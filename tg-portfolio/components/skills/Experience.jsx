@@ -8,11 +8,11 @@ const Experience = ({ companies }) => (
         <div
           key={company._id}
           className={`relative flex items-center 
-          ${index % 2 === 0 ? 'justify-start border-r-2 border-gray-400' : 'justify-end border-l-2 border-gray-400'} mb-8`}
+          ${index % 2 === 0 ? 'justify-start border-r-2 border-gray-400 border-b-2' : 'justify-end border-l-2 border-b-2 border-gray-400'} mb-8`}
         >
           {/* Experience content container */}
           <div
-            className={`m-3 p-3 ${index % 2 === 0 ? 'mr-auto' : 'ml-auto border-x-2 border-gray-400'}`}
+            className={`m-6 ${index % 2 === 0 ? 'mr-auto' : 'ml-auto'}`}
             style={{ width: '75%' }}
           >
             <ExperienceColumn
