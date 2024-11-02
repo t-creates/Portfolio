@@ -2,7 +2,7 @@ import React from 'react';
 import ExperienceColumn from './ExperienceColumn';
 
 const Experience = ({ companies }) => {
-  const sortedCompanies = [...companies].sort((a, b) => a.date - b.date);
+  const sortedCompanies = [...companies].sort((a, b) => parseInt(a.date, 10) - parseInt(b.date, 10));
 
   (
     <div className="w-full rounded-lg animate-in slide-in-from-bottom-48 duration-1000">
