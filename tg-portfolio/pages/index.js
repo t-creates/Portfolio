@@ -53,6 +53,8 @@ const Home = ({ hero, projects, techno, ex }) => (
         </div>
         <div className="flex items-center justify-center mt-5">
           <a
+            data-aos="fade-up"
+            data-aos-duration="800"
             href="/works"
             className="bg-green-700/100 text-white text-lg font-semibold hover:bg-black py-4 px-4 border-2
             hover:border-green-700/90 border-transparent rounded w-60 m-2 mt-9 text-center test z-10"
