@@ -5,7 +5,7 @@ const Experience = ({ companies }) => {
   const sortedCompanies = [...companies].sort((a, b) => parseInt(a.date, 10) - parseInt(b.date, 10));
 
   return (
-    <div className="w-full rounded-lg animate-in slide-in-from-bottom-48 duration-1000">
+    <div className="w-full rounded-lg">
       {sortedCompanies.map((company, index) => (
         <div
           key={company._id}
