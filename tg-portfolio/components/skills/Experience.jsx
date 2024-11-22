@@ -14,7 +14,7 @@ const Experience = ({ companies }) => {
         >
           {/* Experience content container */}
           <div
-            className={`m-6 ${index % 2 === 0 ? 'mr-auto animate-in slide-in-from-right-48 duration-1000' : 'ml-auto animate-in slide-in-from-left-48 duration-1000'}`}
+            className={`m-6 ${index % 2 === 0 ? 'mr-auto animate-in slide-in-from-left-48 duration-1000' : 'ml-auto animate-in slide-in-from-right-48 duration-1000'}`}
             style={{ width: '75%' }}
           >
             <ExperienceColumn
