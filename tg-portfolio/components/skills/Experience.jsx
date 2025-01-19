@@ -10,7 +10,7 @@ const Experience = ({ companies }) => {
         <div
           key={company._id}
           className={`relative flex items-center 
-          ${index % 2 === 0 ? 'justify-start border-r-2 border-gray-400 border-b-2' : 'justify-end border-l-2 border-b-2 border-gray-400'}`}
+          ${index % 2 === 0 ? 'justify-start border-r-2 border-gray-400 border-b-2 border-dashed' : 'justify-end border-l-2 border-b-2 border-gray-400 border-dashed'}`}
         >
           {/* Experience content container */}
           <div
