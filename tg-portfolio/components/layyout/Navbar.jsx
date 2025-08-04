@@ -63,8 +63,8 @@ const Navbar = () => {
           </div>
         </div>
         {/* Mobile Menu */}
-        <div className="md:hidden fixed z-50 w-full border-b-[1px] text-black bg-[#fff]">
-          <div className="flex flex-1 justify-between px-5">
+        <div className="md:hidden fixed z-50 w-full p-3 border-b-[1px] text-black bg-[#fff]">
+          <div className="flex flex-1 justify-between px-5 items-center">
             <button onClick={toggleMenu} type="button"> <HiMenu className="h-8 w-8 text-black" /> </button>
             <a href="/">
               <Image src="/default-monochrome-black.svg" width={50} height={50} />

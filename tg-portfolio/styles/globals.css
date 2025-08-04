@@ -1,17 +1,18 @@
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans&family=Lato&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Antonio:wght@600&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Reem+Kufi+Ink&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Mono:wght@600&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Bungee+Spice&display=swap');
-
+/* Fonts 
+//@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Mono:wght@600&display=swap');
+//@import url('https://fonts.googleapis.com/css2?family=Bungee+Spice&display=swap');
+//@import url('https://fonts.googleapis.com/css2?family=DM+Sans&family=Lato&display=swap');
+//@import url('https://fonts.googleapis.com/css2?family=Antonio:wght@600&display=swap');
+//@import url('https://fonts.googleapis.com/css2?family=Reem+Kufi+Ink&display=swap');
+*/
 @layer base {
   .navName {
     font-family: 'Antonio', sans-serif;
+    font-weight: 600;
   }
 }
 
@@ -21,19 +22,24 @@
 
 .email {
   font-family: 'Noto Sans Mono', monospace;
+  font-weight: 400;
   }
 
 .linkedin {
   color: #1666c5;
   font-family: 'Helvetica', Arial, sans-serif;
+  font-weight: 400;
+  
 }
 
 .test {
   font-family: 'Lato', sans-serif;
+  font-weight: 400;
 }
 
 .aboutTitle {
   font-family: 'Reem Kufi Ink', sans-serif;
+  font-weight: 400;
 }
 
 .heroTitle {
