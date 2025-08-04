@@ -14,7 +14,7 @@ const Programming = ({ technolos }) => (
               <img
                 src={urlFor(techno.image).url()}
                 alt="techno"
-                layout="fill"
+                fill
                 className="hover:cursor-pointer hover:scale-125 bg-none transform transition-transform
                      delay-500 duration-1000 object-contain"
               />
