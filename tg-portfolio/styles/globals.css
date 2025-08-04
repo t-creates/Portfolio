@@ -40,6 +40,7 @@
 .aboutTitle {
   font-family: 'Reem Kufi Ink', sans-serif;
   font-weight: 400;
+  text-transform: none;
 }
 
 .heroTitle {
