@@ -11,7 +11,7 @@ const Hero = ({ hero }) => (
         <img className="w-full h-full object-fill rounded-full bg-opacity-0" src="/avatarImage.png" />
       </div> */}
       <div className="md:pl-12 sm:pl-0">
-        <div className="gap-2 flex flex-col w-fit md:slide-in-from-left-[1000px] sm:fade-in-50 animate-in duration-700">
+        <div className="gap-2 flex flex-col w-fit slide-in-from-left-[1000px] sm:fade-in-50 animate-in duration-700">
           {/* <img
             className="w-48 h-48 object-contain rounded-lg"
             src="/avatarImage.png"

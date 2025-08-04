@@ -14,6 +14,7 @@ const MyApp = ({ Component, pageProps }) => {
   // eslint-disable-next-line no-unused-vars
   const [data, setData] = useState(null);
   const [showLoading, setShowLoading] = useState(true);
+  const [hideLoader, setHideLoader] = useState(false);
 
   useEffect(() => {
     fetch('https://travisg.tech')
@@ -22,10 +23,16 @@ const MyApp = ({ Component, pageProps }) => {
       .then((siteData) => {
         setData(siteData);
         setShowLoading(false);
+        setTimeout(() => {
+          setHideLoader(true); // remove loader from DOM
+        }, 700);
       })
       .catch((error) => {
         console.error('error fetching data:', error);
         setShowLoading(false);
+        setTimeout(() => {
+          setHideLoader(true); // remove loader from DOM
+        }, 700);
       });
   }, []);
 
@@ -50,7 +57,11 @@ const MyApp = ({ Component, pageProps }) => {
         <Script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js" />
       </Head>
       {showLoading ? (
-        <div className="md:mt-96  sm:mt-48 flex justify-center">
+        <div
+          className={`flex justify-center fixed inset-0 z-50 transition-opacity duration-700 bg-white 
+          ${showLoading ? 'opacity-100' : 'opacity-0 pointer-events-none'
+            }`}
+        >
           {/* <div className="loader w-full h-screen" /> */}
           <div className="lds-roller"><div /><div /><div /><div /><div /><div /><div /><div /></div>
         </div>
