@@ -23,6 +23,12 @@ const Document = () => (
         onLoad="this.onload=null;this.rel='stylesheet'"
       />
       <link
+        href="https://fonts.googleapis.com/css2?family=Reem+Kufi+Ink&family=Reem+Kufi&display=swap"
+        rel="stylesheet"
+        as="style"
+        onLoad="this.onload=null;this.rel='stylesheet'"
+      />
+      <link
         rel="stylesheet"
         as="style"
         href="https://fonts.googleapis.com/css2?family=Noto+Sans+Mono:wght@600&display=swap"
