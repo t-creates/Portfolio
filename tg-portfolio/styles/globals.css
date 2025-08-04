@@ -43,6 +43,14 @@
   text-transform: none;
 }
 
+@media (max-width: 640px) {
+  .aboutTitle::first-letter {
+    font-size: 2.25rem;
+    text-transform: lowercase;
+  }
+}
+
+
 .heroTitle {
   animation: color-change 5s infinite;
 }
