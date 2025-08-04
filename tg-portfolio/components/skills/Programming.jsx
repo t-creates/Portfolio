@@ -1,4 +1,5 @@
 import React from 'react';
+import Image from 'next/image';
 
 import { urlFor } from '../../utils/client';
 
@@ -11,7 +12,7 @@ const Programming = ({ technolos }) => (
         {technolos.map((techno) => (
           <div className="animate-in zoom-in duration-1000 h-fit w-52 bg-none" key={techno._id}>
             <a href={techno.link} target="_blank" rel="noreferrer">
-              <img
+              <Image
                 src={urlFor(techno.image).url()}
                 alt="techno"
                 fill
