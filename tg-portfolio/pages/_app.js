@@ -14,7 +14,7 @@ const MyApp = ({ Component, pageProps }) => {
   // eslint-disable-next-line no-unused-vars
   const [data, setData] = useState(null);
   const [showLoading, setShowLoading] = useState(true);
-  const [hideLoader, setHideLoader] = useState(false);
+  const [fadeOut, setFadeOut] = useState(false);
 
   useEffect(() => {
     fetch('https://travisg.tech')
@@ -22,22 +22,31 @@ const MyApp = ({ Component, pageProps }) => {
       // .then((response) => response.json())
       .then((siteData) => {
         setData(siteData);
-        setShowLoading(false);
+        setFadeOut(true);
         setTimeout(() => {
-          setHideLoader(true); // remove loader from DOM
+          setShowLoading(false); // remove loader from DOM
         }, 700);
       })
       .catch((error) => {
         console.error('error fetching data:', error);
-        setShowLoading(false);
+        setFadeOut(true);
         setTimeout(() => {
-          setHideLoader(true); // remove loader from DOM
+          setShowLoading(false); // remove loader from DOM
         }, 700);
       });
   }, []);
 
   useEffect(() => {
     AOS.init();
+  }, []);
+
+  useEffect(() => {
+    const body = document.querySelector('body');
+    if (body) {
+      body.removeAttribute('data-aos-easing');
+      body.removeAttribute('data-aos-delay');
+      body.removeAttribute('data-aos-duration');
+    }
   }, []);
 
   return (
@@ -56,10 +65,10 @@ const MyApp = ({ Component, pageProps }) => {
         <link rel="stylesheet" href="bower_components/aos/dist/aos.css" />
         <Script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js" />
       </Head>
-      {!hideLoader ? (
+      {showLoading ? (
         <div
-          className={`flex justify-center fixed inset-0 z-50 transition-opacity duration-700 bg-white 
-          ${showLoading ? 'opacity-100' : 'opacity-0 pointer-events-none'
+          className={`flex justify-center fixed inset-0 z-50 transition-opacity duration-700 
+          ${fadeOut ? 'opacity-100' : 'opacity-0 pointer-events-none'
             }`}
         >
           {/* <div className="loader w-full h-screen" /> */}

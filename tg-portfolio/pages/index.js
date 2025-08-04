@@ -6,7 +6,7 @@ import { client, urlFor } from '../utils/client';
 import Contact from '../components/contact/Contact';
 
 const Home = ({ hero, projects, techno, ex }) => (
-  <div className="">
+  <div className="transition-none transform-none animate-none">
     <Hero hero={hero} />
     {/* Client Testimonials */}
     {/* <div className="mt-10 md:mx-24 sm:mx-0 ">

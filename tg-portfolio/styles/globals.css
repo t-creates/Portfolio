@@ -9,6 +9,14 @@
 //@import url('https://fonts.googleapis.com/css2?family=Antonio:wght@600&display=swap');
 //@import url('https://fonts.googleapis.com/css2?family=Reem+Kufi+Ink&display=swap');
 */
+
+body {
+  background-color: #f9fafe;
+    animation: none !important;
+  transition: none !important;
+  transform: none !important;
+}
+
 @layer base {
   .navName {
     font-family: 'Antonio', sans-serif;
@@ -95,6 +103,7 @@
   border-bottom-left-radius: 100px;
   border-bottom-right-radius: 100px;  
 }
+/*
 .loader::after {
   content: '';
   position: absolute;
@@ -107,7 +116,7 @@
   transform: translateY(-100%);
   animation: animateBall 3s ease-in-out infinite;
 }
-
+*/
 @keyframes animateBall {
   0% {
     transform: translateY(-100%) translateX(-30px);

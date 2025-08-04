@@ -34,6 +34,15 @@ module.exports = {
         hero: "url('/bg3.jpeg')",
         tgBg: "url('/tg-bg.jpeg')",
       },
+      transitionProperty: {
+        none: 'none',
+      },
+      transform: {
+        none: 'none',
+      },
+      animation: {
+        none: 'none',
+      },
     },
   },
   plugins: [

@@ -2,9 +2,9 @@ import Navbar from './Navbar';
 import Footer from './Footer';
 
 const Layout = ({ children }) => (
-  <div className="bg-cover bg-no-repeat w-full h-full bg-[#f9fafe]">
+  <div className=" w-full h-full animate-none transition-none">
     <Navbar />
-    <main className="2xl:mx-72 mx-0">{children}</main>
+    <main className="2xl:mx-72 mx-0 animate-none transition-none">{children}</main>
     <Footer />
   </div>
 );
