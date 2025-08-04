@@ -17,6 +17,7 @@ const MyApp = ({ Component, pageProps }) => {
 
   useEffect(() => {
     fetch('https://travisg.tech')
+      // fetch('http://localhost:3000/')
       // .then((response) => response.json())
       .then((siteData) => {
         setData(siteData);

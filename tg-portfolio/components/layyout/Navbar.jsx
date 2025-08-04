@@ -52,12 +52,12 @@ const Navbar = () => {
                 href={navItem.link}
                 key={navItem.id}
               >
-                <a
+                <p
                   className={`cursor-pointer py-4 px-2 lg:text-xl hover:animate-pulse hover:text-black z-10
                 aboutTitle ${router.pathname === navItem.link ? 'text-black' : 'text-gray-500'}`}
                   href={navItem.link}
                 >{navItem.name}
-                </a>
+                </p>
               </Link>
             ))}
           </div>

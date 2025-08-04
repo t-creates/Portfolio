@@ -87,7 +87,11 @@ const Home = ({ hero, projects, techno, ex }) => (
           data-aos-duration="1000"
         >
           {techno.map((technology) => (
-            <div className="xl:w-40 xl:h-40 lg:w-32 lg:h-32 sm:h-24 sm:w-24 bg-none" key={technology.name}>
+            <div
+              className={`xl:w-32 xl:h-32 lg:w-28 lg:h-28 sm:h-24 sm:w-24 bg-none 
+              ${technology.name === 'Tailwind CSS' ? '!h-48 !w-48 !sm:h-32 !sm:w-32' : ''}`}
+              key={technology.name}
+            >
               <img src={urlFor(technology.image)} alt={technology.name} className="h-full w-full object-contain rounded-md bg-none" />
             </div>
           ))}
