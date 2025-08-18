@@ -41,7 +41,7 @@ const Services = () => {
         className="aboutTitle text-black sm:text-4xl md:text-5xl font-bold pb-5"
         data-aos="fade-up"
         data-aos-duration="400"
-      >Expertise
+      >Services
       </h1>
       <div className="grid lg:grid-cols-2 gap-5 grid-cols-1 scrollbar-hide mt-10">
         {services.map((service, index) => (

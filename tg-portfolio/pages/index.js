@@ -1,11 +1,12 @@
 import React from 'react';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
 
-import { Hero, About, Services, Projects, Experience } from '../components';
+import { Hero, About, Services, Projects /* , Experience */ } from '../components';
 import { client, urlFor } from '../utils/client';
 import Contact from '../components/contact/Contact';
+import Expertise from '../components/Expertise';
 
-const Home = ({ hero, projects, techno, ex }) => (
+const Home = ({ hero, projects, techno, /* ex, */ expertise }) => (
   <div className="transition-none transform-none animate-none">
     <Hero hero={hero} />
     {/* Client Testimonials */}
@@ -24,6 +25,24 @@ const Home = ({ hero, projects, techno, ex }) => (
         <Services />
       </div>
     </div>
+    <div className="mt-10 lg:px-24 sm:p-1 sm:pt-11" id="about">
+      <div
+        className="w-full h-full md:p-11 sm:pt-5"
+        data-aos="fade-up"
+        data-aos-duration="1000"
+      >
+        <About />
+      </div>
+    </div>
+    <div className="md:px-16 lg:px-24 sm:p-1 sm:pt-11 my-10">
+      <div
+        className="w-full h-full md:p-6 sm:pt-5 mb-10 lg:m-12 sm:m-0"
+        data-aos="fade-up"
+        data-aos-duration="1000"
+      >
+        <Expertise expertise={expertise} />
+      </div>
+    </div>
     {/* <Skills /> */}
     <div className="mt-10 md:px-6 lg:px-16 sm:p-1 sm:pt-11">
       <div className="lg:mx-24 sm:mx-0">
@@ -34,7 +53,8 @@ const Home = ({ hero, projects, techno, ex }) => (
         >Recent Projects
         </h1>
         <div
-          className="lg:grid lg:grid-cols-3 sm:grid-cols-1 md:flex sm:grid gap-5 justify-between overflow-auto w-full h-full scrollbar-hide"
+          className="lg:grid lg:grid-cols-3 sm:grid-cols-1 md:flex sm:grid gap-5
+          justify-between overflow-auto w-full h-full scrollbar-hide"
           data-aos="fade-up"
           data-aos-duration="1000"
         >
@@ -63,15 +83,6 @@ const Home = ({ hero, projects, techno, ex }) => (
         </div>
       </div>
     </div>
-    <div className="mt-10 lg:px-24 sm:p-1 sm:pt-11" id="about">
-      <div
-        className="w-full h-full md:p-11 sm:pt-5"
-        data-aos="fade-up"
-        data-aos-duration="1000"
-      >
-        <About />
-      </div>
-    </div>
     <div className="mt-10 md:px-6 lg:px-24 sm:p-1 sm:pt-11 block" id="experience">
       <div className="w-full h-full md:p-6 sm:pt-5 mb-10 lg:m-12 sm:m-0">
         <h1
@@ -92,12 +103,17 @@ const Home = ({ hero, projects, techno, ex }) => (
               ${technology.name === 'Tailwind CSS' ? '!h-48 !w-48 !sm:h-32 !sm:w-32' : ''}`}
               key={technology.name}
             >
-              <img src={urlFor(technology.image)} alt={technology.name} className="h-full w-full object-contain rounded-md bg-none" />
+              <img
+                src={urlFor(technology.image)}
+                alt={technology.name}
+                className="h-full w-full object-contain rounded-md bg-none"
+              />
             </div>
           ))}
         </div>
       </div>
     </div>
+    {/*
     <div className="md:px-16 lg:px-24 sm:p-1 sm:pt-11 my-10">
       <div
         className="w-full h-full md:p-6 sm:pt-5 mb-10 lg:m-12 sm:m-0"
@@ -109,6 +125,7 @@ const Home = ({ hero, projects, techno, ex }) => (
         <Experience companies={ex} />
       </div>
     </div>
+     */}
     <div className="md:px-16 lg:px-24 sm:p-1 sm:pt-11 mt-10 w-full">
       <div className="w-full h-full md:p-6 sm:pt-5 mb-10 lg:m-12 sm:m-0">
         <h1
@@ -146,6 +163,10 @@ export const getServerSideProps = async () => {
   const exQuery = '*[_type == "experience"]';
   const ex = await client.fetch(exQuery);
 
+  // Experience Query
+  const expertiseQuery = '*[_type == "expertise"]';
+  const expertise = await client.fetch(expertiseQuery);
+
   return {
     props: {
       hero,
@@ -153,6 +174,7 @@ export const getServerSideProps = async () => {
       projects,
       techno,
       ex,
+      expertise,
     },
   };
 };

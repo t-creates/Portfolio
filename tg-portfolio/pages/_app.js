@@ -17,10 +17,12 @@ const MyApp = ({ Component, pageProps }) => {
   const [fadeOut, setFadeOut] = useState(false);
 
   useEffect(() => {
-    fetch('https://travisg.tech')
-      // fetch('http://localhost:3000/')
+    // fetch('https://travisg.tech')
+    fetch('http://localhost:3000/')
       // .then((response) => response.json())
       .then((siteData) => {
+        // eslint-disable-next-line no-console
+        console.log(siteData);
         setData(siteData);
         setFadeOut(true);
         setTimeout(() => {
@@ -28,6 +30,7 @@ const MyApp = ({ Component, pageProps }) => {
         }, 700);
       })
       .catch((error) => {
+        // eslint-disable-next-line no-console
         console.error('error fetching data:', error);
         setFadeOut(true);
         setTimeout(() => {
