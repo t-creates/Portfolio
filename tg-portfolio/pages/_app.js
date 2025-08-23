@@ -10,11 +10,15 @@ import 'aos/dist/aos.css';
 import '../styles/globals.css';
 import Layout from '../components/layyout/Layout';
 
+const SITE_URL = 'https://travisg.tech';
+
 const MyApp = ({ Component, pageProps }) => {
   // eslint-disable-next-line no-unused-vars
   const [data, setData] = useState(null);
   const [showLoading, setShowLoading] = useState(true);
   const [fadeOut, setFadeOut] = useState(false);
+  const TITLE = 'Travis Geislinger | Full-Stack Developer';
+  const DESCRIPTION = 'Portfolio of Travis Geislinger: JavaScript, C#, .NET, SQL, React/Next.js. See projects, clean code, and GitHub @t-creates.';
 
   useEffect(() => {
     // fetch('https://travisg.tech')
@@ -55,22 +59,21 @@ const MyApp = ({ Component, pageProps }) => {
   return (
     <div>
       <Head>
-        <title>Travis Geislinger</title>
-        <meta
-          name="description"
-          content="Discover my software development portfolio, showcasing my expertise in coding, web development, software engineering, and programming.
-        Explore my projects and examples of code I've written in various programming languages and technologies.
-        As a skilled software developer, I'm passionate about creating clean, efficient code and building innovative solutions to complex problems.
-        Take a closer look at my portfolio and see how my experience and skills can benefit your next project or company."
-          key="title"
-        />
+        <title>{TITLE}</title>
+        <meta name="description" content={DESCRIPTION} />
+        <link rel="canonical" href={SITE_URL} />
+        <meta name="robots" content="index,follow" />
+        <meta name="author" content="Travis Geislinger" />
+        <meta name="theme-color" content="#15803D" />
+        {/* eslint-disable-next-line react/no-invalid-html-attribute */}
+        <link rel="me" href="https://github.com/t-creates" />
         <link rel="icon" href="/default-monochrome-white.svg" />
         <link rel="stylesheet" href="bower_components/aos/dist/aos.css" />
         <Script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js" />
       </Head>
       {showLoading ? (
         <div
-          className={`flex justify-center fixed inset-0 z-50 transition-opacity duration-700 
+          className={`flex justify-center items-center fixed inset-0 z-50 transition-opacity duration-700 
           ${fadeOut ? 'opacity-100' : 'opacity-0 pointer-events-none'
             }`}
         >

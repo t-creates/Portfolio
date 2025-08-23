@@ -59,7 +59,7 @@ const Services = () => {
                   data-aos="zoom-in"
                   data-aos-duration="600"
                 >
-                  <Image src={service.image} layout="fill" className="object-center object-contain" />
+                  <Image src={service.image} alt={service.title} layout="fill" className="object-center object-contain" />
                 </div>
               </div>
               <h2 className="text-black/75 text-2xl md:pt-0 pt-2 font-bold test">{service.title}</h2>

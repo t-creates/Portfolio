@@ -6,6 +6,8 @@ import { client, urlFor } from '../utils/client';
 import Contact from '../components/contact/Contact';
 import Expertise from '../components/Expertise';
 
+import { PORTFOLIO_QUERY } from '../lib/queries';
+
 const Home = ({ hero, projects, techno, /* ex, */ expertise }) => (
   <div className="transition-none transform-none animate-none">
     <Hero hero={hero} />
@@ -37,8 +39,9 @@ const Home = ({ hero, projects, techno, /* ex, */ expertise }) => (
     <div className="md:px-16 lg:px-24 sm:p-1 sm:pt-11 my-10">
       <div
         className="w-full h-full md:p-6 sm:pt-5 mb-10 lg:m-12 sm:m-0"
-        data-aos="fade-up"
+        data-aos="fade-in"
         data-aos-duration="1000"
+        id="expertise"
       >
         <Expertise expertise={expertise} />
       </div>
@@ -142,41 +145,24 @@ const Home = ({ hero, projects, techno, /* ex, */ expertise }) => (
 );
 
 // Data Fetching
-export const getServerSideProps = async () => {
-  // Hero Query
-  const heroQuery = '*[_type == "hero"]';
-  const hero = await client.fetch(heroQuery);
-
-  // Testimonials Query
-  const clientsQuery = '*[_type == "testimonials"]';
-  const clientsTest = await client.fetch(clientsQuery);
-
-  // Projects Query
-  const projectsQuery = '*[_type == "projects"]';
-  const projects = await client.fetch(projectsQuery);
-
-  // Technologies Query
-  const techQuery = '*[_type == "technologies"]';
-  const techno = await client.fetch(techQuery);
-
-  // Experience Query
-  const exQuery = '*[_type == "experience"]';
-  const ex = await client.fetch(exQuery);
-
-  // Experience Query
-  const expertiseQuery = '*[_type == "expertise"]';
-  const expertise = await client.fetch(expertiseQuery);
-
-  return {
-    props: {
-      hero,
-      clientsTest,
-      projects,
-      techno,
-      ex,
-      expertise,
-    },
-  };
-};
+export async function getServerSideProps() {
+  try {
+    const data = await client.fetch(PORTFOLIO_QUERY);
+    return {
+      props: {
+        hero: data.hero || [],
+        // clientsTest: data.clientsTest || [],
+        projects: data.projects || [],
+        techno: data.techno || [],
+        ex: data.ex || [],
+        expertise: data.expertise || [],
+      },
+    };
+  } catch (err) {
+    return {
+      props: { hero: [], /* clientsTest: [], */ projects: [], techno: [], ex: [], expertise: [] },
+    };
+  }
+}
 
 export default Home;

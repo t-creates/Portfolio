@@ -5,7 +5,7 @@ import { AiOutlineMail } from 'react-icons/ai';
 import ContactForm from './ContactForm';
 
 const Contact = () => {
-  const textToCopy = 'geislinger@pm.me';
+  const textToCopy = 'geislinger@proton.me';
   const CC = dynamic(() => import('../copyClipboard').then((mod) => mod.CopyClipboard), { ssr: false });
   const showAlert = () => {
     alert('Email copied to clipboard');
@@ -26,7 +26,7 @@ const Contact = () => {
             </div>
             <div className="p-2 border-2 border-neutral/30 flex flex-row items-center sm:justify-between sm:w-full md:w-fit rounded">
               <AiOutlineMail className="text-4xl text-black cursor-pointer sm:pr-1 md:pr-3" />
-              <h2 className="email text-base cursor-pointer text-black">geislinger@pm.me</h2>
+              <h2 className="email text-base cursor-pointer text-black">geislinger@proton.me</h2>
               <div className="text-black rounded-lg sm:pl-1 md:pl-3">
                 <button type="button" onClick={showAlert} className="">
                   <CC content={textToCopy} />
@@ -34,10 +34,10 @@ const Contact = () => {
               </div>
             </div>
             <div className="p-2 border-2 border-neutral/30 md:block sm:hidden rounded">
-              <a target="_blank" rel="noreferrer" href="https://www.linkedin.com/in/travis-geislinger-889b81188/">
+              <a target="_blank" rel="noreferrer" href="https://www.linkedin.com/in/travis-geislinger/">
                 <button type="button" className="flex flex-row items-center">
                   <FaLinkedin className="text-4xl text-[#0A66C2] hover:text-black cursor-pointer sm:pr-1 md:pr-3" />
-                  <p className="email text-base cursor-pointer text-black">https://www.linkedin.com/in/travis-geislinger-889b81188/</p>
+                  <p className="email text-base cursor-pointer text-black">https://www.linkedin.com/in/travis-geislinger</p>
                 </button>
               </a>
             </div>

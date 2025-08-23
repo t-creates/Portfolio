@@ -9,22 +9,27 @@ const Navbar = () => {
   const router = useRouter();
   const navLinks = [
     {
-      id: 'nav-link-0',
+      id: 'Home',
       name: 'Home',
       link: '/',
     },
     {
-      id: 'nav-link-1',
+      id: 'Expertise',
+      name: 'Expertise',
+      link: '/#expertise',
+    },
+    {
+      id: 'Skills',
       name: 'Skills',
       link: '/#experience',
     },
     {
-      id: 'nav-link-2',
+      id: 'Works',
       name: 'Works',
       link: '/works',
     },
     {
-      id: 'nav-link-3',
+      id: 'Contact',
       name: 'Contact',
       link: '/contact',
     },
@@ -41,7 +46,7 @@ const Navbar = () => {
         <div className="md:flex justify-between sm:hidden">
           <div className="md:flex items-center sm:hidden">
             <a href="/">
-              <Image src="/default-monochrome-black.svg" width={75} height={75} className="hover:cursor-pointer" />
+              <Image src="/default-monochrome-black.svg" alt="Software Engineer" width={75} height={75} className="hover:cursor-pointer" />
             </a>
           </div>
           <div className="flex lg:space-x-7" />
@@ -67,7 +72,7 @@ const Navbar = () => {
           <div className="flex flex-1 justify-between px-5 items-center">
             <button onClick={toggleMenu} type="button"> <HiMenu className="h-8 w-8 text-black" /> </button>
             <a href="/">
-              <Image src="/default-monochrome-black.svg" width={50} height={50} />
+              <Image src="/default-monochrome-black.svg" alt="Software Engineer" width={50} height={50} />
             </a>
           </div>
           <ul className="" style={{ display: open ? 'flex' : 'none' }}>

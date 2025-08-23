@@ -9,22 +9,26 @@ const ExperiseSection = ({ expertiseSection }) => {
   const titleImgSrc = doc?.imageUrl || (doc?.image ? urlFor(doc.image).fit('max').url() : '');
 
   return (
-    <section>
+    <section
+      className="mb-24"
+      data-aos="zoom-in"
+      data-aos-duration="1000"
+    >
       <h1 className="test text-green-700 text-2xl md:text-3xl font-bold mb-2 mt-5 pl-5">
         {doc?.title || 'Untitled'}
       </h1>
 
-      <div className="flex sm:flex-col md:flex-row ">
+      <div className="flex sm:flex-col-reverse md:flex-row sm:mx-5">
         <div className="md:w-[50%] sm:w-[100%]">
           {items.map((it, idx) => {
             const slug = it?.slug?.current || `item-${idx}`;
             // Prefer GROQ-expanded URL; fall back to asset.url if you expanded elsewhere
-            const imgSrc = it?.imageUrl || (it?.image ? urlFor(it.image).width(350).fit('max').url() : '');
+            const imgSrc = it?.imageUrl || (it?.image ? urlFor(it.image).width(150).fit('max').url() : '');
             const alt = it?.image?.alt || it?.subtitle || 'Expertise image';
             const lines = Array.isArray(it?.text) ? it.text : [];
 
             return (
-              <article id={`expertise-${slug}`} key={slug} className="w-full mt-5">
+              <article id={`expertise-${slug}`} key={slug} className="w-full mt-12">
 
                 {/* Image left, text right; stacks on small screens */}
                 <div className="flex gap-5">
@@ -34,7 +38,7 @@ const ExperiseSection = ({ expertiseSection }) => {
                         src={imgSrc}
                         alt={alt}
                         loading="lazy"
-                        className="max-w-[150px] h-auto rounded-full border border-green-700 object-cover"
+                        className="max-w-[75px] min-w-[75px] h-auto rounded-full border border-green-700 object-cover"
                       />
                     ) : (
                       <div
@@ -65,12 +69,12 @@ const ExperiseSection = ({ expertiseSection }) => {
             );
           })}
         </div>
-        <div className="md:w-[50%] sm:w-[100%]">
+        <div className="md:w-[50%] sm:w-[100%] m-auto">
           <img
             src={titleImgSrc}
             alt="test"
             loading="lazy"
-            className="w-[100%] h-auto object-cover"
+            className="w-[90%] h-auto object-cover"
           />
         </div>
       </div>
