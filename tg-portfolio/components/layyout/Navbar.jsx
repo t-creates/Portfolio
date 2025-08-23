@@ -19,13 +19,13 @@ const Navbar = () => {
       link: '/#expertise',
     },
     {
-      id: 'Skills',
-      name: 'Skills',
-      link: '/#experience',
+      id: 'Toolbox',
+      name: 'Toolbox',
+      link: '/#toolbox',
     },
     {
-      id: 'Works',
-      name: 'Works',
+      id: 'Projects',
+      name: 'Projects',
       link: '/works',
     },
     {
