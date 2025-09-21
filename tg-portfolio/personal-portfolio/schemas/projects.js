@@ -8,7 +8,56 @@ export default {
       title: 'Name',
       type: 'string',
     },
-
+    {
+      name: 'projectTypeGroup',
+      title: 'Project Type',
+      type: 'object',
+      fields: [
+        {
+          name: 'predefinedType',
+          title: 'Select Project Type',
+          type: 'string',
+          options: {
+            list: [
+              { title: 'Web Development', value: 'Web Development' },
+              { title: 'Mobile App', value: 'Mobile App' },
+              { title: 'E-commerce', value: 'E-commerce' },
+              { title: 'Landing Page', value: 'Landing Page' },
+              { title: 'Blog/CMS', value: 'Blog/CMS' },
+              { title: 'GIS Mapping', value: 'GIS Mapping' },
+              { title: 'API Development', value: 'API Development' },
+              { title: 'Data Processing', value: 'Data Processing' },
+              { title: 'Custom', value: 'Custom' }
+            ],
+            layout: 'dropdown'
+          },
+          validation: Rule => Rule.required()
+        },
+        {
+          name: 'customType',
+          title: 'Custom Project Type',
+          type: 'string',
+          hidden: ({ parent }) => parent?.predefinedType !== 'custom',
+          validation: Rule => Rule.custom((field, context) => {
+            if (context.parent?.predefinedType === 'custom' && !field) {
+              return 'Custom project type is required when "Custom" is selected'
+            }
+            return true
+          })
+        }
+      ],
+      preview: {
+        select: {
+          predefined: 'predefinedType',
+          custom: 'customType'
+        },
+        prepare({ predefined, custom }) {
+          return {
+            title: predefined === 'Custom' ? custom : predefined
+          }
+        }
+      }
+    },
     {
       name: 'description',
       title: 'Description',

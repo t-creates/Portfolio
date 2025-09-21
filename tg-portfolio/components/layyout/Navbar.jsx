@@ -26,7 +26,8 @@ const Navbar = () => {
     {
       id: 'Projects',
       name: 'Projects',
-      link: '/works',
+      link: '/#projects',
+      /* link: '/works', */
     },
     {
       id: 'Contact',
