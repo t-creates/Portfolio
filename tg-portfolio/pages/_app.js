@@ -21,8 +21,8 @@ const MyApp = ({ Component, pageProps }) => {
   const DESCRIPTION = 'Portfolio of Travis Geislinger: JavaScript, C#, .NET, SQL, React/Next.js. See projects, clean code, and GitHub @t-creates.';
 
   useEffect(() => {
-    // fetch('https://travisg.tech')
-    fetch('http://localhost:3000/')
+    fetch('https://travisg.tech')
+      // fetch('http://localhost:3000/')
       // .then((response) => response.json())
       .then((siteData) => {
         // eslint-disable-next-line no-console
