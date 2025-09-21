@@ -103,17 +103,24 @@ const Home = ({ hero, projects, techno, /* ex, */ expertise }) => {
     </div>
 */}
       {/* New Projects */}
-      <div className="mt-10 md:px-6 lg:px-16 sm:p-1 sm:pt-11">
+      <div
+        className="mt-10 md:px-6 lg:px-16 sm:p-1 sm:pt-11"
+        id="projects"
+      >
         <div className="lg:mx-24 sm:mx-0">
           <h1
             className="aboutTitle text-black sm:text-4xl md:text-5xl font-bold pb-5"
             data-aos="fade-up"
             data-aos-duration="800"
-            id="projects"
           >Projects
           </h1>
           {/* Project Filters */}
-          <div id="project-filters" className="flex w-full justify-evenly items-center">
+          <div
+            id="project-filters"
+            className="flex w-full justify-evenly items-center"
+            data-aos="fade-up"
+            data-aos-duration="800"
+          >
             <ProjectTypeFilter
               projects={projects}
               selectedType={selectedType}
@@ -123,7 +130,6 @@ const Home = ({ hero, projects, techno, /* ex, */ expertise }) => {
           <div
             className="lg:grid lg:grid-cols-3 sm:grid-cols-1 md:flex sm:grid gap-5
           justify-between w-full h-full scrollbar-hide flex-wrap"
-
           >
             {/* New Projects */}
             {filteredProjects?.map((project) => (
@@ -139,7 +145,7 @@ const Home = ({ hero, projects, techno, /* ex, */ expertise }) => {
               data-aos-duration="800"
               href="/works"
               className="bg-green-700/100 text-white text-lg font-semibold hover:bg-black py-4 px-4 border-2
-            hover:border-green-700/90 border-transparent rounded w-60 m-2 mt-9 text-center test z-10"
+            hover:border-green-700/90 border-transparent rounded w-60 m-2 mt-9 text-center test z-10 hidden"
             >View All Projects
             </a>
           </div>
