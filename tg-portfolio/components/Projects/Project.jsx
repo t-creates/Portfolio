@@ -19,7 +19,6 @@ const Project = ({ projects: { image, name, sourceCode, website, description, ne
       data-aos="fade-up" // <- valid animation name
       data-aos-delay={String(delay)} // must be a string
       data-aos-duration="700"
-      className="max"
     >
       <div
         className={`rounded-md flex flex-1 flex-col bg-neutral/30 md:mt-5 shadow-xl max-w-[400px] h-[375px]
