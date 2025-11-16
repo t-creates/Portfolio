@@ -54,7 +54,6 @@ const Project = ({ projects: { image, name, sourceCode, website, description, ne
             {name}
             {neww ? <div className="badge badge-secondary bg-green-700/90 text-xs border-none test">NEW</div> : null}
           </h2>
-          <h3 className="pt-2 pb-5 font-medium text-green-700/90 text-base">{ }</h3>
           <p className="text-black/70 pb-3 test"> {description}</p>
           {/* <div className="h-fit flex items-center flex-wrap gap-1 justify-end p-2">
         {badge.map((badges, i) => (
