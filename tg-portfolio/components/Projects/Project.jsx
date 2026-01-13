@@ -13,6 +13,14 @@ Add multiple tags
 const Project = ({ projects: { image, name, sourceCode, website, description, neww }, idx }) => {
   const [show, setShow] = useState(false);
   const delay = (idx % 6) * 75;
+  const imageUrl = image
+    ? urlFor(image)
+      .width(600)
+      .height(350)
+      .fit('crop')
+      .quality(90)
+      .url()
+    : '';
 
   return (
     <article
@@ -21,7 +29,7 @@ const Project = ({ projects: { image, name, sourceCode, website, description, ne
       data-aos-duration="700"
     >
       <div
-        className={`rounded-md flex flex-1 flex-col bg-neutral/30 md:mt-5 shadow-xl max-w-[400px] h-[375px]
+        className={`rounded-md flex flex-1 flex-col bg-neutral/30 md:mt-5 shadow-xl max-w-[400px] min-h-[375px]
      ${show ? 'relative' : ''}`}
         onMouseEnter={() => setShow(true)}
         onMouseLeave={() => setShow(false)}
@@ -46,10 +54,14 @@ const Project = ({ projects: { image, name, sourceCode, website, description, ne
             </button>
           </a>
         </span>
-        <div className="relative w-full h-[233px]">
-          <img src={urlFor(image)} alt={name} className="rounded-t-md object-fill h-[233px]" />
+        <div className="relative w-full h-[233px] overflow-hidden rounded-t-md bg-white">
+          {imageUrl ? (
+            <img src={imageUrl} alt={name} className="h-full w-full object-cover" />
+          ) : (
+            <div className="h-full w-full bg-neutral/40" />
+          )}
         </div>
-        <div className="pt-3 px-3 flex flex-col justify-between h-[67px]">
+        <div className="pt-3 px-3 flex flex-col justify-between flex-1 gap-2">
           <h2 className="text-2xl flex flex-1 justify-between font-medium text-black aboutTitle">
             {name}
             {neww ? <div className="badge badge-secondary bg-green-700/90 text-xs border-none test">NEW</div> : null}

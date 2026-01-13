@@ -5,10 +5,18 @@ import { urlFor } from '../../utils/client';
 
 const Projects = ({ projects: { image, name, sourceCode, website, description, neww } }) => {
   const [show, setShow] = useState(false);
+  const imageUrl = image
+    ? urlFor(image)
+      .width(600)
+      .height(350)
+      .fit('crop')
+      .quality(90)
+      .url()
+    : '';
 
   return (
     <div
-      className={`rounded-md flex flex-1 flex-col bg-neutral/30 md:mt-5 shadow-xl max-w-[450px] h-[333px]
+      className={`rounded-md flex flex-1 flex-col bg-neutral/30 md:mt-5 shadow-xl max-w-[450px] min-h-[333px]
      ${show ? 'relative' : ''}`}
       onMouseEnter={() => setShow(true)}
       onMouseLeave={() => setShow(false)}
@@ -33,10 +41,14 @@ const Projects = ({ projects: { image, name, sourceCode, website, description, n
           </button>
         </a>
       </span>
-      <div className="relative w-full h-[233px]">
-        <img src={urlFor(image)} alt={name} className="rounded-t-md object-fill h-[233px]" />
+      <div className="relative w-full h-[233px] overflow-hidden rounded-t-md bg-white">
+        {imageUrl ? (
+          <img src={imageUrl} alt={name} className="h-full w-full object-cover" />
+        ) : (
+          <div className="h-full w-full bg-neutral/40" />
+        )}
       </div>
-      <div className="pt-3 px-3 flex flex-col justify-between h-[67px]">
+      <div className="pt-3 px-3 flex flex-col justify-between flex-1 gap-2">
         <h2 className="text-2xl flex flex-1 justify-between font-medium text-black aboutTitle">
           {name}
           {neww ? <div className="badge badge-secondary bg-green-700/90 text-xs border-none test">NEW</div> : null}
