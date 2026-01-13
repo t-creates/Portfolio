@@ -129,7 +129,7 @@ const Home = ({ hero, projects, techno, /* ex, */ expertise }) => {
           </div>
           <div
             className="lg:grid lg:grid-cols-3 sm:grid-cols-1 md:flex sm:grid gap-5
-          justify-between w-full h-full scrollbar-hide flex-wrap"
+          justify-between items-stretch w-full h-full scrollbar-hide flex-wrap"
           >
             {/* New Projects */}
             {filteredProjects?.map((project) => (

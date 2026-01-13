@@ -16,7 +16,7 @@ const Projects = ({ projects: { image, name, sourceCode, website, description, n
 
   return (
     <div
-      className={`rounded-md flex flex-1 flex-col bg-neutral/30 md:mt-5 shadow-xl max-w-[450px] min-h-[333px]
+      className={`rounded-md flex flex-col h-full bg-neutral/30 md:mt-5 shadow-xl max-w-[450px] min-h-[333px]
      ${show ? 'relative' : ''}`}
       onMouseEnter={() => setShow(true)}
       onMouseLeave={() => setShow(false)}

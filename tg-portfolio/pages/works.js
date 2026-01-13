@@ -9,7 +9,7 @@ const Works = ({ projects }) => (
       md:text-left sm:text-center tracking-in-expand "
       >Projects
       </h1>
-      <div className="grid md:grid-cols-3 gap-5 grid-cols-1">
+      <div className="grid md:grid-cols-3 gap-5 grid-cols-1 items-stretch">
         {projects?.map((project) => <Projects key={project._id} projects={project} />)}
       </div>
     </div>

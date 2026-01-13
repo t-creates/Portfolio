@@ -24,12 +24,13 @@ const Project = ({ projects: { image, name, sourceCode, website, description, ne
 
   return (
     <article
+      className="h-full"
       data-aos="fade-up" // <- valid animation name
       data-aos-delay={String(delay)} // must be a string
       data-aos-duration="700"
     >
       <div
-        className={`rounded-md flex flex-1 flex-col bg-neutral/30 md:mt-5 shadow-xl max-w-[400px] min-h-[375px]
+        className={`rounded-md flex flex-col h-full bg-neutral/30 md:mt-5 shadow-xl max-w-[400px] min-h-[375px]
      ${show ? 'relative' : ''}`}
         onMouseEnter={() => setShow(true)}
         onMouseLeave={() => setShow(false)}
