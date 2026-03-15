@@ -124,8 +124,10 @@ const Toolbox = ({ techno = [] }) => {
           .map(renderCategoryCard)}
       </div>
 
-      <div className="mt-8 hidden gap-6 md:grid xl:grid-cols-3">
-        {grouped.map(renderCategoryCard)}
+      <div className="mt-8 hidden md:block">
+        <div className="grid gap-6 xl:grid-cols-3">
+          {grouped.map(renderCategoryCard)}
+        </div>
       </div>
     </motion.section>
   );
