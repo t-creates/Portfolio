@@ -149,67 +149,67 @@ const Project = ({ projects, idx = 0 }) => {
             {detailsOpen ? (
               <motion.div className="fixed inset-0 z-40 flex items-center justify-center bg-black/80 px-3 py-6" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
                 <motion.div className="relative w-full max-w-6xl max-h-[95vh] overflow-y-auto rounded-3xl bg-white p-6 shadow-2xl" initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }} exit={{ opacity: 0, scale: 0.95 }}>
-              <button
-                type="button"
-                className="absolute right-6 top-6 rounded-full border border-black/10 p-2 text-black hover:bg-black hover:text-white transition"
-                onClick={() => setDetailsOpen(false)}
-              >
-                <FaTimes />
-              </button>
-              <div className="grid gap-6 lg:grid-cols-2">
-                <div className="flex flex-col gap-4">
-                  <h3 className="text-xl font-semibold text-black">Media</h3>
-                  <Carousel
-                    showThumbs={false}
-                    showStatus={false}
-                    infiniteLoop
-                    autoPlay={galleryImages.length > 1}
-                    interval={5000}
-                    swipeable
-                    className="rounded-2xl overflow-hidden"
+                  <button
+                    type="button"
+                    className="absolute right-6 top-6 rounded-full border border-black/10 p-2 text-black hover:bg-black hover:text-white transition"
+                    onClick={() => setDetailsOpen(false)}
                   >
-                    {galleryImages.map((media) => (
-                      <div key={media.src}>
-                        <img src={media.src} alt={media.alt} className="rounded-2xl object-cover max-h-[360px]" />
+                    <FaTimes />
+                  </button>
+                  <div className="grid gap-6 lg:grid-cols-2">
+                    <div className="flex flex-col gap-4">
+                      <h3 className="text-xl font-semibold text-black">Media</h3>
+                      <Carousel
+                        showThumbs={false}
+                        showStatus={false}
+                        infiniteLoop
+                        autoPlay={galleryImages.length > 1}
+                        interval={5000}
+                        swipeable
+                        className="rounded-2xl overflow-hidden"
+                      >
+                        {galleryImages.map((media) => (
+                          <div key={media.src}>
+                            <img src={media.src} alt={media.alt} className="rounded-2xl object-cover max-h-[360px]" />
+                          </div>
+                        ))}
+                      </Carousel>
+                    </div>
+                    <div className="flex flex-col gap-4">
+                      <h3 className="text-xl font-semibold text-black">Details</h3>
+                      <p className="text-black/70">{description || 'Detailed project notes are being prepared.'}</p>
+                      {featureList.length ? (
+                        <ul className="space-y-2 text-black/80">
+                          {featureList.map((feature) => (
+                            <li key={feature} className="flex gap-3 text-sm">
+                              <span className="mt-2 h-1.5 w-1.5 rounded-full bg-green-600" />
+                              <span>{feature}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      ) : null}
+                      <div className="flex flex-wrap gap-2">
+                        {combinedTags.map((tag) => (
+                          <span key={`${name}-${tag}`} className="rounded-full border border-black/10 px-3 py-1 text-xs uppercase tracking-[0.2em] text-black/60">
+                            {tag}
+                          </span>
+                        ))}
                       </div>
-                    ))}
-                  </Carousel>
-                </div>
-                <div className="flex flex-col gap-4">
-                  <h3 className="text-xl font-semibold text-black">Details</h3>
-                  <p className="text-black/70">{description || 'Detailed project notes are being prepared.'}</p>
-                  {featureList.length ? (
-                    <ul className="space-y-2 text-black/80">
-                      {featureList.map((feature) => (
-                        <li key={feature} className="flex gap-3 text-sm">
-                          <span className="mt-2 h-1.5 w-1.5 rounded-full bg-green-600" />
-                          <span>{feature}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  ) : null}
-                <div className="flex flex-wrap gap-2">
-                  {combinedTags.map((tag) => (
-                      <span key={`${name}-${tag}`} className="rounded-full border border-black/10 px-3 py-1 text-xs uppercase tracking-[0.2em] text-black/60">
-                        {tag}
-                      </span>
-                    ))}
+                    </div>
                   </div>
-                </div>
-              </div>
-              {videoSrc ? (
-                <div className="mt-8">
-                  <h3 className="text-xl font-semibold text-black mb-3">Demo Video</h3>
-                  <video
-                    src={videoSrc}
-                    controls
-                    className="w-full rounded-2xl border border-black/10 bg-black/5"
-                    poster={galleryImages[0]?.src || ''}
-                  >
-                    <track kind="captions" />
-                  </video>
-                </div>
-              ) : null}
+                  {videoSrc ? (
+                    <div className="mt-8">
+                      <h3 className="text-xl font-semibold text-black mb-3">Demo Video</h3>
+                      <video
+                        src={videoSrc}
+                        controls
+                        className="w-full rounded-2xl border border-black/10 bg-black/5"
+                        poster={galleryImages[0]?.src || ''}
+                      >
+                        <track kind="captions" />
+                      </video>
+                    </div>
+                  ) : null}
                 </motion.div>
               </motion.div>
             ) : null}
