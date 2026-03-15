@@ -1,0 +1,17 @@
+{"_id":"tech-javascript","_type":"technologies","name":"JavaScript","category":"Languages","proficiency":"Production"}
+{"_id":"tech-css","_type":"technologies","name":"CSS","category":"Languages","proficiency":"Production"}
+{"_id":"tech-sql-server","_type":"technologies","name":"SQL Server","category":"Data & Cloud","proficiency":"Production"}
+{"_id":"tech-dotnet","_type":"technologies","name":".NET","category":"Frameworks","proficiency":"Production"}
+{"_id":"tech-react","_type":"technologies","name":"React","category":"Frameworks","proficiency":"Production"}
+{"_id":"tech-nextjs","_type":"technologies","name":"Next.js","category":"Frameworks","proficiency":"Production"}
+{"_id":"tech-angular","_type":"technologies","name":"Angular","category":"Frameworks","proficiency":"Production"}
+{"_id":"tech-tailwind","_type":"technologies","name":"Tailwind CSS","category":"Frameworks","proficiency":"Production"}
+{"_id":"tech-framer-motion","_type":"technologies","name":"Framer Motion","category":"Frameworks","proficiency":"Production"}
+{"_id":"tech-sanity","_type":"technologies","name":"Sanity","category":"Frameworks","proficiency":"Production"}
+{"_id":"tech-supabase","_type":"technologies","name":"Supabase","category":"Data & Cloud","proficiency":"Production"}
+{"_id":"tech-azure","_type":"technologies","name":"Azure","category":"Data & Cloud","proficiency":"Production"}
+{"_id":"tech-vercel","_type":"technologies","name":"Vercel","category":"Data & Cloud","proficiency":"Production"}
+{"_id":"tech-leaflet","_type":"technologies","name":"Leaflet","category":"Visualization","proficiency":"Production"}
+{"_id":"tech-datatables","_type":"technologies","name":"datatables.net","category":"Visualization","proficiency":"Production"}
+{"_id":"tech-google-charts","_type":"technologies","name":"Google Charts","category":"Visualization","proficiency":"Production"}
+{"_id":"tech-chartjs","_type":"technologies","name":"Chart.js","category":"Visualization","proficiency":"Production"}

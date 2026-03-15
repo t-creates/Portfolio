@@ -12,6 +12,13 @@ export default {
       validation: (Rule) => Rule.required(),
     },
     {
+      name: 'description',
+      title: 'Description',
+      type: 'text',
+      rows: 4,
+      description: 'Paragraph shown under the section title.',
+    },
+    {
       name: 'image',
       title: 'Image',
       type: 'image',
@@ -25,6 +32,33 @@ export default {
         },
       ],
       validation: (Rule) => Rule.required(),
+    },
+    {
+      name: 'metrics',
+      title: 'Metric Tiles',
+      type: 'array',
+      description: 'Optional KPI/value pairs rendered as cards.',
+      of: [
+        {
+          name: 'metric',
+          title: 'Metric',
+          type: 'object',
+          fields: [
+            {
+              name: 'label',
+              title: 'Label',
+              type: 'string',
+              validation: (Rule) => Rule.required(),
+            },
+            {
+              name: 'value',
+              title: 'Value',
+              type: 'string',
+              validation: (Rule) => Rule.required(),
+            },
+          ],
+        },
+      ],
     },
     // List of items (image, subtitle, text-list)
     {
@@ -57,6 +91,12 @@ export default {
               title: 'Subtitle',
               type: 'string',
               validation: (Rule) => Rule.required(),
+            },
+            {
+              name: 'headline',
+              title: 'Headline',
+              type: 'string',
+              description: 'Short supporting statement for the subtitle.',
             },
             {
               name: 'text',

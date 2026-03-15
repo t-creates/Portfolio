@@ -2,7 +2,11 @@
 export const getDisplayProjectType = (project) => {
   const group = project?.projectTypeGroup;
   if (!group) return null;
-  return group.predefinedType === 'custom' ? group.customType : group.predefinedType;
+  const predefined = group.predefinedType || '';
+  if (predefined && predefined.toLowerCase() === 'custom') {
+    return group.customType || null;
+  }
+  return predefined || null;
 };
 
 export const formatProjectTypeLabel = (slug) => {

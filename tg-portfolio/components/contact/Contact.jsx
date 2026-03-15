@@ -2,60 +2,88 @@ import React from 'react';
 import dynamic from 'next/dynamic';
 import { FaLinkedin, FaGithub } from 'react-icons/fa';
 import { AiOutlineMail } from 'react-icons/ai';
+import { motion } from 'framer-motion';
 import ContactForm from './ContactForm';
+
+const contactMethods = [
+  {
+    label: 'Email',
+    value: 'geislinger@proton.me',
+    href: 'mailto:geislinger@proton.me',
+    icon: AiOutlineMail,
+    description: 'Fastest way to reach me. Expect a reply within one business day.',
+  },
+  {
+    label: 'LinkedIn',
+    value: 'linkedin.com/in/travis-geislinger',
+    href: 'https://www.linkedin.com/in/travis-geislinger/',
+    icon: FaLinkedin,
+    description: 'Connect for professional inquiries or collaborations.',
+  },
+  {
+    label: 'GitHub',
+    value: 'github.com/t-creates',
+    href: 'https://www.github.com/t-creates',
+    icon: FaGithub,
+    description: 'Browse live repositories and recent experiments.',
+  },
+];
 
 const Contact = () => {
   const textToCopy = 'geislinger@proton.me';
   const CC = dynamic(() => import('../copyClipboard').then((mod) => mod.CopyClipboard), { ssr: false });
-  const showAlert = () => {
-    alert('Email copied to clipboard');
-  };
 
   return (
-    <div
-      className="mt-10 w-full h-auto"
-      data-aos="zoom-in"
-      data-aos-duration="1000"
-    >
-      <div className="sm:p-2">
-        <div className="flex flex-row gap-11 w-full lg:flex-nowrap sm:flex-wrap sm:justify-center">
-          <div className="flex flex-col md:items-start sm:items-center justify-between sm:gap-5 md:gap-0 w-full">
-            <div className="gap-5 flex flex-col">
-              <h3 className="font-bold text-black z-30 test md:text-4xl sm:text-xl ">How can I help you?</h3>
-              <p className="font-semibold test md:text-3xl sm:text-lg text-black/75 ">Fill in the form or drop an email</p>
-            </div>
-            <div className="p-2 border-2 border-neutral/30 flex flex-row items-center sm:justify-between sm:w-full md:w-fit rounded">
-              <AiOutlineMail className="text-4xl text-black cursor-pointer sm:pr-1 md:pr-3" />
-              <h2 className="email text-base cursor-pointer text-black">geislinger@proton.me</h2>
-              <div className="text-black rounded-lg sm:pl-1 md:pl-3">
-                <button type="button" onClick={showAlert} className="">
-                  <CC content={textToCopy} />
-                </button>
+    <motion.section className="mt-10 w-full" initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.3 }}>
+      <div className="rounded-[32px] bg-gradient-to-br from-black via-slate-900 to-emerald-900 text-white p-8 flex flex-col gap-10 lg:flex-row lg:items-start">
+        <div className="flex-1 space-y-6">
+          <div>
+            <p className="text-sm uppercase tracking-[0.4em] text-emerald-200/80">Contact</p>
+            <h3 className="aboutTitle text-4xl font-semibold mt-2">Let&apos;s build what&apos;s next</h3>
+            <p className="text-slate-200 mt-3">
+              Drop a message through the form or reach out directly through one of the channels below.
+            </p>
+          </div>
+          <div className="grid gap-4">
+            {contactMethods.map((method) => {
+              const Icon = method.icon;
+              return (
+                <motion.a
+                  key={method.label}
+                  href={method.href}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="flex items-center gap-4 rounded-2xl border border-white/10 bg-white/5 p-4 text-left hover:bg-white/10 transition"
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, amount: 0.3 }}
+                  transition={{ duration: 0.3 }}
+                >
+                  <div className="flex h-12 w-12 items-center justify-center rounded-full bg-white/10 text-2xl">
+                    <Icon />
+                  </div>
+                  <div>
+                    <p className="text-sm uppercase tracking-[0.3em] text-white/70">{method.label}</p>
+                    <p className="font-semibold text-white">{method.value}</p>
+                    <p className="text-sm text-white/70">{method.description}</p>
+                  </div>
+                </motion.a>
+              );
+            })}
+            <div className="flex items-center gap-3 text-sm text-white/70">
+              <span>Copy email</span>
+              <div className="rounded-full bg-white/10 px-3 py-1">
+                <CC content={textToCopy} />
               </div>
             </div>
-            <div className="p-2 border-2 border-neutral/30 md:block sm:hidden rounded">
-              <a target="_blank" rel="noreferrer" href="https://www.linkedin.com/in/travis-geislinger/">
-                <button type="button" className="flex flex-row items-center">
-                  <FaLinkedin className="text-4xl text-[#0A66C2] hover:text-black cursor-pointer sm:pr-1 md:pr-3" />
-                  <p className="email text-base cursor-pointer text-black">https://www.linkedin.com/in/travis-geislinger</p>
-                </button>
-              </a>
-            </div>
-            <div className="p-2 border-2 border-neutral/30 rounded">
-              <a target="_blank" rel="noreferrer" href="https://www.github.com/t-creates">
-                <button type="button" className="flex flex-row items-center">
-                  <FaGithub className="text-4xl text-black cursor-pointer sm:pr-1 md:pr-3" />
-                  <p className="email text-base cursor-pointer text-black">https://www.github.com/t-creates</p>
-                </button>
-              </a>
-            </div>
-          </div>
-          <div className="flex flex-col lg:items-end w-full lg:ml-16">
-            <ContactForm />
           </div>
         </div>
+        <div className="layered-card flex-1 rounded-3xl bg-white text-black shadow-2xl p-6">
+          <ContactForm />
+        </div>
       </div>
-    </div>
+    </motion.section>
   );
 };
+
 export default Contact;

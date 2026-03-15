@@ -14,4 +14,4 @@ export { default as ExperienceColumn } from './skills/ExperienceColumn';
 export { default as Project } from './Projects/Project';
 export { default as ProjectTypeButton } from './Projects/ProjectTypeFilter/ProjectTypeButton';
 export { default as ProjectTypeFilter } from './Projects/ProjectTypeFilter/ProjectTypeFilter';
-
+export { default as Toolbox } from './about/Toolbox';

@@ -1,10 +1,15 @@
+import path from 'path';
+import { fileURLToPath } from 'url';
+
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
-  swcMinify: true,
   images: {
     domains: ['cdn.sanity.io'],
   },
+  outputFileTracingRoot: path.join(__dirname),
   webpack: (config) => {
     config.module.rules.push({
       test: /\.pdf$/,
@@ -19,4 +24,4 @@ const nextConfig = {
   },
 };
 
-module.exports = nextConfig;
+export default nextConfig;

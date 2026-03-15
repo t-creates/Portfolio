@@ -1,150 +1,138 @@
 import React, { useState } from 'react';
 
+const initialForm = {
+  name: '',
+  email: '',
+  subject: '',
+  message: '',
+  company: '',
+};
+
 const ContactForm = () => {
-  const [form, setForm] = useState({
-    name: '',
-    email: '',
-    subject: '',
-    message: '',
-  });
+  const [form, setForm] = useState(initialForm);
+  const [status, setStatus] = useState({ type: '', message: '' });
+  const [submitting, setSubmitting] = useState(false);
 
-  // Setting success or failure messages states
-  const [showMessage, setShowMessage] = useState({
-    type: '',
-    message: '',
-  });
-
-  // Handling Form Submit
-  const handleSubmit = async (e) => {
-    e.preventDefault();
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    setSubmitting(true);
+    setStatus({ type: '', message: '' });
 
     const res = await fetch('/api/sendgrid', {
-      body: JSON.stringify({
-        name: form.name,
-        email: form.email,
-        subject: form.subject,
-        message: form.message,
-      }),
-      headers: {
-        'Content-Type': 'application/json',
-      },
+      body: JSON.stringify(form),
+      headers: { 'Content-Type': 'application/json' },
       method: 'POST',
     });
 
     const { error } = await res.json();
     if (error) {
-      // add timeout to show message
-      setShowMessage({
-        type: 'failure',
-        message: 'Oops! Something went wrong, please try again.',
-      });
-      // Reset form fields
-      setForm({
-        name: '',
-        email: '',
-        subject: '',
-        message: '',
-      });
-      return;
+      setStatus({ type: 'error', message: 'Something went wrong. Please try again or email me directly.' });
+    } else {
+      setStatus({ type: 'success', message: 'Thanks for reaching out — I will reply shortly!' });
+      setForm(initialForm);
     }
-    // add a timeout for the success message
-    setShowMessage({
-      type: 'success',
-      message: 'Thank you! Your Message has been delivered.',
-    });
-    // Reset form fields
-    setForm({
-      name: '',
-      email: '',
-      subject: '',
-      message: '',
-    });
+    setSubmitting(false);
+  };
+
+  const handleChange = (event) => {
+    const { name, value } = event.target;
+    setForm((prev) => ({ ...prev, [name]: value }));
   };
 
   return (
-    <div className="w-full">
-      <form onSubmit={handleSubmit} method="post" className="flex flex-col">
-        <div className="form-control w-full gap-5 mt-11 bg-neutral/30 p-10 rounded">
-          <div>
+    <form onSubmit={handleSubmit} className="space-y-5">
+      <input
+        type="text"
+        id="company"
+        name="company"
+        tabIndex="-1"
+        autoComplete="off"
+        className="hidden"
+        aria-hidden="true"
+        value={form.company}
+        onChange={handleChange}
+      />
+      <div className="grid gap-4 sm:grid-cols-2">
+        <div className="flex flex-col gap-2">
+          <label htmlFor="name" className="flex flex-col gap-2 text-sm font-semibold text-black/70">
+            <span>Full Name</span>
             <input
               type="text"
-              placeholder="Name..."
-              htmlFor="name"
               id="name"
               name="name"
-              className="input input-bordered w-full focus:ring-2 focus:ring-green-700/100 test text-white placeholder:text-white placeholder:test"
-              autoComplete="on"
+              placeholder="e.g. Jordan Smith"
+              className="rounded-2xl border border-black/10 bg-black/5 px-4 py-3 font-normal text-black focus:border-black focus:outline-none"
               required
               value={form.name}
-              onChange={(e) => setForm({ ...form, name: e.target.value })}
+              onChange={handleChange}
             />
-          </div>
-          <div>
+          </label>
+        </div>
+        <div className="flex flex-col gap-2">
+          <label htmlFor="email" className="flex flex-col gap-2 text-sm font-semibold text-black/70">
+            <span>Email</span>
             <input
               type="email"
-              placeholder="Email..."
-              htmlFor="email"
               id="email"
               name="email"
-              className="input input-bordered w-full focus:ring-2 focus:ring-green-700/100 test text-white placeholder:text-white placeholder:test"
-              autoComplete="on"
+              placeholder="you@example.com"
+              className="rounded-2xl border border-black/10 bg-black/5 px-4 py-3 font-normal text-black focus:border-black focus:outline-none"
               required
               value={form.email}
-              onChange={(e) => setForm({ ...form, email: e.target.value })}
+              onChange={handleChange}
             />
-          </div>
-          <div>
-            <input
-              type="text"
-              placeholder="Subject..."
-              htmlFor="email"
-              id="email"
-              name="email"
-              className="input input-bordered w-full focus:ring-2 focus:ring-green-700/100 test placeholder:text-white placeholder:test"
-              autoComplete="on"
-              required
-              value={form.subject}
-              onChange={(e) => setForm({ ...form, subject: e.target.value })}
-            />
-          </div>
-          <div>
-            <textarea
-              className="textarea textarea-bordered h-24 focus:ring-2 focus:ring-green-700/100 w-full test text-white placeholder:text-white placeholder:test"
-              placeholder="Message..."
-              htmlFor="message"
-              id="message"
-              name="message"
-              minLength="10"
-              required
-              value={form.message}
-              onChange={(e) => setForm({ ...form, message: e.target.value })}
-            />
-          </div>
-          <div className="flex justify-center flex-wrap">
-            <button
-              type="submit"
-              className="btn md:btn-wide sm:w-36 bg-green-700/100 font-semibold
-                    text-white hover:bg-black py-2 px-4 border-2
-                       hover:border-green-700/90 rounded border-transparent
-                      focus:ring-2 focus:ring-green-300/100 focus:outline-none
-                      disabled:opacity-75 disabled:cursor-not-allowed test"
-            >SEND
-            </button>
-            <div className="text-left">
-              {showMessage.type === 'success' ? (
-                <p className="text-green-900 font-semibold text-sm mx-2 pt-5">
-                  {showMessage.message}
-                </p>
-              ) : (
-                <p className="text-red-900 font-semibold text-sm mx-2 pt-5">
-                  {showMessage.message}
-                </p>
-              )}
-            </div>
-          </div>
+          </label>
         </div>
-      </form>
-    </div>
+      </div>
+
+      <div className="flex flex-col gap-2">
+        <label htmlFor="subject" className="flex flex-col gap-2 text-sm font-semibold text-black/70">
+          <span>Project or role</span>
+          <input
+            type="text"
+            id="subject"
+            name="subject"
+            placeholder="Website build, dashboard, consulting, or freelance support"
+            className="rounded-2xl border border-black/10 bg-black/5 px-4 py-3 font-normal text-black focus:border-black focus:outline-none"
+            required
+            value={form.subject}
+            onChange={handleChange}
+          />
+        </label>
+      </div>
+
+      <div className="flex flex-col gap-2">
+        <label htmlFor="message" className="flex flex-col gap-2 text-sm font-semibold text-black/70">
+          <span>Message</span>
+          <textarea
+            id="message"
+            name="message"
+            rows="5"
+            placeholder="Share a short brief, goals, current stack, and any timing requirements."
+            className="rounded-2xl border border-black/10 bg-black/5 px-4 py-3 font-normal text-black focus:border-black focus:outline-none"
+            required
+            value={form.message}
+            onChange={handleChange}
+          />
+        </label>
+      </div>
+
+      <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+        <button
+          type="submit"
+          className="rounded-full bg-black px-8 py-3 text-white font-semibold hover:bg-green-700 transition disabled:opacity-60"
+          disabled={submitting}
+        >
+          {submitting ? 'Sending...' : 'Send message'}
+        </button>
+        {status.message ? (
+          <p className={`text-sm font-medium ${status.type === 'success' ? 'text-green-700' : 'text-red-600'}`}>
+            {status.message}
+          </p>
+        ) : null}
+      </div>
+    </form>
   );
 };
+
 export default ContactForm;

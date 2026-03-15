@@ -1,34 +1,44 @@
 import React from 'react';
-import { FaLinkedin, FaGithub } from 'react-icons/fa';
 import Link from 'next/link';
+import { FaLinkedin, FaGithub } from 'react-icons/fa';
+
+const links = [
+  { label: 'Home', href: '/' },
+  { label: 'Expertise', href: '/#expertise' },
+  { label: 'Projects', href: '/#projects' },
+  { label: 'Contact', href: '/contact' },
+];
 
 const Footer = () => (
-  <div className="bg-[#fff] border-t-[1px] mt-20">
-    <footer className="p-5 pt-10">
-      <div className="lg:px-40">
-        <hr className="border-1 border-green-700/100" />
+  <footer className="mt-20 border-t border-black/10 bg-white">
+    <div className="mx-auto flex max-w-6xl flex-col gap-6 px-6 py-10 lg:flex-row lg:items-center lg:justify-between">
+      <div>
+        <p className="text-xs uppercase tracking-[0.4em] text-black/60">Travis Geislinger</p>
+        <h4 className="text-2xl font-semibold text-black">Building reliable software with care.</h4>
+        <p className="text-sm text-black/60">©
+          {' '}
+          {new Date().getFullYear()}
+          {' '}
+          Travis Geislinger. All rights reserved.
+        </p>
       </div>
-      <div className="flex justify-center items-center space-x-10 p-5">
-        <a target="_blank" rel="noreferrer" href="https://www.linkedin.com/in/travis-geislinger-889b81188/">
-          <button type="button">
-            <FaLinkedin className="text-4xl text-black hover:text-green-700/100 cursor-pointer hover:animate-pulse" />
-          </button>
-        </a>
-        <a target="_blank" rel="noreferrer" href="https://www.github.com/t-creates">
-          <button type="button">
-            <FaGithub className="text-4xl text-black hover:text-green-700/100 cursor-pointer hover:animate-pulse" />
-          </button>
-        </a>
-        <Link href="/contact">
-          <p className="font-bold text-black hover:text-green-700/100 cursor-pointer hidden md:flex hover:animate-pulse">CONTACT</p>
-        </Link>
-        <p className="font-extrabold hidden md:flex text-black"> | | </p>
-        <Link href="/#about">
-          <h3 className="font-bold text-black hover:text-green-700/100 cursor-pointer hidden md:flex hover:animate-pulse">Travis Geislinger</h3>
-        </Link>
+      <div className="flex flex-wrap items-center gap-6 text-sm font-semibold text-black/70">
+        {links.map((link) => (
+          <Link key={link.label} href={link.href}>
+            <span className="cursor-pointer hover:text-black">{link.label}</span>
+          </Link>
+        ))}
       </div>
-    </footer>
-  </div>
+      <div className="flex items-center gap-4">
+        <a href="https://www.linkedin.com/in/travis-geislinger-889b81188/" target="_blank" rel="noreferrer" className="rounded-full border border-black/10 p-3 text-2xl text-black hover:bg-black hover:text-white transition">
+          <FaLinkedin />
+        </a>
+        <a href="https://www.github.com/t-creates" target="_blank" rel="noreferrer" className="rounded-full border border-black/10 p-3 text-2xl text-black hover:bg-black hover:text-white transition">
+          <FaGithub />
+        </a>
+      </div>
+    </div>
+  </footer>
 );
 
 export default Footer;

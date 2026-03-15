@@ -41,57 +41,74 @@ const Navbar = () => {
   }
 
   return (
-    // Navbar
-    <nav className="w-full bg-[#fff] ">
-      <div className="mx-auto lg:px-48 md:px-16 border-b-[1px]">
-        <div className="md:flex justify-between sm:hidden">
-          <div className="md:flex items-center sm:hidden">
-            <a href="/">
-              <Image src="/default-monochrome-black.svg" alt="Software Engineer" width={75} height={75} className="hover:cursor-pointer" />
-            </a>
-          </div>
-          <div className="flex lg:space-x-7" />
-          <div className="md:flex items-center space-x-11">
-            {/* Logo */}
-            {navLinks.map((navItem) => (
-              <Link
-                href={navItem.link}
-                key={navItem.id}
+    <nav className="w-full sticky top-0 z-40 bg-white/90 backdrop-blur border-b border-black/10 shadow-sm">
+      <div className="mx-auto flex max-w-6xl items-center justify-between px-4 sm:px-6 lg:px-8 py-3">
+        <a href="/" className="flex items-center gap-2">
+          <Image src="/default-monochrome-black.svg" alt="Software Engineer" width={64} height={64} className="hover:opacity-80 transition" />
+          <span className="hidden md:block text-sm uppercase tracking-[0.3em] text-black/60">Travis Geislinger</span>
+        </a>
+
+        <div className="hidden md:flex items-center gap-8">
+          {navLinks.map((navItem) => (
+            <Link
+              href={navItem.link}
+              key={navItem.id}
+            >
+              <span
+                className={`aboutTitle cursor-pointer py-2 text-lg transition-colors ${
+                  router.pathname === navItem.link ? 'text-black' : 'text-gray-500 hover:text-black'
+                }`}
               >
-                <p
-                  className={`cursor-pointer py-4 px-2 lg:text-xl hover:animate-pulse hover:text-black z-10
-                aboutTitle ${router.pathname === navItem.link ? 'text-black' : 'text-gray-500'}`}
-                  href={navItem.link}
-                >{navItem.name}
-                </p>
-              </Link>
-            ))}
-          </div>
+                {navItem.name}
+              </span>
+            </Link>
+          ))}
+          <a
+            href="/travisGeislingerResume.pdf"
+            className="rounded-full border border-black/10 bg-black text-white px-5 py-2 text-sm font-semibold hover:bg-green-700/90 transition"
+          >
+            Resume
+          </a>
         </div>
-        {/* Mobile Menu */}
-        <div className="md:hidden fixed z-50 w-full p-3 border-b-[1px] text-black bg-[#fff]">
-          <div className="flex flex-1 justify-between px-5 items-center">
-            <button onClick={toggleMenu} type="button"> <HiMenu className="h-8 w-8 text-black" /> </button>
-            <a href="/">
-              <Image src="/default-monochrome-black.svg" alt="Software Engineer" width={50} height={50} />
-            </a>
-          </div>
-          <ul className="" style={{ display: open ? 'flex' : 'none' }}>
-            <div className="flex flex-1 justify-around">
-              {navLinks.map((navItem) => (
-                <Link href={navItem.link} key={navItem.id}>
-                  <button type="button">
-                    <li
-                      className="block test text-sm px-2 py-4 hover:bg-green-500 transition duration-300"
-                    >
-                      {navItem.name}
-                    </li>
-                  </button>
-                </Link>
-              ))}
-            </div>
-          </ul>
+
+        <button
+          type="button"
+          onClick={toggleMenu}
+          className="md:hidden inline-flex items-center justify-center rounded-full border border-black/10 p-2 text-black"
+        >
+          <HiMenu className="h-6 w-6" />
+        </button>
+      </div>
+
+      {/* Mobile Menu */}
+      <div className={`md:hidden fixed top-0 left-0 right-0 z-50 bg-white border-b border-black/10 shadow-lg transition-transform duration-300 ${open ? 'translate-y-0' : '-translate-y-full'}`}>
+        <div className="flex h-[var(--nav-height-mobile)] items-center justify-between px-4">
+          <a href="/">
+            <Image src="/default-monochrome-black.svg" alt="Software Engineer" width={50} height={50} />
+          </a>
+          <button type="button" onClick={toggleMenu}>
+            <HiMenu className="h-7 w-7 text-black" />
+          </button>
         </div>
+        <ul className="flex flex-col divide-y divide-black/5">
+          {navLinks.map((navItem) => (
+            <Link href={navItem.link} key={navItem.id}>
+              <li
+                className="px-6 py-4 text-base text-black/80 hover:bg-green-50"
+                onClick={() => setOpen(false)}
+              >
+                {navItem.name}
+              </li>
+            </Link>
+          ))}
+          <a
+            href="/travisGeislingerResume.pdf"
+            className="px-6 py-4 text-base font-semibold text-green-700"
+            onClick={() => setOpen(false)}
+          >
+            Resume
+          </a>
+        </ul>
       </div>
     </nav>
   );

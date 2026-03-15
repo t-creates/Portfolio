@@ -1,84 +1,118 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 import { urlFor } from '../lib/sanity.image';
+import { getExpertiseSectionCopy, getExpertiseItemCopy } from '../utils/expertiseContent';
 
 const ExperiseSection = ({ expertiseSection }) => {
-  // Accept either the doc itself or an array with a single doc
   const doc = Array.isArray(expertiseSection) ? expertiseSection[0] : (expertiseSection || {});
   const items = Array.isArray(doc.items) ? doc.items : [];
-
   const titleImgSrc = doc?.imageUrl || (doc?.image ? urlFor(doc.image).fit('max').url() : '');
 
+  const metrics = Array.isArray(doc?.metrics) && doc.metrics.length > 0
+    ? doc.metrics
+    : [];
+  const sectionDescription = getExpertiseSectionCopy(
+    doc?.title,
+    doc?.description || doc?.subtitle || '',
+  );
+
   return (
-    <section
-      className="mb-24"
-      data-aos="zoom-in"
-      data-aos-duration="1000"
+    <motion.section
+      className="mb-16 rounded-3xl border border-black/10 bg-white/80 p-6 shadow-lg backdrop-blur layered-card"
+      initial={{ opacity: 0, y: 40 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.3 }}
+      transition={{ duration: 0.6 }}
     >
-      <h1 className="test text-green-700 text-2xl md:text-3xl font-bold mb-2 mt-5 pl-5">
-        {doc?.title || 'Untitled'}
-      </h1>
-
-      <div className="flex sm:flex-col-reverse md:flex-row sm:mx-5">
-        <div className="md:w-[50%] sm:w-[100%]">
-          {items.map((it, idx) => {
-            const slug = it?.slug?.current || `item-${idx}`;
-            // Prefer GROQ-expanded URL; fall back to asset.url if you expanded elsewhere
-            const imgSrc = it?.imageUrl || (it?.image ? urlFor(it.image).width(150).fit('max').url() : '');
-            const alt = it?.image?.alt || it?.subtitle || 'Expertise image';
-            const lines = Array.isArray(it?.text) ? it.text : [];
-
-            return (
-              <article id={`expertise-${slug}`} key={slug} className="w-full mt-12">
-
-                {/* Image left, text right; stacks on small screens */}
-                <div className="flex gap-5">
-                  <div className="sm:col-span-4">
-                    {imgSrc ? (
-                      <img
-                        src={imgSrc}
-                        alt={alt}
-                        loading="lazy"
-                        className="max-w-[75px] min-w-[75px] h-auto rounded-full border border-green-700 object-cover"
-                      />
-                    ) : (
-                      <div
-                        className="xl:w-32 xl:h-32 lg:w-28 lg:h-28 sm:h-24 sm:w-24 bg-none"
-                      >
-                        <img src={urlFor(imgSrc)} alt={it?.subtitle || 'Untitled'} className="h-full w-full object-contain rounded-md bg-none" />
-                      </div>
-                    )}
-                  </div>
-
-                  <div className="flex flex-col">
-                    {/* Subtitle  */}
-                    <h2 className="text-lg md:text-xl font-semibold text-black/75 mb-2">
-                      {it?.subtitle || 'Untitled'}
-                    </h2>
-                    {lines.length > 0 ? (
-                      <div className="list-disc pl-4 text-sm leading-6 text-gray-800">
-                        {lines.map((line, i) => (
-                          <div key={`${slug}-${i}`}>{line}</div>
-                        ))}
-                      </div>
-                    ) : (
-                      <p className="text-gray-600 text-sm">No details provided.</p>
-                    )}
-                  </div>
+      <div className="flex flex-col gap-6 lg:flex-row">
+        <div className="flex-1 space-y-4">
+          <p className="text-xs uppercase tracking-[0.4em] text-green-700/80">Capability</p>
+          <h2 className="aboutTitle text-3xl font-bold text-black">
+            {doc?.title || 'Expertise area'}
+          </h2>
+          <p className="text-black/70 text-lg">
+            {sectionDescription}
+          </p>
+          {metrics.length ? (
+            <motion.div className="grid gap-4 sm:grid-cols-2" initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true, amount: 0.2 }} transition={{ duration: 0.5 }}>
+              {metrics.map((metric, index) => (
+                <div key={`${metric.label}-${index}`} className="rounded-2xl border border-dashed border-black/10 bg-white p-4 layered-card">
+                  <p className="text-xs uppercase tracking-[0.3em] text-black/50">{metric.label}</p>
+                  <p className="text-xl font-semibold text-black/80">{metric.value}</p>
                 </div>
-              </article>
-            );
-          })}
+              ))}
+            </motion.div>
+          ) : null}
         </div>
-        <div className="md:w-[50%] sm:w-[100%] m-auto">
-          <img
-            src={titleImgSrc}
-            alt="test"
-            loading="lazy"
-            className="w-[90%] h-auto object-cover"
-          />
+        <div className="flex-1 relative">
+          {titleImgSrc ? (
+            <img
+              src={titleImgSrc}
+              alt={doc?.title || 'Expertise visual'}
+              loading="lazy"
+              className="w-full h-full max-h-[320px] object-cover rounded-2xl border border-black/5 shadow-lg"
+            />
+          ) : (
+            <div className="w-full h-64 rounded-2xl border border-black/5 bg-[linear-gradient(135deg,rgba(34,197,94,0.12),rgba(15,23,42,0.04))] shadow-lg" />
+          )}
         </div>
       </div>
-    </section>
+
+      <div className="mt-8 grid gap-5 md:grid-cols-2">
+        {items.map((it, idx) => {
+          const slug = it?.slug?.current || `item-${idx}`;
+          const imgSrc = it?.imageUrl || (it?.image ? urlFor(it.image).width(200).fit('max').url() : '');
+          const alt = it?.image?.alt || it?.subtitle || 'Expertise image';
+          const itemCopy = getExpertiseItemCopy(it?.subtitle, it?.headline, it?.text);
+          const lines = itemCopy.text;
+
+          return (
+            <motion.article
+              key={slug}
+              id={`expertise-${slug}`}
+              className="rounded-2xl border border-black/5 bg-neutral-50/70 p-5 shadow-inner layered-card"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.2 }}
+              transition={{ duration: 0.4 }}
+            >
+              <div className="flex items-center gap-4">
+                {imgSrc ? (
+                  <img
+                    src={imgSrc}
+                    alt={alt}
+                    loading="lazy"
+                    className="h-16 w-16 rounded-xl border border-green-600/30 object-cover"
+                  />
+                ) : (
+                  <div className="h-16 w-16 rounded-xl border border-green-600/20 bg-green-50 text-sm font-semibold uppercase tracking-[0.2em] text-green-800 flex items-center justify-center">
+                    {it?.subtitle?.split(' ').map((word) => word[0]).join('').slice(0, 2) || 'EX'}
+                  </div>
+                )}
+                <div>
+                  <h3 className="text-lg font-semibold text-black">
+                    {it?.subtitle || 'Capability highlight'}
+                  </h3>
+                  <p className="text-sm text-black/60">
+                    {itemCopy.headline}
+                  </p>
+                </div>
+              </div>
+              {lines.length ? (
+                <ul className="mt-4 space-y-2 text-black/70">
+                  {lines.map((line, i) => (
+                    <li key={`${slug}-${i}`} className="flex gap-2 text-sm leading-relaxed">
+                      <span className="mt-2 h-1.5 w-1.5 rounded-full bg-green-600/70" />
+                      <span>{line}</span>
+                    </li>
+                  ))}
+                </ul>
+              ) : null}
+            </motion.article>
+          );
+        })}
+      </div>
+    </motion.section>
   );
 };
 

@@ -4,13 +4,12 @@ import Head from 'next/head';
 import Script from 'next/script';
 // eslint-disable-next-line import/no-unresolved
 import { Analytics } from '@vercel/analytics/react';
-import AOS from 'aos';
 
-import 'aos/dist/aos.css';
 import '../styles/globals.css';
 import Layout from '../components/layyout/Layout';
 
 const SITE_URL = 'https://travisg.tech';
+const OG_IMAGE = `${SITE_URL}/Travis%20Geislinger%20Software%20Developer.png`;
 
 const MyApp = ({ Component, pageProps }) => {
   // eslint-disable-next-line no-unused-vars
@@ -21,8 +20,8 @@ const MyApp = ({ Component, pageProps }) => {
   const DESCRIPTION = 'Portfolio of Travis Geislinger: JavaScript, C#, .NET, SQL, React/Next.js. See projects, clean code, and GitHub @t-creates.';
 
   useEffect(() => {
-    fetch('https://travisg.tech')
-      // fetch('http://localhost:3000/')
+    // fetch('https://travisg.tech')
+    fetch('http://localhost:3000/')
       // .then((response) => response.json())
       .then((siteData) => {
         // eslint-disable-next-line no-console
@@ -44,15 +43,9 @@ const MyApp = ({ Component, pageProps }) => {
   }, []);
 
   useEffect(() => {
-    AOS.init();
-  }, []);
-
-  useEffect(() => {
-    const body = document.querySelector('body');
-    if (body) {
-      body.removeAttribute('data-aos-easing');
-      body.removeAttribute('data-aos-delay');
-      body.removeAttribute('data-aos-duration');
+    const { documentElement } = document;
+    if (documentElement) {
+      documentElement.style.setProperty('scroll-behavior', 'smooth');
     }
   }, []);
 
@@ -65,12 +58,22 @@ const MyApp = ({ Component, pageProps }) => {
         <meta name="robots" content="index,follow" />
         <meta name="author" content="Travis Geislinger" />
         <meta name="theme-color" content="#15803D" />
+        <meta property="og:type" content="website" />
+        <meta property="og:site_name" content="Travis Geislinger" />
+        <meta property="og:title" content={TITLE} />
+        <meta property="og:description" content={DESCRIPTION} />
+        <meta property="og:url" content={SITE_URL} />
+        <meta property="og:image" content={OG_IMAGE} />
+        <meta property="og:image:alt" content="Travis Geislinger software developer resume cover" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={TITLE} />
+        <meta name="twitter:description" content={DESCRIPTION} />
+        <meta name="twitter:image" content={OG_IMAGE} />
         {/* eslint-disable-next-line react/no-invalid-html-attribute */}
         <link rel="me" href="https://github.com/t-creates" />
         <link rel="icon" href="/default-monochrome-white.svg" />
-        <link rel="stylesheet" href="bower_components/aos/dist/aos.css" />
-        <Script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js" />
       </Head>
+      <Script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js" strategy="afterInteractive" />
       {showLoading ? (
         <div
           className={`flex justify-center items-center fixed inset-0 z-50 transition-opacity duration-700 
@@ -97,7 +100,6 @@ const MyApp = ({ Component, pageProps }) => {
           />
         </>
       )}
-      <script src="bower_components/aos/dist/aos.js" />
     </div>
   );
 };

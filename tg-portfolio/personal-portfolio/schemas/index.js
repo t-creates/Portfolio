@@ -6,6 +6,7 @@ import testimonials from './testimonials'
 import projects from './projects'
 import technologies from './technologies'
 import expertise from './expertise'
+import services from './services'
 
 export const schemaTypes = [
   hero,
@@ -15,4 +16,5 @@ export const schemaTypes = [
   projects,
   technologies,
   expertise,
+  services,
 ]
