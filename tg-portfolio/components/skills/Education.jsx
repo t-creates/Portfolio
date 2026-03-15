@@ -7,7 +7,7 @@ const Education = ({ schools: { school, date, title, image } }) => (
   hover:shadow-2xl rounded-md"
   >
     <div className="w-24 mask mask-squircle">
-      <img src={urlFor(image)} alt="schoolz" />
+      {image ? <img src={urlFor(image).url()} alt={school || 'School'} /> : null}
     </div>
     <div className="text-xl text-black font-bold test">
       <h1 className="">{school}</h1>

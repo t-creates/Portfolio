@@ -12,34 +12,24 @@ const SITE_URL = 'https://travisg.tech';
 const OG_IMAGE = `${SITE_URL}/Travis%20Geislinger%20Software%20Developer.png`;
 
 const MyApp = ({ Component, pageProps }) => {
-  // eslint-disable-next-line no-unused-vars
-  const [data, setData] = useState(null);
   const [showLoading, setShowLoading] = useState(true);
   const [fadeOut, setFadeOut] = useState(false);
   const TITLE = 'Travis Geislinger | Full-Stack Developer';
   const DESCRIPTION = 'Portfolio of Travis Geislinger: JavaScript, C#, .NET, SQL, React/Next.js. See projects, clean code, and GitHub @t-creates.';
 
   useEffect(() => {
-    fetch('https://travisg.tech')
-      // fetch('http://localhost:3000/')
-      // .then((response) => response.json())
-      .then((siteData) => {
-        // eslint-disable-next-line no-console
-        console.log(siteData);
-        setData(siteData);
-        setFadeOut(true);
-        setTimeout(() => {
-          setShowLoading(false); // remove loader from DOM
-        }, 700);
-      })
-      .catch((error) => {
-        // eslint-disable-next-line no-console
-        console.error('error fetching data:', error);
-        setFadeOut(true);
-        setTimeout(() => {
-          setShowLoading(false); // remove loader from DOM
-        }, 700);
-      });
+    const fadeTimer = setTimeout(() => {
+      setFadeOut(true);
+    }, 150);
+
+    const hideTimer = setTimeout(() => {
+      setShowLoading(false);
+    }, 700);
+
+    return () => {
+      clearTimeout(fadeTimer);
+      clearTimeout(hideTimer);
+    };
   }, []);
 
   useEffect(() => {

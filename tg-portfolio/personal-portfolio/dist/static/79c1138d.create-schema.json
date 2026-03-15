@@ -1,0 +1,1131 @@
+[
+  {
+    "fields": [
+      {
+        "name": "title",
+        "type": "string"
+      },
+      {
+        "name": "name",
+        "type": "string"
+      },
+      {
+        "description": "One or two sentences about yourself, or a favourite quote/tagline.",
+        "name": "bio",
+        "type": "text"
+      },
+      {
+        "options": {
+          "hotspot": true
+        },
+        "name": "image",
+        "type": "image"
+      },
+      {
+        "validation": [
+          {
+            "rules": [
+              {
+                "flag": "uri",
+                "constraint": {
+                  "options": {
+                    "scheme": [
+                      "/^http$/",
+                      "/^https$/"
+                    ],
+                    "allowRelative": false,
+                    "relativeOnly": false,
+                    "allowCredentials": false
+                  }
+                }
+              }
+            ],
+            "level": "error"
+          }
+        ],
+        "name": "linkedin",
+        "type": "url",
+        "title": "LinkedIn"
+      },
+      {
+        "validation": [
+          {
+            "rules": [
+              {
+                "flag": "uri",
+                "constraint": {
+                  "options": {
+                    "scheme": [
+                      "/^http$/",
+                      "/^https$/"
+                    ],
+                    "allowRelative": false,
+                    "relativeOnly": false,
+                    "allowCredentials": false
+                  }
+                }
+              }
+            ],
+            "level": "error"
+          }
+        ],
+        "name": "github",
+        "type": "url"
+      },
+      {
+        "description": "Short statements that appear as bullet points in the hero intro.",
+        "of": [
+          {
+            "fields": [
+              {
+                "validation": [
+                  {
+                    "rules": [
+                      {
+                        "flag": "presence",
+                        "constraint": "required"
+                      }
+                    ],
+                    "level": "error"
+                  }
+                ],
+                "name": "text",
+                "type": "string"
+              }
+            ],
+            "type": "object",
+            "name": "highlight"
+          }
+        ],
+        "name": "highlights",
+        "type": "array"
+      },
+      {
+        "description": "Metrics rendered under the hero copy. Use them for KPIs, availability, or positioning.",
+        "of": [
+          {
+            "fields": [
+              {
+                "validation": [
+                  {
+                    "rules": [
+                      {
+                        "flag": "presence",
+                        "constraint": "required"
+                      }
+                    ],
+                    "level": "error"
+                  }
+                ],
+                "name": "label",
+                "type": "string"
+              },
+              {
+                "validation": [
+                  {
+                    "rules": [
+                      {
+                        "flag": "presence",
+                        "constraint": "required"
+                      }
+                    ],
+                    "level": "error"
+                  }
+                ],
+                "name": "value",
+                "type": "string"
+              },
+              {
+                "validation": [
+                  {
+                    "rules": [
+                      {
+                        "flag": "min",
+                        "constraint": 0
+                      },
+                      {
+                        "flag": "max",
+                        "constraint": 99
+                      }
+                    ],
+                    "level": "error"
+                  }
+                ],
+                "description": "Lower numbers show first in the grid.",
+                "name": "order",
+                "type": "number",
+                "title": "Display order"
+              }
+            ],
+            "type": "object",
+            "name": "stat"
+          }
+        ],
+        "name": "stats",
+        "type": "array",
+        "title": "Hero Stats"
+      }
+    ],
+    "name": "hero",
+    "type": "document"
+  },
+  {
+    "fields": [
+      {
+        "name": "title",
+        "type": "string"
+      },
+      {
+        "name": "School",
+        "type": "string",
+        "title": "School Name"
+      },
+      {
+        "options": {
+          "hotspot": true
+        },
+        "name": "image",
+        "type": "image"
+      },
+      {
+        "name": "date",
+        "type": "string"
+      }
+    ],
+    "name": "education",
+    "type": "document"
+  },
+  {
+    "fields": [
+      {
+        "name": "title",
+        "type": "string"
+      },
+      {
+        "name": "Company",
+        "type": "string",
+        "title": "Company Name"
+      },
+      {
+        "name": "date",
+        "type": "string"
+      },
+      {
+        "name": "experience",
+        "type": "text"
+      }
+    ],
+    "name": "experience",
+    "type": "document"
+  },
+  {
+    "fields": [
+      {
+        "name": "name",
+        "type": "string"
+      },
+      {
+        "name": "company",
+        "type": "string"
+      },
+      {
+        "description": "Client testimonial",
+        "name": "bio",
+        "type": "text"
+      },
+      {
+        "options": {
+          "hotspot": true
+        },
+        "name": "image",
+        "type": "image"
+      }
+    ],
+    "name": "testimonials",
+    "type": "document"
+  },
+  {
+    "fields": [
+      {
+        "validation": [
+          {
+            "rules": [
+              {
+                "flag": "presence",
+                "constraint": "required"
+              }
+            ],
+            "level": "error"
+          }
+        ],
+        "name": "name",
+        "type": "string"
+      },
+      {
+        "options": {
+          "source": "name",
+          "maxLength": 96
+        },
+        "validation": [
+          {
+            "rules": [
+              {
+                "flag": "custom"
+              }
+            ],
+            "level": "error"
+          }
+        ],
+        "name": "slug",
+        "type": "slug"
+      },
+      {
+        "validation": [
+          {
+            "rules": [
+              {
+                "flag": "presence",
+                "constraint": "required"
+              }
+            ],
+            "level": "error"
+          }
+        ],
+        "fields": [
+          {
+            "options": {
+              "list": [
+                {
+                  "title": "Web Development",
+                  "value": "web-development"
+                },
+                {
+                  "title": "Mobile App",
+                  "value": "mobile-app"
+                },
+                {
+                  "title": "E-commerce",
+                  "value": "ecommerce"
+                },
+                {
+                  "title": "Landing Page",
+                  "value": "landing-page"
+                },
+                {
+                  "title": "Blog / CMS",
+                  "value": "blog-cms"
+                },
+                {
+                  "title": "GIS Mapping",
+                  "value": "gis-mapping"
+                },
+                {
+                  "title": "API Development",
+                  "value": "api-development"
+                },
+                {
+                  "title": "Data Platform",
+                  "value": "data-platform"
+                },
+                {
+                  "title": "Automation & AI",
+                  "value": "automation-ai"
+                },
+                {
+                  "title": "Custom",
+                  "value": "custom"
+                }
+              ],
+              "layout": "dropdown"
+            },
+            "validation": [
+              {
+                "rules": [
+                  {
+                    "flag": "valid",
+                    "constraint": [
+                      "web-development",
+                      "mobile-app",
+                      "ecommerce",
+                      "landing-page",
+                      "blog-cms",
+                      "gis-mapping",
+                      "api-development",
+                      "data-platform",
+                      "automation-ai",
+                      "custom"
+                    ]
+                  },
+                  {
+                    "flag": "presence",
+                    "constraint": "required"
+                  }
+                ],
+                "level": "error"
+              }
+            ],
+            "name": "predefinedType",
+            "type": "string",
+            "title": "Select Project Type"
+          },
+          {
+            "validation": [
+              {
+                "rules": [
+                  {
+                    "flag": "custom"
+                  }
+                ],
+                "level": "error"
+              }
+            ],
+            "hidden": "conditional",
+            "name": "customType",
+            "type": "string",
+            "title": "Custom Project Type"
+          },
+          {
+            "description": "Additional filter chips (e.g., “AI”, “Internal tool”, “Design systems”).",
+            "of": [
+              {
+                "type": "string"
+              }
+            ],
+            "name": "secondaryTags",
+            "type": "array"
+          }
+        ],
+        "name": "projectTypeGroup",
+        "type": "object",
+        "title": "Project Type"
+      },
+      {
+        "description": "One or two sentences about the project.",
+        "name": "description",
+        "type": "text"
+      },
+      {
+        "options": {
+          "hotspot": true
+        },
+        "name": "image",
+        "type": "image",
+        "title": "Hero Image"
+      },
+      {
+        "of": [
+          {
+            "fields": [
+              {
+                "options": {
+                  "hotspot": true
+                },
+                "name": "image",
+                "type": "image"
+              },
+              {
+                "name": "headline",
+                "type": "string"
+              },
+              {
+                "name": "caption",
+                "type": "string"
+              }
+            ],
+            "type": "object",
+            "name": "galleryItem"
+          }
+        ],
+        "name": "gallery",
+        "type": "array"
+      },
+      {
+        "description": "Primary tags used for filtering (e.g., “React”, “AI”, “Design Systems”).",
+        "of": [
+          {
+            "type": "string"
+          }
+        ],
+        "name": "tags",
+        "type": "array"
+      },
+      {
+        "description": "Problem / approach / impact statements displayed inside the project modal.",
+        "of": [
+          {
+            "type": "string"
+          }
+        ],
+        "name": "features",
+        "type": "array",
+        "title": "Feature Bullets"
+      },
+      {
+        "of": [
+          {
+            "fields": [
+              {
+                "validation": [
+                  {
+                    "rules": [
+                      {
+                        "flag": "presence",
+                        "constraint": "required"
+                      }
+                    ],
+                    "level": "error"
+                  }
+                ],
+                "name": "label",
+                "type": "string"
+              },
+              {
+                "validation": [
+                  {
+                    "rules": [
+                      {
+                        "flag": "presence",
+                        "constraint": "required"
+                      }
+                    ],
+                    "level": "error"
+                  }
+                ],
+                "name": "value",
+                "type": "string"
+              }
+            ],
+            "type": "object",
+            "name": "fact"
+          }
+        ],
+        "name": "quickFacts",
+        "type": "array"
+      },
+      {
+        "validation": [
+          {
+            "rules": [
+              {
+                "flag": "uri",
+                "constraint": {
+                  "options": {
+                    "scheme": [
+                      "/^http$/",
+                      "/^https$/"
+                    ],
+                    "allowRelative": false,
+                    "relativeOnly": false,
+                    "allowCredentials": false
+                  }
+                }
+              }
+            ],
+            "level": "error"
+          }
+        ],
+        "name": "videoUrl",
+        "type": "url",
+        "title": "Demo Video URL"
+      },
+      {
+        "validation": [
+          {
+            "rules": [
+              {
+                "flag": "uri",
+                "constraint": {
+                  "options": {
+                    "scheme": [
+                      "/^http$/",
+                      "/^https$/"
+                    ],
+                    "allowRelative": false,
+                    "relativeOnly": false,
+                    "allowCredentials": false
+                  }
+                }
+              }
+            ],
+            "level": "error"
+          }
+        ],
+        "description": "Optional alt video (e.g., Loom).",
+        "name": "demoVideoUrl",
+        "type": "url",
+        "title": "Secondary video URL"
+      },
+      {
+        "options": {
+          "accept": "video/*"
+        },
+        "name": "demoVideo",
+        "type": "file",
+        "title": "Upload demo video"
+      },
+      {
+        "name": "neww",
+        "type": "boolean",
+        "title": "Mark as new"
+      },
+      {
+        "validation": [
+          {
+            "rules": [
+              {
+                "flag": "uri",
+                "constraint": {
+                  "options": {
+                    "scheme": [
+                      "/^http$/",
+                      "/^https$/"
+                    ],
+                    "allowRelative": false,
+                    "relativeOnly": false,
+                    "allowCredentials": false
+                  }
+                }
+              }
+            ],
+            "level": "error"
+          }
+        ],
+        "name": "sourceCode",
+        "type": "url"
+      },
+      {
+        "validation": [
+          {
+            "rules": [
+              {
+                "flag": "uri",
+                "constraint": {
+                  "options": {
+                    "scheme": [
+                      "/^http$/",
+                      "/^https$/"
+                    ],
+                    "allowRelative": false,
+                    "relativeOnly": false,
+                    "allowCredentials": false
+                  }
+                }
+              }
+            ],
+            "level": "error"
+          }
+        ],
+        "name": "website",
+        "type": "url"
+      },
+      {
+        "of": [
+          {
+            "type": "string"
+          }
+        ],
+        "name": "badge",
+        "type": "array",
+        "title": "Badges"
+      },
+      {
+        "description": "Lower numbers surface first.",
+        "name": "order",
+        "type": "number",
+        "title": "Display order"
+      }
+    ],
+    "name": "projects",
+    "type": "document"
+  },
+  {
+    "fields": [
+      {
+        "name": "name",
+        "type": "string"
+      },
+      {
+        "options": {
+          "hotspot": true
+        },
+        "name": "image",
+        "type": "image"
+      },
+      {
+        "options": {
+          "list": [
+            {
+              "title": "Languages",
+              "value": "Languages"
+            },
+            {
+              "title": "Frameworks",
+              "value": "Frameworks"
+            },
+            {
+              "title": "Cloud & Infrastructure",
+              "value": "Cloud & Infrastructure"
+            },
+            {
+              "title": "Data & Integration",
+              "value": "Data & Integration"
+            },
+            {
+              "title": "AI & Automation",
+              "value": "AI & Automation"
+            },
+            {
+              "title": "Visualization",
+              "value": "Visualization"
+            },
+            {
+              "title": "Tools",
+              "value": "Tools"
+            }
+          ],
+          "layout": "dropdown"
+        },
+        "name": "category",
+        "type": "string"
+      },
+      {
+        "name": "landingPage",
+        "type": "boolean"
+      },
+      {
+        "validation": [
+          {
+            "rules": [
+              {
+                "flag": "uri",
+                "constraint": {
+                  "options": {
+                    "scheme": [
+                      "/^http$/",
+                      "/^https$/"
+                    ],
+                    "allowRelative": false,
+                    "relativeOnly": false,
+                    "allowCredentials": false
+                  }
+                }
+              }
+            ],
+            "level": "error"
+          }
+        ],
+        "name": "link",
+        "type": "url"
+      },
+      {
+        "options": {
+          "list": [
+            {
+              "title": "Expert",
+              "value": "Expert"
+            },
+            {
+              "title": "Production",
+              "value": "Production"
+            },
+            {
+              "title": "Prototype",
+              "value": "Prototype"
+            },
+            {
+              "title": "Exploring",
+              "value": "Exploring"
+            }
+          ]
+        },
+        "name": "proficiency",
+        "type": "string",
+        "title": "Proficiency level"
+      },
+      {
+        "description": "Approximate count shown in the toolbox badges.",
+        "name": "projectsUsed",
+        "type": "number",
+        "title": "Projects shipped"
+      }
+    ],
+    "name": "technologies",
+    "type": "document"
+  },
+  {
+    "fields": [
+      {
+        "validation": [
+          {
+            "rules": [
+              {
+                "flag": "presence",
+                "constraint": "required"
+              }
+            ],
+            "level": "error"
+          }
+        ],
+        "name": "title",
+        "type": "string"
+      },
+      {
+        "rows": 4,
+        "description": "Paragraph shown under the section title.",
+        "name": "description",
+        "type": "text"
+      },
+      {
+        "options": {
+          "hotspot": true
+        },
+        "validation": [
+          {
+            "rules": [
+              {
+                "flag": "presence",
+                "constraint": "required"
+              }
+            ],
+            "level": "error"
+          }
+        ],
+        "fields": [
+          {
+            "description": "Describe the image for accessibility/SEO.",
+            "name": "alt",
+            "type": "string",
+            "title": "Alt text"
+          }
+        ],
+        "name": "image",
+        "type": "image"
+      },
+      {
+        "description": "Optional KPI/value pairs rendered as cards.",
+        "of": [
+          {
+            "fields": [
+              {
+                "validation": [
+                  {
+                    "rules": [
+                      {
+                        "flag": "presence",
+                        "constraint": "required"
+                      }
+                    ],
+                    "level": "error"
+                  }
+                ],
+                "name": "label",
+                "type": "string"
+              },
+              {
+                "validation": [
+                  {
+                    "rules": [
+                      {
+                        "flag": "presence",
+                        "constraint": "required"
+                      }
+                    ],
+                    "level": "error"
+                  }
+                ],
+                "name": "value",
+                "type": "string"
+              }
+            ],
+            "type": "object",
+            "name": "metric"
+          }
+        ],
+        "name": "metrics",
+        "type": "array",
+        "title": "Metric Tiles"
+      },
+      {
+        "validation": [
+          {
+            "rules": [
+              {
+                "flag": "min",
+                "constraint": 1
+              }
+            ],
+            "level": "error"
+          }
+        ],
+        "of": [
+          {
+            "fields": [
+              {
+                "options": {
+                  "hotspot": true
+                },
+                "validation": [
+                  {
+                    "rules": [
+                      {
+                        "flag": "presence",
+                        "constraint": "required"
+                      }
+                    ],
+                    "level": "error"
+                  }
+                ],
+                "fields": [
+                  {
+                    "description": "Describe the image for accessibility/SEO.",
+                    "name": "alt",
+                    "type": "string",
+                    "title": "Alt text"
+                  }
+                ],
+                "name": "image",
+                "type": "image"
+              },
+              {
+                "validation": [
+                  {
+                    "rules": [
+                      {
+                        "flag": "presence",
+                        "constraint": "required"
+                      }
+                    ],
+                    "level": "error"
+                  }
+                ],
+                "name": "subtitle",
+                "type": "string"
+              },
+              {
+                "description": "Short supporting statement for the subtitle.",
+                "name": "headline",
+                "type": "string"
+              },
+              {
+                "validation": [
+                  {
+                    "rules": [
+                      {
+                        "flag": "min",
+                        "constraint": 1
+                      }
+                    ],
+                    "level": "error"
+                  }
+                ],
+                "description": "Add short, stylable lines (bullets) — avoid long paragraphs.",
+                "of": [
+                  {
+                    "type": "string"
+                  }
+                ],
+                "name": "text",
+                "type": "array",
+                "title": "Text Lines"
+              },
+              {
+                "validation": [
+                  {
+                    "rules": [
+                      {
+                        "flag": "custom"
+                      },
+                      {
+                        "flag": "presence",
+                        "constraint": "required"
+                      }
+                    ],
+                    "level": "error"
+                  }
+                ],
+                "name": "slug",
+                "type": "slug"
+              }
+            ],
+            "type": "object",
+            "name": "item"
+          }
+        ],
+        "name": "items",
+        "type": "array"
+      }
+    ],
+    "name": "expertise",
+    "type": "document",
+    "title": "Areas of Expertise"
+  },
+  {
+    "fields": [
+      {
+        "validation": [
+          {
+            "rules": [
+              {
+                "flag": "presence",
+                "constraint": "required"
+              }
+            ],
+            "level": "error"
+          }
+        ],
+        "name": "title",
+        "type": "string"
+      },
+      {
+        "rows": 4,
+        "validation": [
+          {
+            "rules": [
+              {
+                "flag": "presence",
+                "constraint": "required"
+              }
+            ],
+            "level": "error"
+          }
+        ],
+        "description": "Short paragraph describing the engagement or outcome.",
+        "name": "summary",
+        "type": "text"
+      },
+      {
+        "description": "Show the average engagement length (e.g., “4-8 weeks”).",
+        "name": "timeline",
+        "type": "string",
+        "title": "Typical timeline"
+      },
+      {
+        "options": {
+          "hotspot": true
+        },
+        "fields": [
+          {
+            "name": "alt",
+            "type": "string",
+            "title": "Alt text"
+          }
+        ],
+        "name": "image",
+        "type": "image",
+        "title": "Icon / Image"
+      },
+      {
+        "description": "Describe the types of apps included (e.g., “CRM”, “Landing Pages”). Optional link to a relevant project.",
+        "of": [
+          {
+            "fields": [
+              {
+                "validation": [
+                  {
+                    "rules": [
+                      {
+                        "flag": "presence",
+                        "constraint": "required"
+                      }
+                    ],
+                    "level": "error"
+                  }
+                ],
+                "name": "label",
+                "type": "string"
+              },
+              {
+                "validation": [
+                  {
+                    "rules": [
+                      {
+                        "flag": "uri",
+                        "constraint": {
+                          "options": {
+                            "scheme": [
+                              "/^http$/",
+                              "/^https$/"
+                            ],
+                            "allowRelative": false,
+                            "relativeOnly": false,
+                            "allowCredentials": false
+                          }
+                        }
+                      }
+                    ],
+                    "level": "error"
+                  }
+                ],
+                "description": "External link or anchor to a matching project.",
+                "name": "url",
+                "type": "url",
+                "title": "Link (optional)"
+              }
+            ],
+            "type": "object",
+            "name": "application"
+          }
+        ],
+        "name": "applications",
+        "type": "array",
+        "title": "Application categories"
+      },
+      {
+        "validation": [
+          {
+            "rules": [
+              {
+                "flag": "presence",
+                "constraint": "required"
+              }
+            ],
+            "level": "error"
+          }
+        ],
+        "description": "Representative engagement or client.",
+        "name": "exampleProject",
+        "type": "string",
+        "title": "Example project"
+      },
+      {
+        "description": "Stack summary shown on the card.",
+        "name": "preferredStack",
+        "type": "string",
+        "title": "Preferred tech stack"
+      },
+      {
+        "rows": 3,
+        "name": "placeholderNote",
+        "type": "text",
+        "title": "Placeholder note"
+      },
+      {
+        "rows": 4,
+        "description": "Prefills the modal message so prospects know what to send.",
+        "name": "requestTemplate",
+        "type": "text",
+        "title": "Request form template"
+      },
+      {
+        "validation": [
+          {
+            "rules": [
+              {
+                "flag": "min",
+                "constraint": 0
+              }
+            ],
+            "level": "error"
+          }
+        ],
+        "description": "Lower numbers appear earlier.",
+        "name": "order",
+        "type": "number",
+        "title": "Display order"
+      }
+    ],
+    "name": "service",
+    "type": "document",
+    "title": "Services"
+  }
+]
