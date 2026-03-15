@@ -92,22 +92,25 @@ const Navbar = () => {
         </div>
         <ul className="flex flex-col divide-y divide-black/5">
           {navLinks.map((navItem) => (
-            <Link href={navItem.link} key={navItem.id}>
-              <li
-                className="px-6 py-4 text-base text-black/80 hover:bg-green-50"
+            <li key={navItem.id}>
+              <Link
+                href={navItem.link}
+                className="block px-6 py-4 text-base text-black/80 hover:bg-green-50"
                 onClick={() => setOpen(false)}
               >
                 {navItem.name}
-              </li>
-            </Link>
+              </Link>
+            </li>
           ))}
-          <a
-            href="/travisGeislingerResume.pdf"
-            className="px-6 py-4 text-base font-semibold text-green-700"
-            onClick={() => setOpen(false)}
-          >
-            Resume
-          </a>
+          <li>
+            <a
+              href="/travisGeislingerResume.pdf"
+              className="block px-6 py-4 text-base font-semibold text-green-700"
+              onClick={() => setOpen(false)}
+            >
+              Resume
+            </a>
+          </li>
         </ul>
       </div>
     </nav>
