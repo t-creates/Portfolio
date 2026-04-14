@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
 import { urlFor } from '../../utils/client';
@@ -87,6 +87,7 @@ const fallbackServices = [
 const Services = ({ services: servicesData = [] }) => {
   const services = servicesData.length ? servicesData : fallbackServices;
   const [selectedService, setSelectedService] = useState(null);
+  const [enableScrollAnimations, setEnableScrollAnimations] = useState(false);
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -95,6 +96,20 @@ const Services = ({ services: servicesData = [] }) => {
   });
   const [sending, setSending] = useState(false);
   const [feedback, setFeedback] = useState('');
+
+  useEffect(() => {
+    const mediaQuery = window.matchMedia('(min-width: 768px)');
+    const syncAnimations = (event) => {
+      setEnableScrollAnimations(event.matches);
+    };
+
+    syncAnimations(mediaQuery);
+    mediaQuery.addEventListener('change', syncAnimations);
+
+    return () => {
+      mediaQuery.removeEventListener('change', syncAnimations);
+    };
+  }, []);
 
   const closeModal = () => {
     setSelectedService(null);
@@ -140,7 +155,14 @@ const Services = ({ services: servicesData = [] }) => {
   };
 
   return (
-    <motion.section className="md:p-6 sm:p-1" initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.15 }} transition={{ duration: 0.7 }}>
+    <motion.section
+      className="md:p-6 sm:p-1"
+      initial={enableScrollAnimations ? { opacity: 0, y: 40 } : false}
+      whileInView={enableScrollAnimations ? { opacity: 1, y: 0 } : undefined}
+      animate={!enableScrollAnimations ? { opacity: 1, y: 0 } : undefined}
+      viewport={{ once: true, amount: 0.1, margin: '0px 0px -12% 0px' }}
+      transition={{ duration: 0.7 }}
+    >
       <div className="flex flex-col gap-4">
         <p className="text-sm uppercase tracking-[0.4em] text-black/60">Services</p>
         <h1 className="aboutTitle text-black sm:text-4xl md:text-5xl font-bold">Ways we can collaborate</h1>
@@ -163,9 +185,10 @@ const Services = ({ services: servicesData = [] }) => {
             <motion.article
               key={service.id || service.title}
               className="group layered-card relative flex h-full flex-col overflow-hidden rounded-[2rem] border border-black/5 bg-white/90 shadow-xl backdrop-blur transition-transform duration-300 hover:-translate-y-1 hover:shadow-2xl"
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.3 }}
+              initial={enableScrollAnimations ? { opacity: 0, y: 30 } : false}
+              whileInView={enableScrollAnimations ? { opacity: 1, y: 0 } : undefined}
+              animate={!enableScrollAnimations ? { opacity: 1, y: 0 } : undefined}
+              viewport={{ once: true, amount: 0.12, margin: '0px 0px -10% 0px' }}
               transition={{ duration: 0.5, delay: 0.05 }}
             >
               <div className="pointer-events-none absolute inset-0 opacity-70">

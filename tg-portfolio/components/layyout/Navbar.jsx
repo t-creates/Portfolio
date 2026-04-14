@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import Image from 'next/image';
-import { HiMenu } from 'react-icons/hi';
+import { HiMenu, HiX } from 'react-icons/hi';
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
@@ -40,9 +40,17 @@ const Navbar = () => {
     setOpen(!open);
   }
 
+  useEffect(() => {
+    document.body.style.overflow = open ? 'hidden' : '';
+
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [open]);
+
   return (
-    <nav className="w-full sticky top-0 z-40 bg-white/90 backdrop-blur border-b border-black/10 shadow-sm">
-      <div className="mx-auto flex max-w-6xl items-center justify-between px-4 sm:px-6 lg:px-8 py-3">
+    <nav className="sticky top-0 z-40 w-full border-b border-black/10 bg-white/90 shadow-sm backdrop-blur">
+      <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3 sm:px-6 lg:px-8">
         <a href="/" className="flex items-center gap-2">
           <Image src="/default-monochrome-black.svg" alt="Software Engineer" width={64} height={64} className="hover:opacity-80 transition" />
           <span className="hidden md:block text-sm uppercase tracking-[0.3em] text-black/60">Travis Geislinger</span>
@@ -75,22 +83,21 @@ const Navbar = () => {
           type="button"
           onClick={toggleMenu}
           className="md:hidden inline-flex items-center justify-center rounded-full border border-black/10 p-2 text-black"
+          aria-expanded={open}
+          aria-label={open ? 'Close navigation menu' : 'Open navigation menu'}
         >
-          <HiMenu className="h-6 w-6" />
+          {open ? <HiX className="h-6 w-6" /> : <HiMenu className="h-6 w-6" />}
         </button>
       </div>
 
-      {/* Mobile Menu */}
-      <div className={`md:hidden fixed top-0 left-0 right-0 z-50 bg-white border-b border-black/10 shadow-lg transition-transform duration-300 ${open ? 'translate-y-0' : '-translate-y-full'}`}>
-        <div className="flex h-[var(--nav-height-mobile)] items-center justify-between px-4">
-          <a href="/">
-            <Image src="/default-monochrome-black.svg" alt="Software Engineer" width={50} height={50} />
-          </a>
-          <button type="button" onClick={toggleMenu}>
-            <HiMenu className="h-7 w-7 text-black" />
-          </button>
-        </div>
-        <ul className="flex flex-col divide-y divide-black/5">
+      <div className={`md:hidden ${open ? 'pointer-events-auto' : 'pointer-events-none'}`}>
+        <button
+          type="button"
+          aria-label="Close navigation menu"
+          className={`fixed inset-0 top-[var(--nav-height-mobile)] z-30 bg-black/20 transition-opacity duration-300 ${open ? 'opacity-100' : 'opacity-0'}`}
+          onClick={() => setOpen(false)}
+        />
+        <ul className={`absolute inset-x-0 top-full z-40 flex flex-col divide-y divide-black/5 border-b border-black/10 bg-white shadow-lg transition-all duration-300 ${open ? 'translate-y-0 opacity-100' : '-translate-y-3 opacity-0'}`}>
           {navLinks.map((navItem) => (
             <li key={navItem.id}>
               <Link
