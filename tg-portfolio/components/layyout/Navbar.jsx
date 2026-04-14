@@ -6,33 +6,45 @@ import { HiMenu, HiX } from 'react-icons/hi';
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState('home');
   const router = useRouter();
   const navLinks = [
     {
       id: 'Home',
       name: 'Home',
       link: '/',
+      sectionId: 'home',
+    },
+    {
+      id: 'Services',
+      name: 'Services',
+      link: '/#services',
+      sectionId: 'services',
     },
     {
       id: 'Expertise',
       name: 'Expertise',
       link: '/#expertise',
+      sectionId: 'expertise',
     },
     {
       id: 'Toolbox',
       name: 'Toolbox',
       link: '/#toolbox',
+      sectionId: 'toolbox',
     },
     {
       id: 'Projects',
       name: 'Projects',
       link: '/#projects',
+      sectionId: 'projects',
       /* link: '/works', */
     },
     {
       id: 'Contact',
       name: 'Contact',
-      link: '/contact',
+      link: '/#contact',
+      sectionId: 'contact',
     },
   ];
 
@@ -48,8 +60,53 @@ const Navbar = () => {
     };
   }, [open]);
 
+  useEffect(() => {
+    if (router.pathname !== '/') {
+      setActiveSection(router.pathname);
+      return undefined;
+    }
+
+    const sectionIds = ['services', 'expertise', 'projects', 'toolbox', 'contact'];
+
+    const updateActiveSection = () => {
+      const navOffset = window.innerWidth < 768 ? 112 : 96;
+      const scrollPosition = window.scrollY + navOffset;
+      let currentSection = 'home';
+
+      sectionIds.forEach((sectionId) => {
+        const element = document.getElementById(sectionId);
+        if (!element) return;
+
+        if (scrollPosition >= element.offsetTop) {
+          currentSection = sectionId;
+        }
+      });
+
+      setActiveSection(currentSection);
+    };
+
+    updateActiveSection();
+    window.addEventListener('scroll', updateActiveSection, { passive: true });
+    window.addEventListener('hashchange', updateActiveSection);
+    window.addEventListener('resize', updateActiveSection);
+
+    return () => {
+      window.removeEventListener('scroll', updateActiveSection);
+      window.removeEventListener('hashchange', updateActiveSection);
+      window.removeEventListener('resize', updateActiveSection);
+    };
+  }, [router.pathname]);
+
+  const isNavItemActive = (navItem) => {
+    if (router.pathname !== '/') {
+      return router.pathname === navItem.link;
+    }
+
+    return activeSection === navItem.sectionId;
+  };
+
   return (
-    <nav className="sticky top-0 z-40 w-full border-b border-black/10 bg-white/90 shadow-sm backdrop-blur">
+    <nav className="fixed top-0 left-0 right-0 z-40 w-full border-b border-black/10 bg-white/90 shadow-sm backdrop-blur md:sticky md:top-0">
       <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3 sm:px-6 lg:px-8">
         <a href="/" className="flex items-center gap-2">
           <Image src="/default-monochrome-black.svg" alt="Software Engineer" width={64} height={64} className="hover:opacity-80 transition" />
@@ -64,7 +121,7 @@ const Navbar = () => {
             >
               <span
                 className={`aboutTitle cursor-pointer py-2 text-lg transition-colors ${
-                  router.pathname === navItem.link ? 'text-black' : 'text-gray-500 hover:text-black'
+                  isNavItemActive(navItem) ? 'text-black' : 'text-gray-500 hover:text-black'
                 }`}
               >
                 {navItem.name}
@@ -102,7 +159,7 @@ const Navbar = () => {
             <li key={navItem.id}>
               <Link
                 href={navItem.link}
-                className="block px-6 py-4 text-base text-black/80 hover:bg-green-50"
+                className={`block px-6 py-4 text-base transition-colors ${isNavItemActive(navItem) ? 'bg-green-50 text-black' : 'text-black/80 hover:bg-green-50'}`}
                 onClick={() => setOpen(false)}
               >
                 {navItem.name}

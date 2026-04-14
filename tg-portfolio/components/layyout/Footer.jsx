@@ -4,9 +4,11 @@ import { FaLinkedin, FaGithub } from 'react-icons/fa';
 
 const links = [
   { label: 'Home', href: '/' },
+  { label: 'Services', href: '/#services' },
   { label: 'Expertise', href: '/#expertise' },
+  { label: 'Toolbox', href: '/#toolbox' },
   { label: 'Projects', href: '/#projects' },
-  { label: 'Contact', href: '/contact' },
+  { label: 'Contact', href: '/#contact' },
 ];
 
 const Footer = () => (

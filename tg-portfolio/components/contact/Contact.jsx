@@ -35,7 +35,7 @@ const Contact = () => {
 
   return (
     <motion.section className="mt-10 w-full" initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.3 }}>
-      <div className="rounded-[32px] bg-gradient-to-br from-black via-slate-900 to-emerald-900 text-white p-8 flex flex-col gap-10 lg:flex-row lg:items-start">
+      <div className="flex flex-col gap-8 rounded-[32px] bg-gradient-to-br from-black via-slate-900 to-emerald-900 p-5 text-white sm:p-8 lg:flex-row lg:items-start lg:gap-10">
         <div className="flex-1 space-y-6">
           <div>
             <p className="text-sm uppercase tracking-[0.4em] text-emerald-200/80">Contact</p>
@@ -78,7 +78,7 @@ const Contact = () => {
             </div>
           </div>
         </div>
-        <div className="layered-card flex-1 rounded-3xl bg-white text-black shadow-2xl p-6">
+        <div className="layered-card flex-1 rounded-3xl bg-white p-4 text-black shadow-2xl sm:p-6">
           <ContactForm />
         </div>
       </div>

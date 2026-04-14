@@ -65,18 +65,18 @@ const Home = ({
         />
       </Head>
       <Hero hero={hero} />
-      <div className="md:px-16 lg:px-24 sm:p-1 sm:pt-11">
+      <div className="md:px-16 lg:px-24 sm:p-1 sm:pt-11 scroll-mt-28 md:scroll-mt-24" id="services">
         <div className="w-full h-full md:p-6 sm:pt-5 mb-10 sm:p-0">
           <Services services={services} />
         </div>
       </div>
-      <div className="mt-10 lg:px-24 sm:p-1 sm:pt-11" id="about">
+      <div className="mt-10 lg:px-24 sm:p-1 sm:pt-11 scroll-mt-28 md:scroll-mt-24" id="about">
         <div className="w-full h-full md:p-11 sm:pt-5">
           <About />
         </div>
       </div>
       <div className="md:px-16 lg:px-24 sm:p-1 sm:pt-11 my-10">
-        <div className="w-full h-full md:p-6 sm:pt-5 mb-10 lg:m-12 sm:m-0" id="expertise">
+        <div className="w-full h-full md:p-6 sm:pt-5 mb-10 lg:m-12 sm:m-0 scroll-mt-28 md:scroll-mt-24" id="expertise">
           <Expertise expertise={expertise} />
         </div>
       </div>
@@ -84,7 +84,7 @@ const Home = ({
 
       {/* New Projects */}
       <div
-        className="mt-10 md:px-6 lg:px-16 sm:p-1 sm:pt-11"
+        className="mt-10 md:px-6 lg:px-16 sm:p-1 sm:pt-11 scroll-mt-28 md:scroll-mt-24"
         id="projects"
       >
         <div className="lg:mx-24 sm:mx-0">
@@ -117,7 +117,7 @@ const Home = ({
         </div>
       </div>
 
-      <div className="mt-10 md:px-6 lg:px-24 sm:p-1 sm:pt-11 block" id="toolbox">
+      <div className="mt-10 md:px-6 lg:px-24 sm:p-1 sm:pt-11 block scroll-mt-28 md:scroll-mt-24" id="toolbox">
         <Toolbox techno={techno} />
       </div>
       {/*
@@ -131,7 +131,7 @@ const Home = ({
       </div>
     </div>
      */}
-      <div className="md:px-16 lg:px-24 sm:p-1 sm:pt-11 mt-10 w-full">
+      <div className="md:px-16 lg:px-24 sm:p-1 sm:pt-11 mt-10 w-full scroll-mt-28 md:scroll-mt-24" id="contact">
         <div className="w-full h-full md:p-6 sm:pt-5 mb-10 lg:m-12 sm:m-0">
           <h1 className="aboutTitle text-black sm:text-4xl md:text-5xl font-bold md:pb-5 sm:p-0">Contact</h1>
           <Contact />
