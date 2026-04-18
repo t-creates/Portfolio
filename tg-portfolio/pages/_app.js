@@ -4,6 +4,7 @@ import Head from 'next/head';
 import Script from 'next/script';
 // eslint-disable-next-line import/no-unresolved
 import { Analytics } from '@vercel/analytics/react';
+// eslint-disable-next-line import/no-unresolved
 import { SpeedInsights } from '@vercel/speed-insights/next';
 
 import '../styles/globals.css';
