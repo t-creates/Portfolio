@@ -18,7 +18,7 @@ const ContactForm = () => {
     setSubmitting(true);
     setStatus({ type: '', message: '' });
 
-    const res = await fetch('/api/sendgrid', {
+    const res = await fetch('/api/contact', {
       body: JSON.stringify(form),
       headers: { 'Content-Type': 'application/json' },
       method: 'POST',

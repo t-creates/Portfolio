@@ -21,12 +21,12 @@ Notes:
 The app now includes:
 
 - Hidden honeypot field on both contact forms.
-- Required field validation on `/api/sendgrid`.
+- Required field validation on `/api/contact`.
 - Rejection of obviously automated submissions that fill the honeypot.
 
 ## 3. BotID
 
-If you want route-level BotID later for `/api/sendgrid`:
+If you want route-level BotID later for `/api/contact`:
 
 1. Fix local `node_modules` ownership so installs work without `sudo`.
 2. Install `botid`.

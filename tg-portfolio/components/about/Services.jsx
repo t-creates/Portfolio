@@ -134,7 +134,7 @@ const Services = ({ services: servicesData = [] }) => {
       subject: `Service request: ${selectedService.title}`,
       message: `${formData.message}\n\nRequested service: ${selectedService.title}`,
     };
-    const res = await fetch('/api/sendgrid', {
+    const res = await fetch('/api/contact', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(payload),

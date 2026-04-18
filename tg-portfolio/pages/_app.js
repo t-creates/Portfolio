@@ -4,6 +4,7 @@ import Head from 'next/head';
 import Script from 'next/script';
 // eslint-disable-next-line import/no-unresolved
 import { Analytics } from '@vercel/analytics/react';
+import { SpeedInsights } from '@vercel/speed-insights/next';
 
 import '../styles/globals.css';
 import Layout from '../components/layyout/Layout';
@@ -88,6 +89,7 @@ const MyApp = ({ Component, pageProps }) => {
               return event;
             }}
           />
+          <SpeedInsights />
         </>
       )}
     </div>
