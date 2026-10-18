@@ -176,7 +176,7 @@ const Services = ({ services: servicesData = [] }) => {
       <div className="grid lg:grid-cols-2 gap-6 grid-cols-1 scrollbar-hide mt-10">
         {services.map((service) => {
           const imageSrc = service.imageUrl || (service.image ? urlFor(service.image) : '');
-          const exampleProject = service.exampleProject || service.caseStudy || '';
+          {/* const exampleProject = service.exampleProject || service.caseStudy || ''; */ }
           const applications = Array.isArray(service.applications) && service.applications.length
             ? service.applications
             : [];
