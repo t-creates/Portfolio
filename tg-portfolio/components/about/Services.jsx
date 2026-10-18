@@ -176,7 +176,6 @@ const Services = ({ services: servicesData = [] }) => {
       <div className="grid lg:grid-cols-2 gap-6 grid-cols-1 scrollbar-hide mt-10">
         {services.map((service) => {
           const imageSrc = service.imageUrl || (service.image ? urlFor(service.image) : '');
-          {/* const exampleProject = service.exampleProject || service.caseStudy || ''; */ }
           const applications = Array.isArray(service.applications) && service.applications.length
             ? service.applications
             : [];
@@ -244,18 +243,6 @@ const Services = ({ services: servicesData = [] }) => {
                     </div>
                   </div>
                 ) : null}
-
-                {/*          {exampleProject ? (
-                  <div className="mt-6">
-                    {exampleProject ? (
-                      <div className="rounded-[1.6rem] border border-black/10 bg-white/75 p-5 shadow-sm">
-                        <p className="text-xs uppercase tracking-[0.3em] text-black/50">Representative build</p>
-                        <p className="mt-3 text-xl font-semibold leading-snug text-black">{exampleProject}</p>
-                      </div>
-                    ) : null}
-                  </div>
-                ) : null}
-*/}
                 <div className="mt-8 flex items-center justify-between gap-4 border-t border-black/5 pt-5">
                   <p className="max-w-xl text-sm text-black/45">
                     Request this service to discuss scope, fit, and implementation.
