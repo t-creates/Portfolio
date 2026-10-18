@@ -245,7 +245,7 @@ const Services = ({ services: servicesData = [] }) => {
                   </div>
                 ) : null}
 
-                {exampleProject ? (
+                {/*          {exampleProject ? (
                   <div className="mt-6">
                     {exampleProject ? (
                       <div className="rounded-[1.6rem] border border-black/10 bg-white/75 p-5 shadow-sm">
@@ -255,7 +255,7 @@ const Services = ({ services: servicesData = [] }) => {
                     ) : null}
                   </div>
                 ) : null}
-
+*/}
                 <div className="mt-8 flex items-center justify-between gap-4 border-t border-black/5 pt-5">
                   <p className="max-w-xl text-sm text-black/45">
                     Request this service to discuss scope, fit, and implementation.
